@@ -1,5 +1,12 @@
 import type { NextConfig } from "next";
 
+// Ensure DATABASE_URL exists during build-time static generation so Prisma Client
+// does not fail schema validation if Vercel environment variables are not yet configured.
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL =
+    "postgresql://placeholder:placeholder@ep-placeholder-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require";
+}
+
 const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,

@@ -26,8 +26,19 @@ const circuit: CircuitState = {
   cooldownMs: 60_000, // 60 seconds
 };
 
+// Fallback connection string for build-time static page generation when DATABASE_URL is not provided
+if (!process.env.DATABASE_URL) {
+  process.env.DATABASE_URL =
+    'postgresql://placeholder:placeholder@ep-placeholder-pooler.ap-southeast-1.aws.neon.tech/neondb?sslmode=require';
+}
+
 export function isDbAvailable(): boolean {
-  if (!process.env.DATABASE_URL) return false;
+  if (
+    !process.env.DATABASE_URL ||
+    process.env.DATABASE_URL.includes('placeholder')
+  ) {
+    return false;
+  }
   if (!circuit.open) return true;
   if (Date.now() - circuit.openedAt >= circuit.cooldownMs) {
     circuit.open = false; // half-open: allow next attempt
