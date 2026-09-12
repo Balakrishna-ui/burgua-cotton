@@ -1,0 +1,232 @@
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+enum ItemType {
+  SWATCH
+  SAMPLE_CUT
+  FABRIC_METER
+}
+
+enum OrderStatus {
+  PENDING
+  CONFIRMED
+  PROCESSING
+  DISPATCHED
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentStatus {
+  PENDING
+  AUTHORIZED
+  PAID
+  FAILED
+  REFUNDED
+}
+
+enum EnquiryBuyerType {
+  DESIGNER
+  FASHION_LABEL
+  MANUFACTURER
+  ARCHITECT
+  HOSPITALITY
+  RETAILER
+  PROFESSIONAL_BUYER
+  OTHER
+}
+
+enum ContactPurpose {
+  FABRIC_ENQUIRY
+  B2B_BULK
+  FABRIC_DEVELOPMENT
+  COLLABORATION
+  GENERAL
+}
+
+enum JournalCategory {
+  MATERIAL
+  PEOPLE
+  PLACE
+  PROCESS
+  RESEARCH
+  CONTEMPORARY
+}
+
+model Textile {
+  id                    String            @id @default(uuid())
+  code                  String            @unique
+  name                  String
+  slug                  String            @unique
+  shortDescription      String
+  materialStory         String            @db.Text
+  yarnCount             String?           // Verified data: e.g. "27-30s Handspun Unbaled Cotton"
+  weave                 String?           // Verified weave: e.g. "Plain Weave", "Twill", "Jamdani Accent"
+  width                 String?           // e.g. "44 inches (112 cm)"
+  gsm                   String?           // e.g. "115 GSM"
+  finish                String?           // e.g. "Kora (Unbleached/Natural Loom-State)", "Natural Washed"
+  suggestedApplications String?
+  inStock               Boolean           @default(true)
+  leadTime              String?           // e.g. "3-4 weeks for small batches"
+  b2bMoq                String?           // e.g. "50 meters"
+  basePrice             Decimal?          @db.Decimal(10, 2)
+  swatchPrice           Decimal           @default(150.00) @db.Decimal(10, 2)
+  samplePrice           Decimal           @default(600.00) @db.Decimal(10, 2)
+  isFeatured            Boolean           @default(false)
+  heroImage             String
+  macroImage            String
+  createdAt             DateTime          @default(now())
+  updatedAt             DateTime          @updatedAt
+
+  variants              TextileVariant[]
+  images                TextileImage[]
+  enquiries             Enquiry[]
+  orderItems            OrderItem[]
+
+  @@index([slug])
+  @@index([isFeatured])
+}
+
+model TextileVariant {
+  id          String         @id @default(uuid())
+  textileId   String
+  colorName   String         // e.g., "Kora Natural", "Desi Indigo", "Madder Red"
+  colorHex    String?        // e.g., "#E8E0D2"
+  price       Decimal?       @db.Decimal(10, 2)
+  isAvailable Boolean        @default(true)
+  imageUrl    String?
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+
+  textile     Textile        @relation(fields: [textileId], references: [id], onDelete: Cascade)
+  orderItems  OrderItem[]
+
+  @@index([textileId])
+}
+
+model TextileImage {
+  id        String   @id @default(uuid())
+  textileId String
+  url       String
+  altText   String
+  isMacro   Boolean  @default(false)
+  sortOrder Int      @default(0)
+
+  textile   Textile  @relation(fields: [textileId], references: [id], onDelete: Cascade)
+
+  @@index([textileId])
+}
+
+model Enquiry {
+  id                  String           @id @default(uuid())
+  enquiryNumber       String           @unique
+  companyName         String
+  contactName         String
+  email               String
+  phone               String
+  buyerType           EnquiryBuyerType
+  intendedUse         String
+  preferredTextileId  String?
+  approximateQuantity String?
+  timeline            String?
+  customRequirement   String?          @db.Text
+  status              String           @default("NEW")
+  createdAt           DateTime         @default(now())
+  updatedAt           DateTime         @updatedAt
+
+  preferredTextile    Textile?         @relation(fields: [preferredTextileId], references: [id], onDelete: SetNull)
+
+  @@index([enquiryNumber])
+  @@index([email])
+}
+
+model Order {
+  id                   String        @id @default(uuid())
+  orderNumber          String        @unique
+  idempotencyKey       String?       @unique
+  customerName         String
+  email                String
+  phone                String
+  shippingAddressLine1 String
+  shippingAddressLine2 String?
+  city                 String
+  state                String
+  postalCode           String
+  country              String        @default("India")
+  subtotal             Decimal       @db.Decimal(10, 2)
+  shippingAmount       Decimal       @default(0.00) @db.Decimal(10, 2)
+  taxAmount            Decimal       @default(0.00) @db.Decimal(10, 2)
+  discountAmount       Decimal       @default(0.00) @db.Decimal(10, 2)
+  totalAmount          Decimal       @db.Decimal(10, 2)
+  currency             String        @default("INR")
+  paymentStatus        PaymentStatus @default(PENDING)
+  paymentProvider      String?       // "ONLINE_GATEWAY", "OFFLINE_INVOICE"
+  paymentOrderId       String?
+  paymentTransactionId String?
+  orderStatus          OrderStatus   @default(PENDING)
+  createdAt            DateTime      @default(now())
+  updatedAt            DateTime      @updatedAt
+
+  items                OrderItem[]
+
+  @@index([orderNumber])
+  @@index([email])
+  @@index([idempotencyKey])
+}
+
+model OrderItem {
+  id              String          @id @default(uuid())
+  orderId         String
+  textileId       String?
+  variantId       String?
+  itemType        ItemType
+  quantity        Int
+  unitPrice       Decimal         @db.Decimal(10, 2)
+  totalPrice      Decimal         @db.Decimal(10, 2)
+  productSnapshot Json            // Immutable snapshot of fabric name, code, colour, specs at purchase time
+  createdAt       DateTime        @default(now())
+
+  order           Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  textile         Textile?        @relation(fields: [textileId], references: [id], onDelete: SetNull)
+  variant         TextileVariant? @relation(fields: [variantId], references: [id], onDelete: SetNull)
+
+  @@index([orderId])
+}
+
+model ContactSubmission {
+  id        String         @id @default(uuid())
+  name      String
+  email     String
+  phone     String?
+  purpose   ContactPurpose
+  subject   String
+  message   String         @db.Text
+  createdAt DateTime       @default(now())
+
+  @@index([email])
+}
+
+model JournalArticle {
+  id             String          @id @default(uuid())
+  title          String
+  slug           String          @unique
+  category       JournalCategory
+  summary        String
+  content        String          @db.Text
+  featuredImage  String
+  readingTime    String
+  publishedAt    DateTime        @default(now())
+  seoTitle       String?
+  seoDescription String?
+  canonicalUrl   String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+
+  @@index([slug])
+  @@index([category])
+}

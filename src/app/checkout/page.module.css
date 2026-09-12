@@ -1,0 +1,230 @@
+.emptyContainer {
+  text-align: center;
+}
+
+.emptyTitle {
+  font-family: var(--font-serif);
+  font-size: 2.25rem;
+  margin-bottom: var(--space-4);
+}
+
+.emptyText {
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-8);
+}
+
+.pageWrapper {
+  background-color: var(--color-bg-primary);
+}
+
+.headerRow {
+  margin-bottom: var(--space-8);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+  transition: color var(--transition-base);
+}
+
+.backLink:hover {
+  color: var(--color-text-primary);
+}
+
+.pageTitle {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  margin-top: var(--space-2);
+}
+
+.layoutGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-12);
+}
+
+@media (min-width: 992px) {
+  .layoutGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: var(--space-12);
+  }
+}
+
+.formCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-8);
+}
+
+.sectionHeading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-6);
+}
+
+.errorBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  background-color: var(--color-error-bg);
+  color: var(--color-error);
+  margin-bottom: var(--space-6);
+  border-radius: var(--radius-xs);
+  font-size: var(--text-sm);
+}
+
+.twoColGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .twoColGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.threeColGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-4);
+}
+
+@media (min-width: 600px) {
+  .threeColGrid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+}
+
+.submitBtnWrapper {
+  margin-top: var(--space-6);
+}
+
+.submitBtn {
+  width: 100%;
+  padding: 1rem;
+}
+
+.summaryColumn {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.summaryCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: var(--space-8);
+}
+
+.summaryHeading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  margin-bottom: var(--space-4);
+}
+
+.itemsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.itemRow {
+  display: grid;
+  grid-template-columns: 60px 1fr auto;
+  gap: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-border-subtle);
+  align-items: center;
+}
+
+.itemImageWrapper {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  background-color: var(--color-bg-subtle);
+  overflow: hidden;
+}
+
+.itemImage {
+  object-fit: cover;
+}
+
+.itemCode {
+  font-size: 0.6875rem;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+  display: block;
+}
+
+.itemName {
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  margin: 2px 0;
+}
+
+.itemVariant {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}
+
+.itemPrice {
+  font-size: var(--text-sm);
+  font-weight: 600;
+}
+
+.totalsSection {
+  margin-top: var(--space-6);
+  padding-top: var(--space-4);
+  border-top: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-sm);
+  color: var(--color-text-secondary);
+}
+
+.complimentaryText {
+  color: var(--color-success);
+  font-weight: 500;
+}
+
+.grandTotalRow {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--text-lg);
+  font-weight: 600;
+  color: var(--color-text-primary);
+  margin-top: var(--space-2);
+}
+
+.securityNote {
+  padding: var(--space-4);
+  background-color: var(--color-bg-subtle);
+  border: 1px solid var(--color-border);
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.securityNoteIcon {
+  color: var(--color-accent);
+  flex-shrink: 0;
+}
+
+.securityNoteText {
+  font-size: var(--text-xs);
+  color: var(--color-text-secondary);
+}

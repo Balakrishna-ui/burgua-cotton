@@ -1,0 +1,543 @@
+/* ==========================================================================
+   COTTON JOURNEY CAROUSEL — REFERENCE-BASED EDITORIAL REDESIGN
+   Single dominant active stage (~60-65% image / ~35-40% content)
+   8 bottom circular thumbnail steps, floating prev/next, progress indicator
+   ========================================================================== */
+
+.journeyWrapper {
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  user-select: none;
+  outline: none;
+}
+
+/* ==========================================================================
+   1. MAIN SHOWCASE: SINGLE ACTIVE STAGE CARD WITH FLOATING ARROWS
+   ========================================================================== */
+.showcaseStageBox {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+/* Floating Circular Side Navigation Buttons */
+.floatingArrowBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 10;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background-color: var(--color-bg-surface, #FFFFFF);
+  border: 1px solid var(--color-border, #E8E2D6);
+  color: var(--color-text-primary, #1A1715);
+  box-shadow: 0 4px 16px rgba(26, 23, 21, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all var(--transition-base, 250ms ease);
+}
+
+.floatingArrowPrev {
+  left: -22px;
+}
+
+.floatingArrowNext {
+  right: -22px;
+}
+
+.floatingArrowBtn:hover {
+  background-color: var(--color-text-primary, #1A1715);
+  color: #FAF7F2;
+  border-color: var(--color-text-primary, #1A1715);
+  transform: translateY(-50%) scale(1.06);
+  box-shadow: 0 6px 20px rgba(26, 23, 21, 0.16);
+}
+
+.floatingArrowBtn:focus-visible {
+  outline: 2px solid var(--color-accent, #8C3B1E);
+  outline-offset: 3px;
+}
+
+/* The Single Active Stage Card */
+.activeStageCard {
+  display: grid;
+  grid-template-columns: 1.35fr 1fr;
+  width: 100%;
+  background-color: var(--color-bg-primary, #FAF7F2);
+  border: 1px solid var(--color-border, #E8E2D6);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 12px 32px rgba(26, 23, 21, 0.04);
+  min-height: 420px;
+}
+
+/* Left Column: Dominant Active Stage Image (~60-65% width) */
+.stageImageColumn {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 420px;
+  background-color: var(--color-bg-subtle, #F3EFE8);
+  overflow: hidden;
+}
+
+.activeHeroImage {
+  object-fit: cover;
+  object-position: center;
+  transition: opacity 380ms cubic-bezier(0.16, 1, 0.3, 1), transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.imageTransitioning {
+  opacity: 0.82;
+  transform: scale(1.02);
+}
+
+/* Right Column: Stage Information & Narrative (~35-40% width) */
+.stageInfoColumn {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2.25rem, 3.5vw, 3.5rem);
+  background-color: var(--color-bg-primary, #FAF7F2);
+  overflow: hidden;
+}
+
+/* Botanical Cotton Watermark Illustration */
+.botanicalWatermark {
+  position: absolute;
+  top: 1rem;
+  right: 1.25rem;
+  width: 140px;
+  height: 140px;
+  color: #C8BCAC;
+  opacity: 0.36;
+  pointer-events: none;
+  user-select: none;
+}
+
+.stageEyebrow {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--color-accent, #8C3B1E);
+  margin-bottom: 2px;
+  transition: opacity 300ms ease;
+}
+
+.stageBigNumber {
+  font-family: var(--font-serif, serif);
+  font-size: clamp(3.25rem, 4.8vw, 4.5rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: -0.02em;
+  color: var(--color-text-primary, #1A1715);
+  font-feature-settings: 'tnum' 1;
+  margin-bottom: 0.65rem;
+  transition: opacity 300ms ease;
+}
+
+.stageTitle {
+  font-family: var(--font-serif, serif);
+  font-size: clamp(1.85rem, 2.6vw, 2.5rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  color: var(--color-text-primary, #1A1715);
+  margin-bottom: 0.85rem;
+  text-wrap: balance;
+  transition: opacity 300ms ease;
+}
+
+.stageDesc {
+  font-family: var(--font-sans, sans-serif);
+  font-size: clamp(0.9375rem, 0.9vw + 0.1rem, 1.0625rem);
+  font-weight: 400;
+  line-height: 1.7;
+  color: var(--color-text-secondary, #5C554E);
+  max-width: 440px;
+  margin-bottom: 1.75rem;
+  text-wrap: pretty;
+  transition: opacity 300ms ease;
+}
+
+.contentFading {
+  opacity: 0.8;
+}
+
+/* Stage Action CTA */
+.ctaWrapper {
+  display: flex;
+  align-items: center;
+}
+
+.exploreStageCta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--color-accent, #8C3B1E);
+  color: #FAF7F2;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 2px;
+  transition: all var(--transition-base, 250ms ease);
+}
+
+.exploreStageCta:hover {
+  background-color: var(--color-accent-hover, #A74724);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(140, 59, 30, 0.28);
+}
+
+.exploreStageCta:focus-visible {
+  outline: 2px solid var(--color-accent, #8C3B1E);
+  outline-offset: 3px;
+}
+
+.ctaArrow {
+  font-size: 0.9375rem;
+  transition: transform var(--transition-fast, 150ms ease);
+}
+
+.exploreStageCta:hover .ctaArrow {
+  transform: translateX(4px);
+}
+
+/* Editorial Tagline at bottom-right of card */
+.editorialWatermark {
+  position: absolute;
+  bottom: 1.25rem;
+  right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 2px;
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.5625rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #B2A79A;
+  line-height: 1.25;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* ==========================================================================
+   2. BOTTOM THUMBNAIL NAVIGATION: 8 COMPACT STAGE BUTTONS
+   ========================================================================== */
+.thumbnailNavigationRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: clamp(1.75rem, 2.5vw, 2.5rem);
+  padding: 0.5rem 0.25rem;
+  gap: 0.5rem;
+}
+
+.thumbnailItemBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+  flex: 1;
+  max-width: 96px;
+  transition: transform var(--transition-fast, 150ms ease);
+}
+
+.thumbStepNum {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  color: var(--color-text-muted, #8C847B);
+  transition: color var(--transition-base, 250ms ease);
+}
+
+.thumbCircleWrapper {
+  position: relative;
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 2px solid transparent;
+  background-color: var(--color-bg-subtle, #F3EFE8);
+  box-shadow: 0 2px 8px rgba(26, 23, 21, 0.06);
+  transition: all var(--transition-base, 250ms ease);
+}
+
+.thumbCircleImg {
+  object-fit: cover;
+  object-position: center;
+  filter: grayscale(20%);
+  transition: filter 250ms ease, transform 300ms ease;
+}
+
+.thumbStepTitle {
+  font-family: var(--font-sans, sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--color-text-secondary, #5C554E);
+  text-align: center;
+  white-space: nowrap;
+  transition: color var(--transition-base, 250ms ease);
+}
+
+/* Hover State */
+.thumbnailItemBtn:hover .thumbCircleWrapper {
+  border-color: var(--color-accent, #8C3B1E);
+  transform: translateY(-2px);
+}
+
+.thumbnailItemBtn:hover .thumbCircleImg {
+  filter: grayscale(0%);
+  transform: scale(1.06);
+}
+
+.thumbnailItemBtn:hover .thumbStepNum {
+  color: var(--color-accent, #8C3B1E);
+}
+
+.thumbnailItemBtn:focus-visible {
+  outline: 2px solid var(--color-accent, #8C3B1E);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Active State */
+.thumbnailItemActive .thumbCircleWrapper {
+  border-color: var(--color-accent, #8C3B1E);
+  box-shadow: 0 0 0 3px rgba(140, 59, 30, 0.2), 0 4px 12px rgba(140, 59, 30, 0.18);
+  transform: scale(1.08);
+}
+
+.thumbnailItemActive .thumbCircleImg {
+  filter: grayscale(0%);
+}
+
+.thumbnailItemActive .thumbStepNum {
+  color: var(--color-accent, #8C3B1E);
+  font-weight: 700;
+}
+
+.thumbnailItemActive .thumbStepTitle {
+  color: var(--color-text-primary, #1A1715);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   3. REFINED EDITORIAL PROGRESS INDICATOR (01 / 08 + PROGRESS LINE)
+   ========================================================================== */
+.progressIndicatorRow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  max-width: 280px;
+  margin-top: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.progressNumberBox {
+  display: flex;
+  align-items: baseline;
+  gap: 4px;
+  font-family: var(--font-serif, serif);
+  font-size: 1.125rem;
+  color: var(--color-text-primary, #1A1715);
+}
+
+.progressActive {
+  color: var(--color-accent, #8C3B1E);
+  font-weight: 600;
+}
+
+.progressSlash {
+  color: var(--color-text-muted, #8C847B);
+  font-size: 0.875rem;
+  margin: 0 2px;
+}
+
+.progressTotal {
+  color: var(--color-text-muted, #8C847B);
+}
+
+.progressBarTrack {
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-border, #E8E2D6);
+  border-radius: 1px;
+  overflow: hidden;
+}
+
+.progressBarFill {
+  height: 100%;
+  background-color: var(--color-accent, #8C3B1E);
+  border-radius: 1px;
+  transition: width 350ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Mobile Nav Controls */
+.mobileNavControlsRow {
+  display: none;
+}
+
+/* ==========================================================================
+   Reduced Motion Support
+   ========================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .activeHeroImage,
+  .floatingArrowBtn,
+  .exploreStageCta,
+  .thumbnailItemBtn,
+  .thumbCircleWrapper,
+  .thumbCircleImg,
+  .progressBarFill,
+  .stageEyebrow,
+  .stageBigNumber,
+  .stageTitle,
+  .stageDesc {
+    transition: none !important;
+    transform: none !important;
+  }
+}
+
+/* ==========================================================================
+   Responsive Adaptations
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .activeStageCard {
+    grid-template-columns: 1.15fr 1fr;
+    min-height: 380px;
+  }
+
+  .stageImageColumn {
+    min-height: 360px;
+  }
+
+  .stageInfoColumn {
+    padding: clamp(1.75rem, 3vw, 2.5rem);
+  }
+
+  .floatingArrowPrev {
+    left: -16px;
+  }
+
+  .floatingArrowNext {
+    right: -16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .activeStageCard {
+    grid-template-columns: 1fr;
+    min-height: auto;
+  }
+
+  .stageImageColumn {
+    min-height: 280px;
+    aspect-ratio: 16 / 10;
+  }
+
+  .stageInfoColumn {
+    padding: var(--space-6) var(--space-5) var(--space-8) var(--space-5);
+  }
+
+  .floatingArrowBtn {
+    display: none;
+  }
+
+  .editorialWatermark {
+    display: none;
+  }
+
+  .thumbnailNavigationRow {
+    overflow-x: auto;
+    justify-content: flex-start;
+    gap: var(--space-3);
+    padding: var(--space-2) 0 var(--space-3) 0;
+    scrollbar-width: none;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .thumbnailNavigationRow::-webkit-scrollbar {
+    display: none;
+  }
+
+  .thumbnailItemBtn {
+    flex: 0 0 auto;
+    min-width: 68px;
+  }
+
+  .thumbCircleWrapper {
+    width: 44px;
+    height: 44px;
+  }
+
+  .mobileNavControlsRow {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: var(--space-4);
+    padding: 0 var(--space-2);
+  }
+
+  .mobileCtrlBtn {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: var(--color-bg-subtle, #F3EFE8);
+    border: 1px solid var(--color-border, #E8E2D6);
+    color: var(--color-text-primary, #1A1715);
+    font-family: var(--font-sans, sans-serif);
+    font-size: 0.6875rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    padding: 0.5rem 1rem;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+
+  .mobileStepCounter {
+    font-family: var(--font-serif, serif);
+    font-size: 1.125rem;
+    color: var(--color-text-primary, #1A1715);
+  }
+}
+
+@media (max-width: 480px) {
+  .stageImageColumn {
+    min-height: 220px;
+    aspect-ratio: 4 / 3;
+  }
+
+  .stageTitle {
+    font-size: 1.75rem;
+  }
+
+  .stageDesc {
+    font-size: 0.9375rem;
+    line-height: 1.65;
+  }
+}

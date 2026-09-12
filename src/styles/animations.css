@@ -1,0 +1,188 @@
+/* ==========================================================================
+   BURGLA COTTON — EDITORIAL INTERACTION & ANIMATION SYSTEM
+   Inspired by Kalpavruksha & Duppali luxury textile aesthetic.
+   Lightweight, performant, fluid, and non-intrusive.
+   ========================================================================== */
+
+:root {
+  --ease-editorial: cubic-bezier(0.2, 0.9, 0.3, 1);
+  --ease-out-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out-smooth: cubic-bezier(0.65, 0, 0.35, 1);
+  --duration-fast: 0.35s;
+  --duration-normal: 0.5s;
+  --duration-slow: 0.75s;
+}
+
+/* --------------------------------------------------------------------------
+   1. SCROLL REVEAL UTILITIES
+   -------------------------------------------------------------------------- */
+
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+  transition: opacity var(--duration-normal) var(--ease-editorial),
+              transform var(--duration-normal) var(--ease-editorial);
+}
+
+[data-reveal="fade-in"] {
+  transform: none;
+}
+
+[data-reveal="image"] {
+  transform: scale(0.99);
+  transition: opacity var(--duration-normal) ease,
+              transform var(--duration-slow) var(--ease-out-smooth);
+}
+
+[data-reveal="slide-right"] {
+  transform: translateX(14px);
+}
+
+[data-reveal="slide-left"] {
+  transform: translateX(-14px);
+}
+
+/* Revealed State */
+[data-reveal].is-revealed {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   2. STAGGERED REVEALS FOR CARD & CONTENT GROUPS
+   -------------------------------------------------------------------------- */
+
+[data-reveal-group] > * {
+  opacity: 0;
+  transform: translateY(12px);
+  will-change: opacity, transform;
+  transition: opacity var(--duration-normal) var(--ease-editorial),
+              transform var(--duration-normal) var(--ease-editorial);
+}
+
+[data-reveal-group].is-revealed > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Micro-stagger timings (0.05s increments for seamless cascading flow) */
+[data-reveal-group].is-revealed > *:nth-child(1) { transition-delay: 0.02s; }
+[data-reveal-group].is-revealed > *:nth-child(2) { transition-delay: 0.07s; }
+[data-reveal-group].is-revealed > *:nth-child(3) { transition-delay: 0.12s; }
+[data-reveal-group].is-revealed > *:nth-child(4) { transition-delay: 0.17s; }
+[data-reveal-group].is-revealed > *:nth-child(5) { transition-delay: 0.22s; }
+[data-reveal-group].is-revealed > *:nth-child(6) { transition-delay: 0.27s; }
+[data-reveal-group].is-revealed > *:nth-child(7) { transition-delay: 0.32s; }
+[data-reveal-group].is-revealed > *:nth-child(8) { transition-delay: 0.37s; }
+
+/* --------------------------------------------------------------------------
+   3. CARD & IMAGE HOVER INTERACTIONS
+   -------------------------------------------------------------------------- */
+
+.hover-lift {
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.hover-lift:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(26, 23, 21, 0.08);
+}
+
+.image-hover-zoom {
+  overflow: hidden;
+}
+
+.image-hover-zoom img {
+  transition: transform var(--duration-slow) var(--ease-out-smooth);
+}
+
+.image-hover-zoom:hover img {
+  transform: scale(1.025);
+}
+
+/* --------------------------------------------------------------------------
+   4. BUTTON & LINK MICRO-INTERACTIONS
+   -------------------------------------------------------------------------- */
+
+.btn-arrow-slide {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-arrow-slide span[aria-hidden="true"] {
+  display: inline-block;
+  transition: transform 0.2s var(--ease-editorial);
+}
+
+.btn-arrow-slide:hover span[aria-hidden="true"] {
+  transform: translateX(4px);
+}
+
+/* Subtle Link Underline Wave */
+.editorial-link-hover {
+  position: relative;
+  text-decoration: none;
+}
+
+.editorial-link-hover::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: currentColor;
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 0.3s var(--ease-editorial);
+}
+
+.editorial-link-hover:hover::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* --------------------------------------------------------------------------
+   5. SUBTLE PARALLAX / BANNER DRIFT
+   -------------------------------------------------------------------------- */
+
+.parallax-banner-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.parallax-banner-image {
+  will-change: transform;
+  transform: scale(1.05);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   6. ACCESSIBILITY: REDUCED MOTION
+   -------------------------------------------------------------------------- */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal],
+  [data-reveal-group] > *,
+  [data-reveal].is-revealed,
+  [data-reveal-group].is-revealed > * {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .hover-lift:hover {
+    transform: none !important;
+  }
+
+  .image-hover-zoom:hover img {
+    transform: none !important;
+  }
+
+  .btn-arrow-slide:hover span[aria-hidden="true"] {
+    transform: none !important;
+  }
+}
