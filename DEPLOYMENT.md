@@ -26,13 +26,14 @@ Set the following environment variables in your **Vercel Project Settings > Envi
 
 | Variable Name | Required | Description | Example Production Value |
 |---|---|---|---|
-| `NEXT_PUBLIC_APP_URL` | **Yes** | Canonical public URL used for SEO, OpenGraph, sitemaps, and robots | `https://burgulacotton.com` *(or `https://<project>.vercel.app`)* |
+| `NEXT_PUBLIC_APP_URL` | **Yes** | Canonical public URL used for SEO, OpenGraph, sitemaps, and robots | `https://burgua-cotton.vercel.app` *(or custom domain)* |
 | `APP_SECRET` | **Yes** | 32+ character random secret string for API signing and security | `generate_with_openssl_rand_hex_32` |
-| `DATABASE_URL` | Optional | Connection string to PostgreSQL database (e.g., Vercel Postgres, Supabase, Neon) | `postgresql://user:pass@ep-host.neon.tech/burgula?sslmode=require` |
-| `REDIS_URL` | Optional | Redis connection URL for distributed rate limiting across edge regions | `rediss://default:token@host.upstash.io:6379` |
+| `DATABASE_URL` | **Yes** | Neon PostgreSQL pooled connection string (Project: `wandering-smoke-14824604`) | `postgresql://<user>:<password>@ep-<endpoint>-pooler.<region>.aws.neon.tech/neondb?sslmode=require` |
 
 > [!NOTE]
 > **Zero-Downtime Database Architecture**: If `DATABASE_URL` is omitted or temporarily unreachable, the application automatically activates its circuit breaker and serves verified static handloom textiles, journal articles, and chapters without failing builds or showing 500 errors.
+>
+> **Rate Limiting**: The platform uses a high-performance in-memory token bucket with TTL-based pruning. External Redis is **not required**.
 
 ---
 
