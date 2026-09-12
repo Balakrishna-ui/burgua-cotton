@@ -23,6 +23,18 @@
   z-index: 1;
 }
 
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 65%;
+  height: 100%;
+  background: linear-gradient(90deg, rgba(13, 54, 82, 0.52) 0%, rgba(13, 54, 82, 0.22) 65%, transparent 100%);
+  z-index: 2;
+  pointer-events: none;
+}
+
 .heroOverlay,
 .heroTextilePattern {
   display: none !important;
@@ -30,7 +42,7 @@
 
 .heroContainer {
   position: relative;
-  z-index: 2;
+  z-index: 3;
   width: 100%;
   height: 100%;
   padding-left: 7.5%;
@@ -43,7 +55,7 @@
 
 .heroContent {
   width: 100%;
-  max-width: 480px;
+  max-width: 580px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -52,24 +64,27 @@
 
 .heroEyebrow {
   font-family: var(--font-sans, sans-serif);
-  font-size: 0.72rem;
-  font-weight: 500;
-  letter-spacing: 0.22em;
+  font-size: clamp(0.72rem, 0.85vw, 0.8rem);
+  font-weight: 600;
+  letter-spacing: 0.26em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
-  margin-bottom: 0.85rem;
+  color: rgba(255, 255, 255, 0.95);
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.65);
+  margin-bottom: 1.15rem;
   display: block;
   animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.1s both;
 }
 
 .heroHeading {
-  font-family: var(--font-serif, serif);
-  font-size: clamp(3.2rem, 4.5vw, 4.4rem);
-  font-weight: 400;
-  line-height: 0.93;
-  letter-spacing: 0.015em;
+  font-family: var(--font-serif-display, 'Playfair Display', var(--font-serif, serif));
+  font-size: clamp(2.75rem, 4.3vw, 4.25rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
   color: #FFFFFF;
-  margin-bottom: 0.75rem;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6), 0 1px 3px rgba(0, 0, 0, 0.85);
+  margin-bottom: 1.35rem;
   display: flex;
   flex-direction: column;
   animation: heroFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both;
@@ -77,36 +92,27 @@
 
 .heroHeadingLine {
   display: block;
-}
-
-.heroBrandLine {
-  font-family: var(--font-serif, serif);
-  font-size: clamp(1.45rem, 1.8vw, 1.75rem);
-  font-weight: 400;
-  line-height: 1.25;
-  color: #FFFFFF;
-  margin-bottom: 1.15rem;
-  letter-spacing: 0;
-  animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.55s both;
+  text-wrap: balance;
 }
 
 .heroParagraph {
   font-family: var(--font-sans, sans-serif);
-  font-size: 0.875rem;
+  font-size: clamp(0.925rem, 1.05vw, 1.05rem);
   font-weight: 400;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 460px;
-  margin-bottom: 1.85rem;
-  animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.8s both;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.92);
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.65);
+  max-width: 490px;
+  margin-bottom: 2.15rem;
+  animation: heroFadeUp 1.1s cubic-bezier(0.16, 1, 0.3, 1) 0.6s both;
 }
 
 .heroButtons {
   display: flex;
   align-items: center;
-  gap: 0.9rem;
+  gap: 1rem;
   margin-bottom: 2rem;
-  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 1.05s both;
+  animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
 }
 
 .heroPrimaryBtn {
@@ -350,9 +356,14 @@
 @media (max-width: 768px) {
   .hero {
     height: auto;
-    min-height: 580px;
+    min-height: 560px;
     padding: 4.5rem 0 3rem 0;
     align-items: center;
+  }
+
+  .hero::before {
+    width: 100%;
+    background: linear-gradient(180deg, rgba(13, 54, 82, 0.72) 0%, rgba(13, 54, 82, 0.45) 100%);
   }
 
   .heroBgImage {
@@ -369,15 +380,12 @@
   }
 
   .heroHeading {
-    font-size: clamp(2.6rem, 8vw, 3.4rem);
-  }
-
-  .heroBrandLine {
-    font-size: 1.35rem;
+    font-size: clamp(2.25rem, 7.2vw, 3.15rem);
+    line-height: 1.08;
   }
 
   .heroParagraph {
-    font-size: 0.875rem;
+    font-size: 0.925rem;
     max-width: 100%;
   }
 
@@ -682,14 +690,15 @@
 }
 
 .handloomHeading {
-  font-family: var(--font-serif);
-  font-size: clamp(2.5rem, 4.5vw + 0.5rem, 4.25rem);
-  font-weight: 400;
-  line-height: 1.08;
-  letter-spacing: -0.02em;
-  color: #FAF7F2;
+  font-family: var(--font-serif-display, 'Playfair Display', var(--font-serif, serif));
+  font-size: clamp(2.4rem, 4.2vw, 3.85rem);
+  font-weight: 700;
+  line-height: 1.06;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #FFFFFF;
   text-wrap: balance;
-  text-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.65), 0 1px 3px rgba(0, 0, 0, 0.85);
 }
 
 .handloomParagraph {

@@ -25,21 +25,15 @@ export default async function HomePage() {
         <div className={styles.heroContainer}>
           {/* Left Column: Brand Narrative, Heading & CTAs */}
           <div className={styles.heroContent}>
-            <span className={styles.heroEyebrow}>TELANGANA ROOTED</span>
+            <span className={styles.heroEyebrow}>TELANGANA ROOTED &bull; HANDLOOM REVIVAL</span>
 
             <h1 className={styles.heroHeading}>
-              <span className={styles.heroHeadingLine}>BURGULA</span>
-              <span className={styles.heroHeadingLine}>COTTON</span>
+              <span className={styles.heroHeadingLine}>BURGULA COTTON.</span>
+              <span className={styles.heroHeadingLine}>IN COTTON WE TRUST.</span>
             </h1>
 
-            <p className={styles.heroBrandLine}>
-              In Cotton We Trust.
-            </p>
-
             <p className={styles.heroParagraph}>
-              Handloom cotton, rooted in Telangana.<br />
-              From cotton to yarn to cloth &mdash;<br />
-              for a more thoughtful tomorrow.
+              Handloom cotton, rooted in Telangana &mdash; from cotton to yarn to cloth, crafted for a more thoughtful tomorrow.
             </p>
 
             <div className={styles.heroButtons}>
@@ -141,17 +135,17 @@ export default async function HomePage() {
 
         <div className="container">
           <div className={styles.handloomContent} data-reveal>
-            <span className="section-label section-label-light">HANDLOOM</span>
+            <span className="section-label section-label-light">HANDLOOM HERITAGE</span>
             <h2 className={styles.handloomHeading}>
-              Where tradition becomes<br />
-              fabric
+              WHERE TRADITION<br />
+              BECOMES FABRIC.
             </h2>
             <p className={styles.handloomParagraph}>
               Weaving connects yarn and material into living cloth. On traditional pit-looms in Telangana, generational weavers translate unbaled cotton into breathable, durable cloth with authentic character.
             </p>
             <div className={styles.sectionCtaWrapper}>
               <Link href="/textiles" className="btn btn-hero-white">
-                Explore Fabrics
+                EXPLORE FABRICS &rarr;
               </Link>
             </div>
           </div>
