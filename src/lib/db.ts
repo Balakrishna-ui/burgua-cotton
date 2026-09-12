@@ -33,7 +33,10 @@ if (!process.env.DATABASE_URL) {
 }
 
 export function isDbAvailable(): boolean {
+  // During build-time static site generation, serve verified seed data directly
+  // to avoid build delays or network timeouts to remote serverless databases.
   if (
+    process.env.NEXT_PHASE === 'phase-production-build' ||
     !process.env.DATABASE_URL ||
     process.env.DATABASE_URL.includes('placeholder')
   ) {
