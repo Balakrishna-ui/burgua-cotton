@@ -27,6 +27,7 @@ const circuit: CircuitState = {
 };
 
 export function isDbAvailable(): boolean {
+  if (!process.env.DATABASE_URL) return false;
   if (!circuit.open) return true;
   if (Date.now() - circuit.openedAt >= circuit.cooldownMs) {
     circuit.open = false; // half-open: allow next attempt
