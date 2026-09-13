@@ -41,17 +41,6 @@ export default async function HomePage() {
                 EXPLORE FABRICS
                 <span className={styles.btnArrow} aria-hidden="true">&rarr;</span>
               </Link>
-              <Link href="/our-story" className={styles.heroSecondaryBtn}>
-                OUR STORY
-              </Link>
-            </div>
-
-            {/* Slide Pagination Indicator */}
-            <div className={styles.heroPagination} aria-label="Slide Indicator">
-              <span className={styles.paginationActive}>01</span>
-              <span className={styles.paginationLine} aria-hidden="true" />
-              <span className={styles.paginationMuted}>02</span>
-              <span className={styles.paginationMuted}>03</span>
             </div>
           </div>
 
@@ -83,19 +72,13 @@ export default async function HomePage() {
       {/* SECTION 02 — OUR TEXTILE (Reference 2) */}
       <section className={styles.ourTextileSection} aria-label="Our Textile">
         <div className={styles.ourTextileContainer}>
-          {/* Left Column: Eyebrow, Heading, Description & Link (approx 42% width) */}
+          {/* Left Column: Eyebrow, Heading, Description (approx 42% width) */}
           <div className={styles.textileContentCol} data-reveal>
             <span className={styles.textileEyebrow}>OUR TEXTILE</span>
             <h2 className={styles.textileHeading}>Cotton. Yarn. Cloth.</h2>
             <p className={styles.textileParagraph}>
               We work with the purest cotton, skilled hands and traditional techniques to create fabrics that are natural, breathable and timeless.
             </p>
-            <div className={styles.textileLinkWrapper}>
-              <Link href="/textiles" className={styles.textileLearnMoreLink}>
-                LEARN MORE
-                <span className={styles.learnMoreArrow} aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
           </div>
 
           {/* Right Side: Rectangular Photograph of Premium Cotton Fabric (approx 50% width) */}
@@ -143,11 +126,6 @@ export default async function HomePage() {
             <p className={styles.handloomParagraph}>
               Weaving connects yarn and material into living cloth. On traditional pit-looms in Telangana, generational weavers translate unbaled cotton into breathable, durable cloth with authentic character.
             </p>
-            <div className={styles.sectionCtaWrapper}>
-              <Link href="/textiles" className="btn btn-hero-white">
-                EXPLORE FABRICS &rarr;
-              </Link>
-            </div>
           </div>
         </div>
       </section>
@@ -160,12 +138,6 @@ export default async function HomePage() {
             <div className={styles.collectionTitleArea}>
               <span className={styles.collectionEyebrow}>FEATURED FABRICS</span>
               <h2 className={styles.collectionHeading}>The Burgula Cotton Collection</h2>
-            </div>
-            <div className={styles.collectionLinkArea}>
-              <Link href="/textiles" className={styles.exploreAllFabricsLink}>
-                EXPLORE ALL FABRICS
-                <span className={styles.collectionArrow} aria-hidden="true">&rarr;</span>
-              </Link>
             </div>
           </div>
 
@@ -369,14 +341,29 @@ export default async function HomePage() {
       <section className={styles.villageBannerSection} aria-label="Our Place - Burgula Village">
         <Link href="/our-story" className={styles.villageBannerLink} aria-label="Discover Burgula - Our Story">
           <Image
-            src="/images/burgula-aerial-banner.png"
-            alt="Our Place — Burgula: Kapās se Kapda Tak, Ek Gaon Mein. From cotton to cloth within one village."
+            src="/images/burgula-aerial-clean.png"
+            alt="Burgula Village Aerial Panorama"
             width={1024}
             height={229}
             priority
             sizes="100vw"
             className={styles.villageAerialBannerImg}
           />
+          <div className={styles.villageBannerContent}>
+            <span className={styles.villageBannerEyebrow}>OUR PLACE</span>
+            <h2 className={styles.villageBannerHeading}>
+              Kapās se Kapda Tak,<br />
+              Ek Gaon Mein.
+            </h2>
+            <p className={styles.villageBannerSubtitle}>
+              From cotton to cloth &mdash; within one village.
+            </p>
+            <div className={styles.villageBannerBtnWrapper}>
+              <span className={styles.villageBannerBtn}>
+                DISCOVER BURGULA <span className={styles.villageBannerArrow} aria-hidden="true">&rarr;</span>
+              </span>
+            </div>
+          </div>
         </Link>
       </section>
 
@@ -385,11 +372,12 @@ export default async function HomePage() {
         <div className={styles.institutionGrid}>
           <div className={styles.institutionVisual} data-reveal="image">
             <Image
-              src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?auto=format&fit=crop&w=1200&q=85"
-              alt="Rural spinning shed facility and water infrastructure in Telangana"
+              src="/images/img3.jpg"
+              alt="Burgula Cotton spinning and yarn machinery operations in Telangana"
               fill
               sizes="(max-width: 992px) 100vw, 50vw"
-              style={{ objectFit: 'cover' }}
+              className={styles.institutionImg}
+              style={{ objectFit: 'cover', objectPosition: 'center' }}
             />
           </div>
 

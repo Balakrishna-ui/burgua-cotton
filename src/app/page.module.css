@@ -118,7 +118,7 @@
   display: flex;
   align-items: center;
   gap: 1rem;
-  margin-bottom: 2rem;
+  margin-bottom: 0;
   animation: heroFadeUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.85s both;
 }
 
@@ -466,7 +466,7 @@
   line-height: 1.75;
   color: #5C554E;
   max-width: 440px;
-  margin-bottom: 1.85rem;
+  margin-bottom: 0;
   text-wrap: pretty;
 }
 
@@ -1244,15 +1244,35 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  background-color: #082F4C;
-  line-height: 0;
+  background-color: #062A46;
+  margin-bottom: 10px;
 }
 
 .villageBannerLink {
+  position: relative;
   display: block;
   width: 100%;
-  line-height: 0;
   text-decoration: none;
+  color: inherit;
+  overflow: hidden;
+}
+
+.villageBannerLink::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 52%;
+  background: linear-gradient(
+    90deg,
+    rgba(6, 42, 70, 0.95) 0%,
+    rgba(6, 42, 70, 0.85) 40%,
+    rgba(6, 42, 70, 0.35) 75%,
+    transparent 100%
+  );
+  z-index: 1;
+  pointer-events: none;
 }
 
 .villageAerialBannerImg {
@@ -1260,14 +1280,112 @@
   height: auto;
   display: block;
   object-fit: cover;
-  object-position: center;
+  object-position: center right;
+}
+
+.villageBannerContent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 50%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  padding-left: clamp(1.75rem, 8.2vw, 5.5rem);
+  padding-right: 1.5rem;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.villageBannerEyebrow {
+  font-family: var(--font-sans);
+  font-size: clamp(0.8125rem, 1.05vw, 0.9375rem);
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #FAF7F2;
+  margin-bottom: clamp(0.35rem, 0.65vw, 0.65rem);
+  line-height: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.villageBannerHeading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5625rem, 2.7vw, 2.6875rem);
+  font-weight: 400;
+  line-height: 1.18;
+  color: #FAF7F2;
+  letter-spacing: -0.01em;
+  margin: 0 0 clamp(0.4rem, 0.7vw, 0.75rem) 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+.villageBannerSubtitle {
+  font-family: var(--font-sans);
+  font-size: clamp(0.9375rem, 1.25vw, 1.15rem);
+  font-weight: 400;
+  line-height: 1.35;
+  color: rgba(250, 247, 242, 0.92);
+  margin: 0 0 clamp(0.55rem, 1.15vw, 1.25rem) 0;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.villageBannerBtnWrapper {
+  display: inline-flex;
+}
+
+.villageBannerBtn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-sans);
+  font-size: clamp(0.75rem, 0.95vw, 0.875rem);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #FAF7F2;
+  border: 1px solid rgba(250, 247, 242, 0.7);
+  padding: clamp(0.4rem, 0.65vw, 0.625rem) clamp(0.95rem, 1.35vw, 1.45rem);
+  background: transparent;
+  transition: all 0.25s ease;
+  pointer-events: auto;
+}
+
+.villageBannerArrow {
+  transition: transform 0.25s ease;
+}
+
+.villageBannerLink:hover .villageBannerBtn {
+  border-color: #FAF7F2;
+  background: rgba(250, 247, 242, 0.12);
+}
+
+.villageBannerLink:hover .villageBannerArrow {
+  transform: translateX(4px);
 }
 
 @media (max-width: 640px) {
+  .villageBannerSection {
+    min-height: 220px;
+  }
+
   .villageAerialBannerImg {
-    min-height: 180px;
+    min-height: 220px;
     object-fit: cover;
-    object-position: left center;
+    object-position: 75% center;
+  }
+
+  .villageBannerContent {
+    width: 85%;
+    max-width: none;
+    padding-left: 1.5rem;
+    padding-right: 1rem;
   }
 }
 
@@ -1292,14 +1410,20 @@
 .institutionVisual {
   position: relative;
   width: 100%;
-  min-height: 340px;
+  min-height: 380px;
   background-color: var(--color-bg-navy-dark);
+  overflow: hidden;
 }
 
 @media (min-width: 992px) {
   .institutionVisual {
     min-height: 100%;
   }
+}
+
+.institutionImg {
+  object-fit: cover !important;
+  object-position: center !important;
 }
 
 .institutionContent {
