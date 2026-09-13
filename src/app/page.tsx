@@ -14,8 +14,8 @@ export default async function HomePage() {
       {/* SECTION 01 — FULL-SCREEN CINEMATIC HERO */}
       <section className={styles.hero} aria-label="Burgula Cotton Hero">
         <Image
-          src="/images/hero-weaver.png"
-          alt="Telangana artisan weaving on traditional wooden pit-loom"
+          src="/images/img11.png"
+          alt="Decentralised unbaled cotton yarn spinning machinery and spindles in Burgula, Telangana"
           fill
           priority
           sizes="100vw"
