@@ -14,7 +14,7 @@ export default async function HomePage() {
       {/* SECTION 01 — FULL-SCREEN CINEMATIC HERO */}
       <section className={styles.hero} aria-label="Burgula Cotton Hero">
         <Image
-          src="/images/img11.png"
+          src="/images/img1.jpg"
           alt="Decentralised unbaled cotton yarn spinning machinery and spindles in Burgula, Telangana"
           fill
           priority
