@@ -12,48 +12,60 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 80px;
+  height: clamp(64px, 8vw, 80px);
+  gap: var(--space-2);
 }
 
 .brand {
   display: flex;
   flex-direction: column;
   text-decoration: none;
+  flex-shrink: 1;
+  min-width: 0;
 }
 
 .brandTitle {
   font-family: var(--font-serif);
-  font-size: 1.5rem;
+  font-size: clamp(1.125rem, 3.8vw, 1.5rem);
   font-weight: 500;
   letter-spacing: 0.1em;
   color: var(--color-text-primary);
   line-height: 1.1;
   text-transform: uppercase;
+  white-space: nowrap;
 }
 
 .brandLocation {
   font-family: var(--font-sans);
-  font-size: 0.625rem;
+  font-size: clamp(0.55rem, 1.5vw, 0.625rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-muted);
+  white-space: nowrap;
 }
 
 .nav {
   display: none;
   align-items: center;
-  gap: var(--space-6);
+  gap: var(--space-4);
 }
 
 @media (min-width: 1024px) {
   .nav {
     display: flex;
+    gap: clamp(0.75rem, 1.4vw, 1.5rem);
+  }
+}
+
+@media (min-width: 1200px) {
+  .nav {
+    gap: var(--space-6);
   }
 }
 
 .navLink {
   font-family: var(--font-sans);
-  font-size: 0.75rem;
+  font-size: clamp(0.6875rem, 0.85vw, 0.75rem);
   font-weight: 600;
   letter-spacing: 0.12em;
   text-transform: uppercase;
@@ -61,6 +73,7 @@
   position: relative;
   padding: var(--space-2) 0;
   transition: color var(--transition-fast);
+  white-space: nowrap;
 }
 
 .navLink:hover, .navLinkActive {
@@ -80,18 +93,22 @@
 .actions {
   display: flex;
   align-items: center;
-  gap: var(--space-3);
+  gap: clamp(0.25rem, 1vw, 0.75rem);
+  flex-shrink: 0;
 }
 
 .iconBtn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
+  min-width: var(--touch-target-min, 44px);
+  min-height: var(--touch-target-min, 44px);
   color: var(--color-text-primary);
   transition: all var(--transition-fast);
   position: relative;
+  touch-action: manipulation;
 }
 
 .iconBtn:hover {
@@ -101,8 +118,8 @@
 
 .badge {
   position: absolute;
-  top: 2px;
-  right: 2px;
+  top: 4px;
+  right: 4px;
   background-color: var(--color-accent);
   color: #FAF7F2;
   font-size: 0.625rem;
@@ -119,9 +136,12 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 38px;
-  height: 38px;
+  width: 44px;
+  height: 44px;
+  min-width: var(--touch-target-min, 44px);
+  min-height: var(--touch-target-min, 44px);
   color: var(--color-text-primary);
+  touch-action: manipulation;
 }
 
 @media (min-width: 1024px) {
@@ -132,24 +152,27 @@
 
 .mobileNav {
   position: fixed;
-  top: 80px;
+  top: clamp(64px, 8vw, 80px);
   left: 0;
   right: 0;
   bottom: 0;
+  height: calc(100dvh - clamp(64px, 8vw, 80px));
   background-color: var(--color-bg-primary);
-  padding: var(--space-8) var(--space-6);
+  padding: var(--space-6) clamp(1rem, 4vw, var(--space-6));
   display: flex;
   flex-direction: column;
-  gap: var(--space-6);
+  gap: var(--space-4);
   border-top: 1px solid var(--color-border);
   z-index: var(--z-overlay);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
 }
 
 .mobileNavLink {
   font-family: var(--font-serif);
-  font-size: 1.75rem;
+  font-size: clamp(1.35rem, 4.5vw, 1.75rem);
   color: var(--color-text-primary);
   border-bottom: 1px solid var(--color-border-subtle);
-  padding-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  display: block;
 }

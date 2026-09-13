@@ -409,6 +409,68 @@
   }
 }
 
+@media (max-width: 576px) {
+  .hero {
+    min-height: 520px;
+    padding: 3.5rem 0 2.5rem 0;
+  }
+
+  .heroContainer {
+    padding-left: 1.125rem;
+    padding-right: 1.125rem;
+  }
+
+  .heroHeading {
+    font-size: clamp(1.85rem, 8vw, 2.45rem);
+    line-height: 1.1;
+    margin-bottom: 1rem;
+  }
+
+  .heroParagraph {
+    font-size: 0.875rem;
+    line-height: 1.55;
+    margin-bottom: 1.75rem;
+  }
+
+  .heroButtons {
+    flex-direction: column;
+    align-items: stretch;
+    width: 100%;
+    gap: 0.65rem;
+  }
+
+  .heroPrimaryBtn,
+  .heroSecondaryBtn {
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+    min-height: var(--touch-target-min, 44px);
+    padding: 0.75rem 1.25rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .hero {
+    min-height: 480px;
+    padding: 2.75rem 0 2rem 0;
+  }
+
+  .heroContainer {
+    padding-left: 0.875rem;
+    padding-right: 0.875rem;
+  }
+
+  .heroHeading {
+    font-size: clamp(1.6rem, 7.5vw, 1.85rem);
+  }
+
+  .heroEyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 0.75rem;
+  }
+}
+
 /* SECTION 02 — OUR TEXTILE (Reference 2) */
 .ourTextileSection {
   background-color: #F5F1E8;
@@ -623,6 +685,27 @@
   }
 }
 
+@media (max-width: 576px) {
+  .ourTextileSection {
+    padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+  }
+
+  .textileHeading {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    margin-bottom: 1rem;
+  }
+
+  .textileImageFrame {
+    aspect-ratio: 16 / 8.5;
+    min-height: 140px;
+  }
+
+  .textilePillarsCol {
+    padding-left: 0.85rem;
+    font-size: 0.625rem;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .textileImage {
     transform: none !important;
@@ -763,6 +846,29 @@
 
   .sectionCtaWrapper {
     margin-top: var(--space-2);
+  }
+}
+
+@media (max-width: 576px) {
+  .handloomSection {
+    padding: clamp(3.5rem, 8vw, 4.5rem) 0;
+    min-height: 60dvh;
+  }
+
+  .handloomHeading {
+    font-size: clamp(1.75rem, 6.5vw, 2.25rem);
+    line-height: 1.15;
+  }
+
+  .handloomParagraph {
+    font-size: 0.875rem;
+    line-height: 1.55;
+  }
+}
+
+@media (max-width: 374px) {
+  .handloomHeading {
+    font-size: clamp(1.5rem, 6vw, 1.75rem);
   }
 }
 
@@ -1536,7 +1642,7 @@
 
 .capabilitiesGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: var(--space-6);
 }
 
@@ -1578,7 +1684,7 @@
 
 .networkGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 250px), 1fr));
   gap: var(--space-6);
 }
 
@@ -1727,7 +1833,7 @@
 
 .journalGrid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
   gap: var(--space-8);
 }
 
@@ -2191,6 +2297,20 @@
     opacity: 0.35;
     width: 100px;
     height: 110px;
+  }
+}
+
+@media (max-width: 374px) {
+  .topCardContent {
+    padding: 1rem 0.85rem;
+  }
+
+  .topCardHeading {
+    font-size: 1.1rem;
+  }
+
+  .quoteContent {
+    padding-right: 0.5rem;
   }
 }
 

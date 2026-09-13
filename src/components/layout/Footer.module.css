@@ -1,19 +1,25 @@
 .footer {
   background-color: var(--color-bg-dark);
   color: var(--color-text-inverse);
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-12);
+  padding-top: clamp(3rem, 7vw, var(--space-20));
+  padding-bottom: clamp(2rem, 5vw, var(--space-12));
   border-top: 1px solid var(--color-border-dark);
 }
 
 .grid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: var(--space-12);
-  margin-bottom: var(--space-16);
+  gap: clamp(2rem, 4vw, var(--space-12));
+  margin-bottom: clamp(2.5rem, 5vw, var(--space-16));
 }
 
-@media (min-width: 768px) {
+@media (min-width: 640px) {
+  .grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (min-width: 1024px) {
   .grid {
     grid-template-columns: 2fr 1fr 1fr 1.5fr;
   }

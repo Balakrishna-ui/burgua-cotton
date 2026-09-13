@@ -47,8 +47,8 @@ export default function AboutPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(340px, 1fr))', gap: 'var(--space-8)' }}>
-            <div style={{ backgroundColor: 'var(--color-bg-surface)', padding: 'var(--space-8)', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-8)' }}>
+            <div style={{ backgroundColor: 'var(--color-bg-surface)', padding: 'clamp(var(--space-5), 4vw, var(--space-8))', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <span className="eyebrow">Market-Facing Textile House</span>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem' }}>
                 Burgula Cotton
@@ -58,7 +58,7 @@ export default function AboutPage() {
               </p>
             </div>
 
-            <div style={{ backgroundColor: 'var(--color-bg-surface)', padding: 'var(--space-8)', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
+            <div style={{ backgroundColor: 'var(--color-bg-surface)', padding: 'clamp(var(--space-5), 4vw, var(--space-8))', border: '1px solid var(--color-border)', display: 'flex', flexDirection: 'column', gap: 'var(--space-3)' }}>
               <span className="eyebrow">Institutional Foundation</span>
               <h3 style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem' }}>
                 Burgula Cotton Trust
@@ -74,7 +74,7 @@ export default function AboutPage() {
       {/* Material Focus & What We Do Today */}
       <section className="section-padding" style={{ backgroundColor: 'var(--color-bg-subtle)', borderBottom: '1px solid var(--color-border)' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-12)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-12)', alignItems: 'center' }}>
             <div style={{ position: 'relative', width: '100%', aspectRatio: '4 / 3', backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)' }}>
               <Image
                 src="https://images.unsplash.com/photo-1596755094514-f87e34085b2c?auto=format&fit=crop&w=1200&q=80"

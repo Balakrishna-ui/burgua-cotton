@@ -58,14 +58,14 @@ export default function OurVisionPage() {
       {/* Vision Tenets Grid */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-8)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-8)' }}>
             {visionTenets.map((t) => (
               <div
                 key={t.num}
                 style={{
                   backgroundColor: 'var(--color-bg-surface)',
                   border: '1px solid var(--color-border)',
-                  padding: 'var(--space-8)',
+                  padding: 'clamp(var(--space-5), 4vw, var(--space-8))',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 'var(--space-3)',

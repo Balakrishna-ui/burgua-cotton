@@ -73,7 +73,19 @@
   --container-max: 1360px;
   --container-narrow: 860px;
   --container-wide: 1560px;
-  --container-padding: 1.5rem;
+  --container-padding: clamp(1rem, 3.5vw, 3.5rem);
+
+  /* Touch Targets */
+  --touch-target-min: 44px;
+
+  /* Standard Breakpoint Tokens (for reference and CSS variable use) */
+  --bp-mobile-sm: 320px;
+  --bp-mobile: 375px;
+  --bp-mobile-lg: 576px;
+  --bp-tablet: 768px;
+  --bp-tablet-lg: 992px;
+  --bp-desktop: 1200px;
+  --bp-desktop-lg: 1440px;
 
   /* Radii & Borders */
   --radius-none: 0px;
@@ -96,13 +108,7 @@
   --z-modal: 300;
 }
 
-@media (min-width: 768px) {
-  :root {
-    --container-padding: 3rem;
-  }
-}
-
-@media (min-width: 1280px) {
+@media (min-width: 1440px) {
   :root {
     --container-padding: 4rem;
   }

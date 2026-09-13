@@ -86,7 +86,7 @@ export default function ContactPage() {
       {/* Contact Form & Information */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-12)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-12)' }}>
             {/* Left: Contact Info & Address */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-8)' }}>
               <div>
@@ -133,7 +133,7 @@ export default function ContactPage() {
             </div>
 
             {/* Right: Submission Form */}
-            <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'var(--space-8)' }}>
+            <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'clamp(var(--space-4), 4vw, var(--space-8))' }}>
               {submitted ? (
                 <div style={{ textAlign: 'center', padding: 'var(--space-8) 0', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
                   <CheckCircle2 size={48} style={{ color: 'var(--color-success)' }} />

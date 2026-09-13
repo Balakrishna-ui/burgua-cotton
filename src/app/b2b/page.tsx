@@ -7,7 +7,7 @@ import { JsonLd, createBreadcrumbSchema } from '@/components/ui/JsonLd';
 
 function B2BForm() {
   const searchParams = useSearchParams();
-  const prefilledTextile = searchParams.get('textile') || '';
+  const prefilledTextile = searchParams?.get('textile') || '';
 
   const [formData, setFormData] = useState({
     companyName: '',
@@ -183,7 +183,7 @@ function B2BForm() {
                 </button>
               </div>
             ) : (
-              <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'var(--space-8)' }}>
+              <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'clamp(var(--space-4), 4vw, var(--space-8))' }}>
                 <div style={{ marginBottom: 'var(--space-6)' }}>
                   <span className="eyebrow">Direct Commercial Portal</span>
                   <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2rem' }}>
@@ -213,7 +213,7 @@ function B2BForm() {
                     autoComplete="off"
                   />
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-4)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'var(--space-4)' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="companyName">Studio / Company Name *</label>
                       <input
@@ -243,7 +243,7 @@ function B2BForm() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-4)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'var(--space-4)' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="email">Business Email *</label>
                       <input
@@ -273,7 +273,7 @@ function B2BForm() {
                     </div>
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-4)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'var(--space-4)' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="buyerType">Buyer Profile *</label>
                       <select
@@ -319,7 +319,7 @@ function B2BForm() {
                     />
                   </div>
 
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-4)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 240px), 1fr))', gap: 'var(--space-4)' }}>
                     <div className="form-group">
                       <label className="form-label" htmlFor="approximateQuantity">Estimated Yardage (Meters)</label>
                       <input

@@ -59,7 +59,7 @@ export default function OurImpactPage() {
       {/* Qualitative Impact Philosophy */}
       <section className="section-padding">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-12)', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-12)', alignItems: 'center' }}>
             <div>
               <span className="eyebrow">Community & Dignity</span>
               <h2 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.25rem', marginBottom: 'var(--space-6)' }}>
@@ -96,14 +96,14 @@ export default function OurImpactPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: 'var(--space-6)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-6)' }}>
             {ecosystemPillars.map((p) => (
               <div
                 key={p.num}
                 style={{
                   backgroundColor: 'var(--color-bg-surface)',
                   border: '1px solid var(--color-border)',
-                  padding: 'var(--space-8)',
+                  padding: 'clamp(var(--space-5), 4vw, var(--space-8))',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 'var(--space-3)',

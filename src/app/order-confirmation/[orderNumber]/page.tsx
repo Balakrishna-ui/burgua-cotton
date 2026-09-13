@@ -20,14 +20,14 @@ export default async function OrderConfirmationPage({ params, searchParams }: Or
 
   return (
     <div className="section-padding container container-narrow">
-      <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'var(--space-12) var(--space-8)', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
+      <div style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'clamp(var(--space-6), 5vw, var(--space-12)) clamp(var(--space-4), 4vw, var(--space-8))', textAlign: 'center', display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 'var(--space-4)' }}>
         <CheckCircle2 size={56} style={{ color: 'var(--color-success)' }} />
         
         <span className="eyebrow" style={{ color: 'var(--color-success)' }}>
           Order Confirmed
         </span>
         
-        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: '2.5rem' }}>
+        <h1 style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.75rem, 5vw, 2.5rem)', lineHeight: 1.15 }}>
           Thank you for your order
         </h1>
 
@@ -35,11 +35,11 @@ export default async function OrderConfirmationPage({ params, searchParams }: Or
           Your swatch / sample dispatch request has been safely logged in our database under reference:
         </p>
 
-        <div style={{ backgroundColor: 'var(--color-bg-subtle)', padding: 'var(--space-4) var(--space-8)', border: '1px dashed var(--color-border)', margin: 'var(--space-2) 0' }}>
+        <div style={{ backgroundColor: 'var(--color-bg-subtle)', padding: 'var(--space-4) clamp(var(--space-4), 5vw, var(--space-8))', border: '1px dashed var(--color-border)', margin: 'var(--space-2) 0', width: '100%', maxWidth: '400px' }}>
           <span style={{ fontSize: 'var(--text-xs)', textTransform: 'uppercase', letterSpacing: '0.1em', color: 'var(--color-text-muted)', display: 'block' }}>
             Order Reference Number
           </span>
-          <strong style={{ fontFamily: 'var(--font-serif)', fontSize: '1.75rem', color: 'var(--color-text-primary)' }}>
+          <strong style={{ fontFamily: 'var(--font-serif)', fontSize: 'clamp(1.25rem, 4vw, 1.75rem)', color: 'var(--color-text-primary)', wordBreak: 'break-all' }}>
             {orderNumber}
           </strong>
           {confirmedTotal && (

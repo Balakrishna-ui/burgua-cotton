@@ -540,4 +540,38 @@
     font-size: 0.9375rem;
     line-height: 1.65;
   }
+
+  .mobileCtrlBtn {
+    min-height: var(--touch-target-min, 44px);
+    padding: 0.65rem 1rem;
+  }
+}
+
+@media (max-width: 374px) {
+  .stageInfoColumn {
+    padding: var(--space-4) var(--space-3) var(--space-6) var(--space-3);
+  }
+
+  .stageBigNumber {
+    font-size: 2.75rem;
+  }
+
+  .stageTitle {
+    font-size: 1.45rem;
+  }
+
+  .exploreStageCta {
+    width: 100%;
+    justify-content: center;
+    min-height: var(--touch-target-min, 44px);
+  }
+
+  .thumbnailItemBtn {
+    min-width: 56px;
+  }
+
+  .thumbCircleWrapper {
+    width: 38px;
+    height: 38px;
+  }
 }

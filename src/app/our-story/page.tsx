@@ -93,7 +93,7 @@ export default function OurStoryPage() {
       {/* 10 Chapters Structured Editorial Story */}
       <section className="section-padding">
         <div className="container">
-          <div data-reveal-group style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-8)' }}>
+          <div data-reveal-group style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-8)' }}>
             {chapters.map((ch) => (
               <div
                 key={ch.num}
@@ -101,7 +101,7 @@ export default function OurStoryPage() {
                 style={{
                   backgroundColor: 'var(--color-bg-surface)',
                   border: '1px solid var(--color-border)',
-                  padding: 'var(--space-8)',
+                  padding: 'clamp(var(--space-5), 4vw, var(--space-8))',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 'var(--space-3)',

@@ -143,7 +143,7 @@ export default function TextilesPage() {
               </button>
             </div>
           ) : (
-            <div data-reveal-group style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))', gap: 'var(--space-8)' }}>
+            <div data-reveal-group style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-8)' }}>
               {textiles.map((textile) => (
                 <FabricCard key={textile.id} textile={textile} />
               ))}

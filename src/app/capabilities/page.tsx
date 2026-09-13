@@ -129,14 +129,14 @@ export default function CapabilitiesPage() {
             </h2>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-6)' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-6)' }}>
             {capabilities.map((c) => (
               <div
                 key={c.num}
                 style={{
                   backgroundColor: 'var(--color-bg-surface)',
                   border: '1px solid var(--color-border)',
-                  padding: 'var(--space-8)',
+                  padding: 'clamp(var(--space-5), 4vw, var(--space-8))',
                   display: 'flex',
                   flexDirection: 'column',
                   gap: 'var(--space-3)',

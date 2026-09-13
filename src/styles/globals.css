@@ -12,6 +12,9 @@ html {
   font-size: 16px;
   scroll-behavior: smooth;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
 }
 
 body {
@@ -23,6 +26,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  width: 100%;
+  max-width: 100%;
+  position: relative;
 }
 
 /* Editorial Typography */
@@ -32,18 +38,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: var(--leading-tight);
   color: var(--color-text-primary);
   letter-spacing: -0.015em;
+  text-wrap: balance;
 }
 
 h1 {
-  font-size: clamp(2.75rem, 5.5vw + 1rem, 4.75rem);
+  font-size: clamp(2rem, 5vw + 0.75rem, 4.75rem);
 }
 
 h2 {
-  font-size: clamp(2.25rem, 4vw + 0.5rem, 3.5rem);
+  font-size: clamp(1.625rem, 3.8vw + 0.35rem, 3.5rem);
 }
 
 h3 {
-  font-size: clamp(1.625rem, 2.5vw + 0.25rem, 2.5rem);
+  font-size: clamp(1.35rem, 2.5vw + 0.25rem, 2.5rem);
 }
 
 p {
@@ -95,15 +102,8 @@ button {
 }
 
 .section-padding {
-  padding-top: var(--space-20);
-  padding-bottom: var(--space-20);
-}
-
-@media (min-width: 768px) {
-  .section-padding {
-    padding-top: var(--space-24);
-    padding-bottom: var(--space-24);
-  }
+  padding-top: clamp(2.75rem, 6vw, 6rem);
+  padding-bottom: clamp(2.75rem, 6vw, 6rem);
 }
 
 /* Small Uppercase Section Label (Exact Reference Style) */
@@ -174,7 +174,7 @@ button {
   align-items: center;
   justify-content: center;
   gap: var(--space-2);
-  padding: 0.875rem 1.875rem;
+  padding: 0.875rem clamp(1.25rem, 2.5vw, 1.875rem);
   font-size: 0.6875rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -183,6 +183,8 @@ button {
   transition: all var(--transition-base);
   cursor: pointer;
   white-space: nowrap;
+  min-height: var(--touch-target-min, 44px);
+  touch-action: manipulation;
 }
 
 .btn .arrow,
@@ -327,12 +329,12 @@ button {
 .spec-box {
   background-color: var(--color-bg-surface);
   border: 1px solid var(--color-border);
-  padding: var(--space-8);
+  padding: clamp(var(--space-4), 4vw, var(--space-8));
 }
 
 .spec-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 160px), 1fr));
   gap: var(--space-6);
 }
 

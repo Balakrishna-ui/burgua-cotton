@@ -10,7 +10,7 @@ import { JsonLd, createBreadcrumbSchema } from '@/components/ui/JsonLd';
 
 function SearchResults() {
   const searchParams = useSearchParams();
-  const initialQuery = searchParams.get('q') || '';
+  const initialQuery = searchParams?.get('q') || '';
 
   const [query, setQuery] = useState(initialQuery);
   const [textiles, setTextiles] = useState<VerifiedTextile[]>([]);
@@ -111,7 +111,7 @@ function SearchResults() {
                       Textiles ({textiles.length})
                     </h2>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: 'var(--space-8)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-8)' }}>
                     {textiles.map((t) => (
                       <FabricCard key={t.id} textile={t} />
                     ))}
@@ -127,7 +127,7 @@ function SearchResults() {
                       Journal & Field Notes ({journalArticles.length})
                     </h2>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: 'var(--space-6)' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: 'var(--space-6)' }}>
                     {journalArticles.map((a) => (
                       <div key={a.id} style={{ backgroundColor: 'var(--color-bg-surface)', border: '1px solid var(--color-border)', padding: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-2)', color: 'var(--color-accent)', fontSize: 'var(--text-xs)', fontWeight: 600 }}>
