@@ -18,6 +18,7 @@ export default async function HomePage() {
           alt="Decentralised unbaled cotton yarn spinning machinery and spindles in Burgula, Telangana"
           fill
           priority
+          unoptimized
           sizes="100vw"
           className={styles.heroBgImage}
         />

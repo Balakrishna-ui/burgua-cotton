@@ -12,6 +12,8 @@ const nextConfig: NextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
   images: {
+    unoptimized: true,
+    contentDispositionType: "inline",
     formats: ["image/avif", "image/webp"],
     remotePatterns: [
       {
