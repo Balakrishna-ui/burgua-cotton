@@ -18,7 +18,6 @@ export default async function HomePage() {
           alt="Decentralised unbaled cotton yarn spinning machinery and spindles in Burgula, Telangana"
           fill
           priority
-          unoptimized
           sizes="100vw"
           className={styles.heroBgImage}
         />
@@ -38,8 +37,8 @@ export default async function HomePage() {
             </p>
 
             <div className={styles.heroButtons}>
-              <Link href="/textiles" className={styles.heroPrimaryBtn}>
-                EXPLORE FABRICS
+              <Link href="/about" className={styles.heroPrimaryBtn}>
+                ABOUT US
                 <span className={styles.btnArrow} aria-hidden="true">&rarr;</span>
               </Link>
             </div>
@@ -55,7 +54,7 @@ export default async function HomePage() {
               <span className={styles.pillarItem}>TOMORROW</span>
             </div>
 
-            <Link href="/our-story" className={styles.watchStoryBtn} aria-label="Watch our story">
+            <Link href="/about" className={styles.watchStoryBtn} aria-label="Watch our story">
               <span className={styles.playIconCircle}>
                 <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                   <polygon points="7 4 20 12 7 20 7 4" />
@@ -124,81 +123,6 @@ export default async function HomePage() {
               WHERE TRADITION<br />
               BECOMES FABRIC.
             </h2>
-            <p className={styles.handloomParagraph}>
-              Weaving connects yarn and material into living cloth. On traditional pit-looms in Telangana, generational weavers translate unbaled cotton into breathable, durable cloth with authentic character.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* SECTION 04 — FEATURED FABRICS (Reference 4 Top) */}
-      <section className={styles.featuredCollectionSection} aria-label="Featured Fabrics Collection">
-        <div className={styles.featuredCollectionContainer}>
-          {/* Header Area */}
-          <div className={styles.collectionHeaderRow} data-reveal>
-            <div className={styles.collectionTitleArea}>
-              <span className={styles.collectionEyebrow}>FEATURED FABRICS</span>
-              <h2 className={styles.collectionHeading}>The Burgula Cotton Collection</h2>
-            </div>
-          </div>
-
-          {/* 4 Fabric Cards Grid */}
-          <div className={styles.fabricCardsGrid} data-reveal-group>
-            <Link href="/textiles" className={styles.fabricCardItem}>
-              <div className={styles.fabricCardImgWrapper}>
-                <Image
-                  src="/images/fabrics/plains.png"
-                  alt="Plains handloom cotton fabric: Clean & versatile"
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={styles.fabricCardImg}
-                />
-              </div>
-              <h3 className={styles.fabricCardTitle}>Plains</h3>
-              <p className={styles.fabricCardSubtitle}>Clean &amp; versatile</p>
-            </Link>
-
-            <Link href="/textiles" className={styles.fabricCardItem}>
-              <div className={styles.fabricCardImgWrapper}>
-                <Image
-                  src="/images/fabrics/stripes.png"
-                  alt="Stripes handloom cotton fabric: Subtle & timeless"
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={styles.fabricCardImg}
-                />
-              </div>
-              <h3 className={styles.fabricCardTitle}>Stripes</h3>
-              <p className={styles.fabricCardSubtitle}>Subtle &amp; timeless</p>
-            </Link>
-
-            <Link href="/textiles" className={styles.fabricCardItem}>
-              <div className={styles.fabricCardImgWrapper}>
-                <Image
-                  src="/images/fabrics/textured.png"
-                  alt="Textured handloom cotton fabric: Character in every weave"
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={styles.fabricCardImg}
-                />
-              </div>
-              <h3 className={styles.fabricCardTitle}>Textured</h3>
-              <p className={styles.fabricCardSubtitle}>Character in every weave</p>
-            </Link>
-
-            <Link href="/textiles" className={styles.fabricCardItem}>
-              <div className={styles.fabricCardImgWrapper}>
-                <Image
-                  src="/images/fabrics/yarn-dyed.png"
-                  alt="Yarn-dyed handloom cotton fabric: Depth in every thread"
-                  fill
-                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
-                  className={styles.fabricCardImg}
-                />
-              </div>
-              <h3 className={styles.fabricCardTitle}>Yarn-dyed</h3>
-              <p className={styles.fabricCardSubtitle}>Depth in every thread</p>
-            </Link>
           </div>
         </div>
       </section>
@@ -206,10 +130,9 @@ export default async function HomePage() {
       {/* SECTION 05 — FROM COTTON TO CLOTH (Reference Section 5) */}
       <section className={styles.cottonToClothSection} aria-label="From Cotton to Cloth">
         <div className={styles.cottonToClothContainer}>
-          {/* Header row: Left heading, Right description aligned horizontally */}
+          {/* Header row: Left heading */}
           <div className={styles.clothHeaderRow} data-reveal>
             <h2 className={styles.clothHeading}>FROM COTTON TO CLOTH</h2>
-            <p className={styles.clothSubheading}>A simple journey. A stronger tomorrow.</p>
           </div>
 
           {/* Sequential 4-Step Process & CTA Strip */}
@@ -324,15 +247,6 @@ export default async function HomePage() {
                 EXPLORE<br />
                 THE JOURNEY <span className={styles.journeyCtaArrow}>&rarr;</span>
               </span>
-              <div className={styles.botanicalBgWrapper} aria-hidden="true">
-                <Image
-                  src="/images/journey-strip/cotton-botanical.png"
-                  alt=""
-                  fill
-                  sizes="240px"
-                  className={styles.botanicalBgImg}
-                />
-              </div>
             </Link>
           </div>
         </div>
@@ -420,210 +334,6 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
-
-      {/* SECTION 08 — FEATURED EDITORIAL & BURGULA JOURNAL */}
-      <section className={styles.editorialSection} aria-label="Editorial Stories and Burgula Journal">
-        <div className={styles.editorialContainer}>
-          {/* Top 3 Featured Cards */}
-          <div className={styles.topFeaturedRow} data-reveal-group>
-            {/* Card 1: Our Story */}
-            <div className={styles.topFeaturedCard}>
-              <div className={styles.topCardContent}>
-                <span className={`${styles.topCardEyebrow} ${styles.eyebrowStory}`}>OUR STORY</span>
-                <h3 className={styles.topCardHeading}>
-                  A Textile Story<br />
-                  Rooted in Burgula
-                </h3>
-                <p className={styles.topCardDesc}>
-                  People, place and practice come together to build a living textile ecosystem in Telangana.
-                </p>
-                <div className={styles.topCardCtaWrapper}>
-                  <Link href="/our-story" className={styles.topCardCtaBtn}>
-                    <span>READ OUR STORY</span>
-                    <span className={styles.topCardArrow} aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.topCardImgWrapper}>
-                <Image
-                  src="/images/editorial/our-story-weaver.png"
-                  alt="Telangana woman artisan working at a traditional handloom"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={styles.topCardImg}
-                />
-              </div>
-            </div>
-
-            {/* Card 2: The Trust */}
-            <div className={styles.topFeaturedCard}>
-              <div className={styles.topCardContent}>
-                <span className={`${styles.topCardEyebrow} ${styles.eyebrowTrust}`}>THE TRUST</span>
-                <h3 className={styles.topCardHeading}>
-                  A Public Purpose<br />
-                  Behind the Fabric
-                </h3>
-                <p className={styles.topCardDesc}>
-                  Burgula Cotton Trust works towards rural development, education, skill building and sustainable livelihoods.
-                </p>
-                <div className={styles.topCardCtaWrapper}>
-                  <Link href="/about" className={styles.topCardCtaBtn}>
-                    <span>ABOUT THE TRUST</span>
-                    <span className={styles.topCardArrow} aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.topCardImgWrapper}>
-                <Image
-                  src="/images/editorial/trust-village.png"
-                  alt="Rural Telangana village house and heritage trees in Burgula"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={styles.topCardImg}
-                />
-              </div>
-            </div>
-
-            {/* Card 3: B2B */}
-            <div className={styles.topFeaturedCard}>
-              <div className={styles.topCardContent}>
-                <span className={`${styles.topCardEyebrow} ${styles.eyebrowB2b}`}>B2B</span>
-                <h3 className={styles.topCardHeading}>
-                  Cotton for Designers,<br />
-                  Brands &amp; Makers
-                </h3>
-                <p className={styles.topCardDesc}>
-                  Partner with us for high-quality handloom cotton fabrics, samples, large orders and custom development.
-                </p>
-                <div className={styles.topCardCtaWrapper}>
-                  <Link href="/b2b" className={styles.topCardCtaBtn}>
-                    <span>WORK WITH US</span>
-                    <span className={styles.topCardArrow} aria-hidden="true">&rarr;</span>
-                  </Link>
-                </div>
-              </div>
-              <div className={styles.topCardImgWrapper}>
-                <Image
-                  src="/images/editorial/b2b-fabrics.png"
-                  alt="Handloom cotton fabric swatches, bespoke samples, and yarn developments"
-                  fill
-                  sizes="(max-width: 768px) 100vw, 33vw"
-                  className={styles.topCardImg}
-                />
-              </div>
-            </div>
-          </div>
-
-          {/* THE BURGULA JOURNAL Underneath */}
-          <div className={styles.journalUnderneathArea}>
-            {/* Journal Header */}
-            <div className={styles.journalHeaderRow} data-reveal>
-              <div className={styles.journalHeaderLeft}>
-                <h3 className={styles.journalMainHeading}>THE BURGULA JOURNAL</h3>
-                <p className={styles.journalSubtitle}>
-                  Stories, people, place and ideas around cotton, yarn, weaving and contemporary textile practice.
-                </p>
-              </div>
-              <div className={styles.journalHeaderRight}>
-                <Link href="/journal" className={styles.viewAllStoriesLink}>
-                  <span>VIEW ALL STORIES</span>
-                  <span className={styles.viewAllArrow} aria-hidden="true">&rarr;</span>
-                </Link>
-              </div>
-            </div>
-
-            {/* Journal Row: 4 Cards + Quote Block */}
-            <div className={styles.journalMainRow}>
-              {/* 4 Cards Grid/Flex */}
-              <div className={styles.journalCardsContainer} data-reveal-group>
-                {/* Card 1 */}
-                <Link href="/journal/kapas-aur-kora-reviving-village-centred-yarn-tradition" className={styles.journalMiniCard}>
-                  <div className={styles.journalMiniImgWrap}>
-                    <Image
-                      src="/images/editorial/journal-cotton.png"
-                      alt="Raw cotton bolls - The Story of Our Cotton"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 20vw"
-                      className={styles.journalMiniImg}
-                    />
-                  </div>
-                  <h4 className={styles.journalMiniTitle}>The Story of Our Cotton</h4>
-                  <span className={styles.journalMiniCategory}>MATERIAL</span>
-                </Link>
-
-                {/* Card 2 */}
-                <Link href="/journal" className={styles.journalMiniCard}>
-                  <div className={styles.journalMiniImgWrap}>
-                    <Image
-                      src="/images/editorial/journal-weaving.png"
-                      alt="Generational weaver hands working with handloom - Hands That Weave"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 20vw"
-                      className={styles.journalMiniImg}
-                    />
-                  </div>
-                  <h4 className={styles.journalMiniTitle}>Hands That Weave</h4>
-                  <span className={styles.journalMiniCategory}>PEOPLE</span>
-                </Link>
-
-                {/* Card 3 */}
-                <Link href="/journal/kapas-se-kapda-tak-philosophy-of-place" className={styles.journalMiniCard}>
-                  <div className={styles.journalMiniImgWrap}>
-                    <Image
-                      src="/images/editorial/journal-landscape.png"
-                      alt="Telangana boulders and rocky hill landscape - Burgula: A Living Landscape"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 20vw"
-                      className={styles.journalMiniImg}
-                    />
-                  </div>
-                  <h4 className={styles.journalMiniTitle}>Burgula: A Living Landscape</h4>
-                  <span className={styles.journalMiniCategory}>PLACE</span>
-                </Link>
-
-                {/* Card 4 */}
-                <Link href="/journal/natural-fibre-blends-hemp-silk-handloom-cotton" className={styles.journalMiniCard}>
-                  <div className={styles.journalMiniImgWrap}>
-                    <Image
-                      src="/images/editorial/journal-fabric.png"
-                      alt="Close-up macro texture of handloom cloth - Weave, Texture, Life"
-                      fill
-                      sizes="(max-width: 768px) 100vw, 20vw"
-                      className={styles.journalMiniImg}
-                    />
-                  </div>
-                  <h4 className={styles.journalMiniTitle}>Weave, Texture, Life</h4>
-                  <span className={styles.journalMiniCategory}>PROCESS</span>
-                </Link>
-              </div>
-
-              {/* Quotation Block on the Right */}
-              <div className={styles.quoteBlockWrapper} data-reveal="slide-right">
-                <div className={styles.quoteDividerLine} aria-hidden="true" />
-                <div className={styles.quoteContent}>
-                  <span className={styles.quoteMark} aria-hidden="true">&ldquo;</span>
-                  <blockquote className={styles.quoteText}>
-                    Cloth carries the story<br />
-                    of a place, its people<br />
-                    and their possibilities.
-                  </blockquote>
-                  <cite className={styles.quoteAuthor}>&mdash; BURGULA COTTON</cite>
-                </div>
-                <div className={styles.quoteBotanicalWrap} aria-hidden="true">
-                  <Image
-                    src="/images/editorial/quote-cotton-botanical.png"
-                    alt=""
-                    fill
-                    sizes="180px"
-                    className={styles.quoteBotanicalImg}
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
 
       {/* SECTION 12 — B2B TRADE & BESPOKE DEVELOPMENT */}
       <section className={styles.b2bSection} aria-label="B2B Commercial Sourcing">

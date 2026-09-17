@@ -93,11 +93,6 @@ export function Footer() {
             <p className={styles.statement} style={{ fontSize: 'var(--text-xs)' }}>
               Burgula Village · Shadnagar Mandal · Telangana, India.
             </p>
-            <div style={{ marginTop: 'var(--space-4)' }}>
-              <Link href="/b2b" className="btn btn-accent" style={{ fontSize: 'var(--text-xs)', padding: '0.625rem 1.25rem' }}>
-                Initiate Trade Sourcing
-              </Link>
-            </div>
           </div>
         </div>
 

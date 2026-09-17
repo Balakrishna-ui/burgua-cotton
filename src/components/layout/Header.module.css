@@ -48,6 +48,8 @@
   display: none;
   align-items: center;
   gap: var(--space-4);
+  position: relative;
+  left: -70px;
 }
 
 @media (min-width: 1024px) {

@@ -3,13 +3,11 @@
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Search, ShoppingBag, Menu, X } from 'lucide-react';
-import { useCart } from '@/context/CartContext';
+import { Menu, X } from 'lucide-react';
 import styles from './Header.module.css';
 
 export function Header() {
   const pathname = usePathname();
-  const { itemCount, setIsCartOpen } = useCart();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
@@ -20,10 +18,6 @@ export function Header() {
     { href: '/', label: 'HOME' },
     { href: '/about', label: 'ABOUT US' },
     { href: '/our-story', label: 'OUR STORY' },
-    { href: '/capabilities', label: 'CAPABILITIES' },
-    { href: '/textiles', label: 'TEXTILES' },
-    { href: '/our-impact', label: 'OUR IMPACT' },
-    { href: '/our-vision', label: 'OUR VISION' },
   ];
 
   return (
@@ -54,20 +48,6 @@ export function Header() {
 
           {/* Right Utilities */}
           <div className={styles.actions}>
-            <Link href="/search" className={styles.iconBtn} aria-label="Search Textiles and Field Notes">
-              <Search size={18} />
-            </Link>
-
-            <button
-              type="button"
-              className={styles.iconBtn}
-              onClick={() => setIsCartOpen(true)}
-              aria-label={`Swatch Bag (${itemCount} items)`}
-            >
-              <ShoppingBag size={18} />
-              {itemCount > 0 && <span className={styles.badge}>{itemCount}</span>}
-            </button>
-
             <button
               type="button"
               className={styles.mobileMenuBtn}
