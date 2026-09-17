@@ -60,32 +60,6 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Trade & Editorial */}
-          <div>
-            <h3 className={styles.heading}>Commercial & Field Notes</h3>
-            <ul className={styles.linkList}>
-              <li>
-                <Link href="/b2b" className={styles.link}>
-                  B2B & Trade Sourcing
-                </Link>
-              </li>
-              <li>
-                <Link href="/journal" className={styles.link}>
-                  Journal & Research
-                </Link>
-              </li>
-              <li>
-                <Link href="/contact" className={styles.link}>
-                  Contact House
-                </Link>
-              </li>
-              <li>
-                <Link href="/search" className={styles.link}>
-                  Fabric Search Archive
-                </Link>
-              </li>
-            </ul>
-          </div>
 
           {/* Location & Origin */}
           <div>
