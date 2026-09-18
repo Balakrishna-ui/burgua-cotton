@@ -1,0 +1,625 @@
+.heroSection {
+  position: relative;
+  background-color: #F9F6F0;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  overflow: hidden;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  min-height: 0;
+}
+
+@media (min-width: 992px) {
+  .heroGrid {
+    grid-template-columns: 1.15fr 0.85fr;
+    min-height: 0;
+  }
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 1.75rem 1.25rem;
+  max-width: 660px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+@media (min-width: 992px) {
+  .heroContent {
+    margin: 0;
+    max-width: 700px;
+    padding: clamp(1.5rem, 2.5vw, 2.25rem) clamp(2rem, 3.5vw, 3.5rem);
+  }
+}
+
+.heroEyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.heroEyebrowDash {
+  width: 24px;
+  height: 2px;
+  background-color: #9E6B47;
+}
+
+.heroEyebrow {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: #9E6B47;
+  text-transform: uppercase;
+}
+
+.heroHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  font-weight: 500;
+  line-height: 1.15;
+  color: var(--color-text-primary, #1A1715);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.75rem;
+}
+
+.heroBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.heroParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.88vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+  text-align: left;
+}
+
+.heroVisual {
+  position: relative;
+  width: 100%;
+  min-height: 240px;
+  background-color: #E8DFD3;
+  overflow: hidden;
+}
+
+@media (min-width: 992px) {
+  .heroVisual {
+    min-height: 100%;
+    height: 100%;
+  }
+}
+
+.heroImg {
+  object-fit: cover !important;
+  object-position: 65% center !important;
+}
+
+.heroVisualFade {
+  display: none;
+}
+
+@media (min-width: 992px) {
+  .heroVisualFade {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 80px;
+    background: linear-gradient(90deg, #F9F6F0 0%, rgba(249, 246, 240, 0) 100%);
+    z-index: 2;
+    pointer-events: none;
+  }
+}
+
+/* ==========================================================================
+   2. VILLAGE COMMUNITY & HISTORICAL FOUNDATION SECTION
+   ========================================================================== */
+.villageSection {
+  background-color: #E2E2DA;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+}
+
+.villageGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .villageGrid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+  }
+}
+
+.villageVisualCol {
+  width: 100%;
+}
+
+.villageImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 351 / 206;
+  min-height: 220px;
+  background-color: #D8D6CE;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.villageImage {
+  object-fit: cover !important;
+}
+
+.villageContentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.villageDash {
+  width: 32px;
+  height: 2.5px;
+  background-color: #9D6844;
+  margin-bottom: 0.85rem;
+}
+
+.villageHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.65rem, 2.3vw, 2.2rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary, #1A1715);
+  letter-spacing: -0.015em;
+  margin-bottom: 0.95rem;
+}
+
+.villageBody {
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+
+.villageParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+.villageQuoteBox {
+  background-color: #E6DFCF;
+  border-left: 3px solid #9D6844;
+  padding: 0.85rem 1.25rem;
+  margin: 0.25rem 0;
+}
+
+.villageQuoteText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.05rem, 1.2vw, 1.2rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: var(--color-text-primary, #1A1715);
+  margin: 0;
+  font-style: normal;
+}
+
+.villageParagraph strong {
+  font-weight: 700;
+  color: var(--color-text-primary, #1A1715);
+}
+
+/* ==========================================================================
+   3. VILLAGE TEXTILE ECONOMY SECTION (TEXT LEFT, IMAGE RIGHT)
+   ========================================================================== */
+.economySection {
+  background-color: #FAF8F5;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+}
+
+.economyGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .economyGrid {
+    grid-template-columns: 1.05fr 0.95fr;
+    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+  }
+}
+
+.economyContentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.economyVisualCol {
+  width: 100%;
+}
+
+.economyImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 388 / 211;
+  min-height: 220px;
+  background-color: #D8D6CE;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+/* ==========================================================================
+   4. THE REVIVAL TODAY SECTION (IMAGE LEFT, TEXT RIGHT)
+   ========================================================================== */
+.revivalSection {
+  background-color: #E2E2DA;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+}
+
+.revivalGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2rem, 3.5vw, 3.5rem);
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .revivalGrid {
+    grid-template-columns: 0.95fr 1.05fr;
+    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+  }
+}
+
+.revivalVisualCol {
+  width: 100%;
+}
+
+.revivalImageWrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 378 / 198;
+  min-height: 220px;
+  background-color: #D8D6CE;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+}
+
+.revivalContentCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.revivalQuestionText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.35rem, 1.7vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text-primary, #1A1715);
+  margin: 0;
+  letter-spacing: -0.01em;
+}
+
+/* ==========================================================================
+   5. FROM COTTON TO CLOTH (FINAL JOURNEY & BELIEF SECTION)
+   ========================================================================== */
+.journeySection {
+  background-color: #FAF8F5;
+  padding: clamp(3rem, 5.5vw, 4.5rem) 0;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+}
+
+.journeyHeader {
+  margin-bottom: 2.25rem;
+}
+
+.journeyHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 2.4vw, 2.3rem);
+  font-weight: 500;
+  line-height: 1.2;
+  color: var(--color-text-primary, #1A1715);
+  margin-bottom: 0.5rem;
+}
+
+.journeySubtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+.journeyFlowRow {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
+  align-items: center;
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid rgba(157, 104, 68, 0.18);
+  margin-bottom: 3.5rem;
+}
+
+@media (min-width: 992px) {
+  .journeyFlowRow {
+    grid-template-columns: 1.55fr 0.85fr;
+    gap: 3.5rem;
+  }
+}
+
+.journeySteps {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.stepItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.65rem;
+  text-align: center;
+}
+
+.stepCircle {
+  width: clamp(58px, 5.5vw, 76px);
+  height: clamp(58px, 5.5vw, 76px);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background-color: #E6DFCF;
+  flex-shrink: 0;
+}
+
+.stepImage {
+  object-fit: cover !important;
+}
+
+.stepLabel {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--color-text-primary, #1A1715);
+  text-transform: uppercase;
+}
+
+.stepArrow {
+  font-size: 1.25rem;
+  color: var(--color-text-muted, #7A746E);
+  font-weight: 300;
+  user-select: none;
+}
+
+.journeyAside {
+  border-left: 2px solid #9D6844;
+  padding-left: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.journeyAsideText {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+/* Looking Ahead & Our Belief 2-Column Grid */
+.futureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 4.5rem);
+}
+
+@media (min-width: 992px) {
+  .futureGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.futureCol {
+  display: flex;
+  flex-direction: column;
+  gap: 0.95rem;
+}
+
+.futureHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.65rem, 2.2vw, 2.1rem);
+  font-weight: 500;
+  color: var(--color-text-primary, #1A1715);
+  margin-bottom: 0.15rem;
+}
+
+.futureLead {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+.futureList {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  margin: 0.25rem 0;
+}
+
+.futureList li {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.84rem;
+  line-height: 1.5;
+  color: var(--color-text-secondary, #4A443E);
+}
+
+.futureNote {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0.5rem 0 0 0;
+}
+
+.beliefGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+
+.beliefParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.84rem;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+.communityStatement {
+  border-left: 3px solid #9D6844;
+  padding-left: 1rem;
+  margin: 1.25rem 0 0.5rem 0;
+}
+
+.communityStatementText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  font-weight: 600;
+  color: var(--color-text-primary, #1A1715);
+  line-height: 1.25;
+  margin: 0;
+}
+
+.trustSignature {
+  margin-top: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.trustName {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--color-text-primary, #1A1715);
+}
+
+.trustTagline {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.82rem;
+  color: var(--color-text-secondary, #4A443E);
+}
+
+/* ==========================================================================
+   PAGE WRAPPER & CHAPTERS SECTION TYPOGRAPHY (MATCHING HOME & ABOUT US)
+   ========================================================================== */
+.pageWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: var(--color-bg-primary);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+.chaptersGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr));
+  gap: var(--space-8);
+}
+
+.chapterCard {
+  background-color: var(--color-bg-surface);
+  border: 1px solid var(--color-border);
+  padding: clamp(var(--space-5), 4vw, var(--space-8));
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.chapterLabel {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-accent);
+  text-transform: uppercase;
+}
+
+.chapterTitle {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.625rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+  color: var(--color-text-primary);
+}
+
+.chapterDesc {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.7;
+}
+
+.ctaBox {
+  margin-top: var(--space-16);
+  text-align: center;
+}
+
+.ctaHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: 1.75rem;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.25;
+  color: var(--color-text-primary);
+  margin-bottom: var(--space-3);
+}
+
+.ctaDesc {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: var(--text-sm);
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.65;
+  max-width: 620px;
+  margin: 0 auto var(--space-6) auto;
+}
+
+.ctaBtnRow {
+  display: flex;
+  gap: var(--space-4);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaBtn {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}

@@ -1364,12 +1364,13 @@
   top: 0;
   left: 0;
   bottom: 0;
-  width: 52%;
+  width: 65%;
   background: linear-gradient(
     90deg,
-    rgba(6, 42, 70, 0.95) 0%,
-    rgba(6, 42, 70, 0.85) 40%,
-    rgba(6, 42, 70, 0.35) 75%,
+    rgba(6, 42, 70, 0.98) 0%,
+    rgba(6, 42, 70, 0.95) 45%,
+    rgba(6, 42, 70, 0.7) 70%,
+    rgba(6, 42, 70, 0.25) 88%,
     transparent 100%
   );
   z-index: 1;
@@ -1474,6 +1475,10 @@
 @media (max-width: 640px) {
   .villageBannerSection {
     min-height: 220px;
+  }
+
+  .villageBannerLink::before {
+    width: 85%;
   }
 
   .villageAerialBannerImg {
