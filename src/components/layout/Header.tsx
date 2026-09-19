@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowRight } from 'lucide-react';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -23,6 +23,9 @@ export function Header() {
 
   return (
     <header className={styles.header}>
+      {/* Colorful heritage gradient stripe at the top */}
+      <div className={styles.headerTopStripe} aria-hidden="true" />
+
       <div className="container">
         <div className={styles.inner}>
           {/* Brand Logo */}
@@ -37,7 +40,7 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Pill Capsule with Active Glow */}
           <nav className={styles.nav} aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
@@ -47,14 +50,20 @@ export function Header() {
                   href={link.href}
                   className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
                 >
-                  {link.label}
+                  {isActive && <span className={styles.activeDot} aria-hidden="true" />}
+                  <span>{link.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right Utilities */}
+          {/* Right Action Utilities */}
           <div className={styles.actions}>
+            <Link href="/textiles" className={styles.ctaBtn}>
+              <span>EXPLORE TEXTILES</span>
+              <ArrowRight size={14} className={styles.ctaArrow} />
+            </Link>
+
             <button
               type="button"
               className={styles.mobileMenuBtn}
@@ -77,17 +86,18 @@ export function Header() {
               <Link
                 key={link.href}
                 href={link.href}
-                className={`${styles.mobileNavLink} ${isActive ? styles.navLinkActive : ''}`}
+                className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`}
               >
-                {link.label}
+                {isActive && <span className={styles.activeDot} aria-hidden="true" />}
+                <span>{link.label}</span>
               </Link>
             );
           })}
           <div style={{ marginTop: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-            <Link href="/b2b" className="btn btn-primary" style={{ textAlign: 'center' }}>
-              B2B & Trade Sourcing
+            <Link href="/textiles" className={styles.mobileCtaPrimary} style={{ textAlign: 'center' }}>
+              Explore Textiles Library &rarr;
             </Link>
-            <Link href="/contact" className="btn btn-secondary" style={{ textAlign: 'center' }}>
+            <Link href="/contact" className={styles.mobileCtaSecondary} style={{ textAlign: 'center' }}>
               Contact House
             </Link>
           </div>
