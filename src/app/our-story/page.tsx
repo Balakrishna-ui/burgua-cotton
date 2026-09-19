@@ -1,7 +1,6 @@
 import React from 'react';
 import type { Metadata } from 'next';
 import Image from 'next/image';
-import Link from 'next/link';
 import { JsonLd, createBreadcrumbSchema } from '@/components/ui/JsonLd';
 import styles from './page.module.css';
 
@@ -10,59 +9,6 @@ export const metadata: Metadata = {
   description:
     'The story of Burgula Cotton: Kapas aur Kora, reviving 27-30 count unbaled cotton yarn in Telangana and the philosophy of Kapas se Kapda Tak, Ek Gaon Mein.',
 };
-
-const chapters = [
-  {
-    num: '01',
-    title: 'The Beginning',
-    desc: 'Indian handloom cotton historically drew its unmatched breathability and softness from local, small-scale ginning and spinning. When industrial spinning mills introduced heavy hydraulic baling for distance transport, the natural wax and living spring of native cotton fibres were permanently fractured.',
-  },
-  {
-    num: '02',
-    title: 'Burgula Cotton Trust (Est. 2007)',
-    desc: 'In 2007, the Burgula Cotton Trust was established in Telangana as an institutional foundation to explore whether decentralized, village-scale yarn production could revive authentic handloom excellence and dignified rural livelihoods.',
-  },
-  {
-    num: '03',
-    title: 'The Continuing Textile Practice',
-    desc: 'The Trust became an active laboratory of training, research, pit-loom tuning, and deep maker relationships, connecting every step from seed cotton to finished cloth.',
-  },
-  {
-    num: '04',
-    title: 'Cotton and Yarn',
-    desc: 'Through participation in the Decentralised Cotton Yarn Project, gentle micro-spinning units were deployed to spin 27–30 count unbaled cotton yarn, bypassing the damage of industrial baling.',
-  },
-  {
-    num: '05',
-    title: 'Decentralised Textile Thinking',
-    desc: 'Keeping yarn production close to the farm and pit-loom preserves the tactile memory of the fibre, resulting in a fabric that absorbs moisture naturally and softens with every wash.',
-  },
-  {
-    num: '06',
-    title: 'Kapas se Kapda Tak, Ek Gaon Mein',
-    desc: 'The defining philosophy: converting cotton to yarn, yarn to warp, and warp to handloom cloth within contiguous Telangana village clusters. Material knowledge stays with the people.',
-  },
-  {
-    num: '07',
-    title: 'Weaving Relationships',
-    desc: 'Generational pit-loom weaving families across Telangana brought intuitive mastery of loom tension, rhythm, and structural weaves, forging lasting partnerships.',
-  },
-  {
-    num: '08',
-    title: 'Fabric Development',
-    desc: 'Expanding into natural fermentation plant dyes (madder root, desi indigo) and experimental blends with indigenous bast hemp and wild silks to answer modern design needs.',
-  },
-  {
-    num: '09',
-    title: 'Burgula Cotton Today',
-    desc: 'Today, Burgula Cotton stands as the market-facing contemporary textile house, making this living handloom practice commercially accessible to global designers, brands, and architects.',
-  },
-  {
-    num: '10',
-    title: 'Looking Ahead',
-    desc: 'Continuing our commitment to material truth, research, and circular production, demonstrating that handloom cotton is a vital, living technology for the future.',
-  },
-];
 
 export default function OurStoryPage() {
   const breadcrumbs = createBreadcrumbSchema([
@@ -452,48 +398,6 @@ export default function OurStoryPage() {
                 <span className={styles.trustName}>Burgula Cotton Trust</span>
                 <span className={styles.trustTagline}>Handloom &bull; Heritage &bull; Sustainable Livelihoods</span>
               </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 6. COMPLETE CHAPTERS FOUNDATION ARCHIVE & CTA */}
-      <section className={styles.chaptersSection} aria-label="The 10 Chapters Foundation Archive">
-        <div className="container">
-          <div className={styles.chaptersHeader}>
-            <span className={styles.chaptersEyebrow}>THE FOUNDATION ARCHIVE</span>
-            <h2 className={styles.chaptersTitle}>
-              10 Chapters: From Cotton to Cloth in Telangana
-            </h2>
-            <p className={styles.chaptersSubtitle}>
-              A documented history of researching, establishing, and scaling decentralised unbaled cotton yarn and master pit-loom handloom weaving in Telangana.
-            </p>
-          </div>
-
-          <div className={styles.chaptersGrid}>
-            {chapters.map((ch) => (
-              <article key={ch.num} className={styles.chapterCard}>
-                <span className={styles.chapterLabel}>Chapter {ch.num}</span>
-                <h3 className={styles.chapterTitle}>{ch.title}</h3>
-                <p className={styles.chapterDesc}>{ch.desc}</p>
-              </article>
-            ))}
-          </div>
-
-          <div className={styles.ctaBox}>
-            <h3 className={styles.ctaHeading}>
-              Experience the Cloth Born from This Practice
-            </h3>
-            <p className={styles.ctaDesc}>
-              Explore our handloom fabric library or initiate a bespoke fabric development partnership.
-            </p>
-            <div className={styles.ctaBtnRow}>
-              <Link href="/textiles" className="btn btn-primary">
-                Explore Textiles Library
-              </Link>
-              <Link href="/capabilities" className="btn btn-secondary">
-                View Capabilities & Workflow
-              </Link>
             </div>
           </div>
         </div>
