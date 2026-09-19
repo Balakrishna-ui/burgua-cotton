@@ -28,7 +28,6 @@ export default async function HomePage() {
             <span className={styles.heroEyebrow}>TELANGANA ROOTED &bull; HANDLOOM REVIVAL</span>
 
             <h1 className={styles.heroHeading}>
-              <span className={styles.heroHeadingLine}>BURGULA COTTON.</span>
               <span className={styles.heroHeadingLine}>IN COTTON WE TRUST.</span>
             </h1>
 
