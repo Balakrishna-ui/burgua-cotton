@@ -25,17 +25,16 @@ export function Header() {
     <header className={styles.header}>
       <div className="container">
         <div className={styles.inner}>
-          {/* Brand Logo & Location */}
+          {/* Brand Logo */}
           <Link href="/" className={styles.brand} aria-label="Burgula Cotton Home">
             <Image
               src="/images/logo.png"
               alt="Burgula Cotton Trust"
-              width={160}
-              height={50}
+              width={200}
+              height={60}
               priority
               className={styles.logoImg}
             />
-            <span className={styles.brandLocation}>Telangana · India</span>
           </Link>
 
           {/* Desktop Navigation */}
