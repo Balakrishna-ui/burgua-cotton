@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import styles from './Header.module.css';
@@ -26,6 +27,14 @@ export function Header() {
         <div className={styles.inner}>
           {/* Brand Logo & Location */}
           <Link href="/" className={styles.brand} aria-label="Burgula Cotton Home">
+            <Image
+              src="/images/logo.png"
+              alt="Burgula Cotton Trust"
+              width={160}
+              height={50}
+              priority
+              className={styles.logoImg}
+            />
             <span className={styles.brandLocation}>Telangana · India</span>
           </Link>
 

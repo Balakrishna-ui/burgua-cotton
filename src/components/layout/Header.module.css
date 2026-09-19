@@ -19,29 +19,29 @@
 .brand {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   text-decoration: none;
   flex-shrink: 1;
   min-width: 0;
+  gap: 2px;
 }
 
-.brandTitle {
-  font-family: var(--font-serif);
-  font-size: clamp(1.125rem, 3.8vw, 1.5rem);
-  font-weight: 500;
-  letter-spacing: 0.1em;
-  color: var(--color-text-primary);
-  line-height: 1.1;
-  text-transform: uppercase;
-  white-space: nowrap;
+.logoImg {
+  height: clamp(32px, 3.8vw, 42px);
+  width: auto;
+  max-width: 175px;
+  object-fit: contain;
+  display: block;
 }
 
 .brandLocation {
   font-family: var(--font-sans);
-  font-size: clamp(0.55rem, 1.5vw, 0.625rem);
+  font-size: clamp(0.5rem, 1.2vw, 0.58rem);
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: var(--color-text-muted);
   white-space: nowrap;
+  padding-left: 2px;
 }
 
 .nav {
