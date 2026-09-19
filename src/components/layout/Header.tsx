@@ -26,7 +26,6 @@ export function Header() {
         <div className={styles.inner}>
           {/* Brand Logo & Location */}
           <Link href="/" className={styles.brand} aria-label="Burgula Cotton Home">
-            <span className={styles.brandTitle}>Burgula Cotton</span>
             <span className={styles.brandLocation}>Telangana · India</span>
           </Link>
 
