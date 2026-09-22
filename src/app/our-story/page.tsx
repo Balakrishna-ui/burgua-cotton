@@ -60,7 +60,7 @@ export default function OurStoryPage() {
               alt="Burgula village aerial view, rural homes and surrounding community"
               fill
               priority
-              sizes="(max-width: 991px) 100vw, 48vw"
+              sizes="(max-width: 991px) 100vw, 60vw"
               className={styles.heroImg}
             />
           </div>

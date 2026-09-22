@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState } from 'react';
-import Link from 'next/link';
 import { VerifiedTextile } from '@/lib/seed-data';
 import { useCart } from '@/context/CartContext';
 import { Check, ShieldCheck } from 'lucide-react';
@@ -89,12 +88,12 @@ export default function TextileDetailClient({ textile }: { textile: VerifiedText
           </button>
         </div>
 
-        <Link
-          href={`/b2b?textile=${encodeURIComponent(textile.name)}&code=${encodeURIComponent(textile.code)}`}
+        <a
+          href={`mailto:cottontrustburgula@gmail.com?subject=Bulk%20Fabric%20Enquiry%20-%20${encodeURIComponent(textile.name)}`}
           className={`btn btn-primary ${styles.bulkEnquiryBtn}`}
         >
           Start Bulk / B2B Fabric Enquiry →
-        </Link>
+        </a>
 
         {textile.basePrice && (
           <button

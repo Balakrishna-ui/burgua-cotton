@@ -11,13 +11,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/our-story',
-    '/capabilities',
     '/textiles',
     '/our-impact',
     '/our-vision',
-    '/b2b',
     '/journal',
-    '/contact',
     '/search',
   ].map((route) => ({
     url: `${baseUrl}${route}`,

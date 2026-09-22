@@ -9,7 +9,20 @@ export function Footer() {
         <div className={styles.grid}>
           {/* Brand & Narrative */}
           <div className={styles.brandCol}>
-            <h2 className={styles.title}>Burgula Cotton</h2>
+            <span className={styles.regdBadge}>Regd. No. 83/2007</span>
+
+            <div className={styles.titleGroup}>
+              <h2 className={styles.title}>Burgula Cotton Trust</h2>
+              <span className={styles.teluguTitle} lang="te">బూర్గుల కాటన్ ట్రస్ట్</span>
+            </div>
+
+            {/* Tagline Pill from Certificate/Identity */}
+            <div className={styles.mottoPill}>
+              <span lang="te">పత్తిలో మా భరోసా.</span>
+              <span className={styles.mottoDivider} aria-hidden="true">|</span>
+              <span>In Cotton We Trust</span>
+            </div>
+
             <p className={styles.statement}>
               Rooted in cotton. Built for the future. From cotton to yarn to cloth in Telangana.
             </p>
@@ -37,48 +50,54 @@ export function Footer() {
                   Our Story: Kapas aur Kora
                 </Link>
               </li>
-              <li>
-                <Link href="/capabilities" className={styles.link}>
-                  Capabilities & Process
-                </Link>
-              </li>
-              <li>
-                <Link href="/textiles" className={styles.link}>
-                  Textiles Archive
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-impact" className={styles.link}>
-                  Our Impact & Ecosystem
-                </Link>
-              </li>
-              <li>
-                <Link href="/our-vision" className={styles.link}>
-                  Our Vision
-                </Link>
-              </li>
             </ul>
           </div>
 
+          {/* Registered Office & Contact */}
+          <div className={styles.contactCol}>
+            <h3 className={styles.heading}>Registered Office & Contact</h3>
+            <address className={styles.addressBlock}>
+              <p className={styles.addressLine}>
+                <strong>H.no:</strong> 1-47, Burgula, Farooq Nagar,<br />
+                Ranga Reddy, Telangana &ndash; 509202
+              </p>
+            </address>
 
-          {/* Location & Origin */}
-          <div>
-            <h3 className={styles.heading}>Geographical Origin</h3>
-            <p className={styles.statement} style={{ fontSize: 'var(--text-xs)' }}>
-              Burgula Village · Shadnagar Mandal · Telangana, India.
-            </p>
+            <div className={styles.contactItems}>
+              <div className={styles.contactItem}>
+                <span className={styles.contactLabel}>Email:</span>
+                <a href="mailto:cottontrustburgula@gmail.com" className={styles.contactLink}>
+                  cottontrustburgula@gmail.com
+                </a>
+              </div>
+              <div className={styles.contactItem}>
+                <span className={styles.contactLabel}>Web:</span>
+                <a
+                  href="https://www.cottontrustburgula.in"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={styles.contactLink}
+                >
+                  www.cottontrustburgula.in
+                </a>
+              </div>
+              <div className={styles.contactItem}>
+                <span className={styles.contactLabel}>Regd:</span>
+                <span className={styles.contactVal}>No. 83/2007</span>
+              </div>
+            </div>
           </div>
         </div>
 
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <div className={styles.copyright}>
-            © {new Date().getFullYear()} Burgula Cotton. All rights reserved.
+            © {new Date().getFullYear()} Burgula Cotton Trust (Regd. No. 83/2007). All rights reserved.
           </div>
-          <div style={{ display: 'flex', gap: 'var(--space-6)' }}>
-            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--color-text-inverse-muted)' }}>
-              Telangana Handloom Textile House
-            </span>
+          <div className={styles.bottomMeta}>
+            <span lang="te" className={styles.bottomTelugu}>పత్తిలో మా భరోసా.</span>
+            <span aria-hidden="true">·</span>
+            <span>Telangana Handloom Textile House</span>
           </div>
         </div>
       </div>

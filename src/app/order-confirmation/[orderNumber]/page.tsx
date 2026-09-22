@@ -57,9 +57,9 @@ export default async function OrderConfirmationPage({ params, searchParams }: Or
           <Link href="/textiles" className="btn btn-primary">
             Continue Browsing Textiles
           </Link>
-          <Link href="/b2b" className="btn btn-secondary">
+          <a href="mailto:cottontrustburgula@gmail.com" className="btn btn-secondary">
             <PackageCheck size={16} /> Start B2B Trade Enquiry
-          </Link>
+          </a>
         </div>
       </div>
     </div>

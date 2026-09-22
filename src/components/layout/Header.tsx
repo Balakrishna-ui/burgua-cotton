@@ -97,9 +97,9 @@ export function Header() {
             <Link href="/textiles" className={styles.mobileCtaPrimary} style={{ textAlign: 'center' }}>
               Explore Textiles Library &rarr;
             </Link>
-            <Link href="/contact" className={styles.mobileCtaSecondary} style={{ textAlign: 'center' }}>
+            <a href="mailto:cottontrustburgula@gmail.com" className={styles.mobileCtaSecondary} style={{ textAlign: 'center' }}>
               Contact House
-            </Link>
+            </a>
           </div>
         </div>
       )}

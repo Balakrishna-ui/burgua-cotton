@@ -158,7 +158,7 @@ export default function TextilesPage() {
             <p style={{ maxWidth: '640px', margin: '0 auto var(--space-6) auto', fontSize: 'var(--text-sm)', color: 'var(--color-text-secondary)' }}>
               We develop customized yarn counts, wild silk / bast hemp natural blends, and bespoke loom widths for fashion labels and architectural projects.
             </p>
-            <a href="/b2b" className="btn btn-primary">
+            <a href="mailto:cottontrustburgula@gmail.com" className="btn btn-primary">
               Initiate Custom Development Enquiry →
             </a>
           </div>

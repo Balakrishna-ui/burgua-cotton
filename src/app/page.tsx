@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { ArrowRight } from 'lucide-react';
 import { JsonLd, createOrganizationSchema } from '@/components/ui/JsonLd';
 import styles from './page.module.css';
 
@@ -37,8 +38,8 @@ export default async function HomePage() {
 
             <div className={styles.heroButtons}>
               <Link href="/about" className={styles.heroPrimaryBtn}>
-                ABOUT US
-                <span className={styles.btnArrow} aria-hidden="true">&rarr;</span>
+                <span>ABOUT US</span>
+                <ArrowRight size={14} className={styles.btnArrow} aria-hidden="true" />
               </Link>
             </div>
           </div>
@@ -241,7 +242,7 @@ export default async function HomePage() {
             </div>
 
             {/* RIGHT-SIDE CTA PANEL */}
-            <Link href="/capabilities" className={styles.journeyCtaPanel} aria-label="Explore the journey">
+            <Link href="/our-story" className={styles.journeyCtaPanel} aria-label="Explore the journey">
               <span className={styles.journeyCtaText}>
                 EXPLORE<br />
                 THE JOURNEY <span className={styles.journeyCtaArrow}>&rarr;</span>
@@ -344,11 +345,11 @@ export default async function HomePage() {
               For designers, labels, manufacturers, retailers, architects and hospitality brands seeking verified handloom yardage, custom weave developments, and traceable material origin.
             </p>
             <div className={styles.b2bButtonRow}>
-              <Link href="/b2b" className="btn btn-hero-white">
+              <a href="mailto:cottontrustburgula@gmail.com" className="btn btn-hero-white">
                 Start B2B Trade Enquiry
-              </Link>
-              <Link href="/capabilities" className="btn btn-hero-outline">
-                View Development Workflow
+              </a>
+              <Link href="/our-story" className="btn btn-hero-outline">
+                View Story &amp; Philosophy
               </Link>
             </div>
           </div>
