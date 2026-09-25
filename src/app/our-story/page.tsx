@@ -50,10 +50,7 @@ export default function OurStoryPage() {
           </div>
 
           {/* Right Column: Village Landscape Visual */}
-          <div
-            className={styles.heroVisual}
-            style={{ position: 'relative', width: '100%', minHeight: '340px', overflow: 'hidden' }}
-          >
+          <div className={styles.heroVisual}>
             <div className={styles.heroVisualFade} aria-hidden="true" />
             <Image
               src="/images/images.jpeg"

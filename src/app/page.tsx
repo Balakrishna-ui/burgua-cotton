@@ -287,7 +287,7 @@ export default async function HomePage() {
         <div className={styles.institutionGrid}>
           <div className={styles.institutionVisual} data-reveal="image">
             <Image
-              src="/images/img3.jpg"
+              src="/images/bct.png"
               alt="Burgula Cotton spinning and yarn machinery operations in Telangana"
               fill
               sizes="(max-width: 992px) 100vw, 50vw"

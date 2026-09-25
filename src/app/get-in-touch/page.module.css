@@ -1,0 +1,642 @@
+/* ==========================================================================
+   GET IN TOUCH PAGE STYLES — BURGULA COTTON TRUST
+   Matches reference design: layout, typography, cards, responsive behavior
+   ========================================================================== */
+
+.pageWrapper {
+  width: 100%;
+  overflow-x: hidden;
+  background-color: #FAF8F5;
+  color: #1A1715;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+}
+
+/* ==========================================================================
+   1. HERO SECTION
+   ========================================================================== */
+.heroSection {
+  position: relative;
+  width: 100%;
+  min-height: 400px;
+  background-color: #1A1715;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .heroSection {
+    min-height: 440px;
+  }
+}
+
+.heroBg {
+  object-fit: cover !important;
+  object-position: 70% 30% !important;
+  z-index: 1;
+}
+
+.heroOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    rgba(14, 13, 12, 0.94) 0%,
+    rgba(14, 13, 12, 0.88) 35%,
+    rgba(14, 13, 12, 0.6) 65%,
+    rgba(14, 13, 12, 0.25) 100%
+  );
+  z-index: 2;
+  pointer-events: none;
+}
+
+@media (max-width: 768px) {
+  .heroOverlay {
+    background: linear-gradient(
+      180deg,
+      rgba(14, 13, 12, 0.92) 0%,
+      rgba(14, 13, 12, 0.82) 60%,
+      rgba(14, 13, 12, 0.5) 100%
+    );
+  }
+}
+
+.heroContent {
+  position: relative;
+  z-index: 3;
+  max-width: 620px;
+  padding: 3.5rem 0;
+}
+
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 2.5rem 0;
+  }
+}
+
+.heroEyebrow {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  color: #D4A359;
+  text-transform: uppercase;
+  margin-bottom: 0.85rem;
+  display: inline-block;
+}
+
+.heroHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2.35rem, 4.4vw, 3.75rem);
+  font-weight: 600;
+  line-height: 1.12;
+  color: #FFFFFF;
+  margin: 0 0 1.15rem 0;
+  letter-spacing: -0.01em;
+}
+
+.heroSubtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: clamp(0.92rem, 1.15vw, 1.0625rem);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0;
+  max-width: 520px;
+}
+
+/* ==========================================================================
+   2. MAIN TWO-COLUMN CONTACT & FORM SECTION
+   ========================================================================== */
+.mainSection {
+  padding: clamp(3rem, 5.5vw, 4.75rem) 0;
+}
+
+.twoColGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .twoColGrid {
+    grid-template-columns: 1fr 1.08fr;
+    gap: clamp(3rem, 4.5vw, 5rem);
+  }
+}
+
+/* LEFT COLUMN — Contact Information & Location */
+.leftCol {
+  display: flex;
+  flex-direction: column;
+  gap: 2.75rem;
+}
+
+.sectionTitle {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.85rem, 2.6vw, 2.35rem);
+  font-weight: 600;
+  color: #1A1715;
+  margin: 0 0 0.5rem 0;
+  letter-spacing: -0.01em;
+}
+
+.sectionSubtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.55;
+  color: #5C554E;
+  margin: 0 0 1.5rem 0;
+  max-width: 480px;
+}
+
+/* Contact Info Items */
+.infoItemsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1.1rem;
+}
+
+.infoItemCard {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.15rem;
+}
+
+.infoIconBadge {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background-color: #F3ECE1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #9D6844;
+  flex-shrink: 0;
+}
+
+.infoContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.infoEyebrow {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.6875rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  color: #9E743A;
+  text-transform: uppercase;
+  margin-bottom: 0.15rem;
+}
+
+.infoText {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #1A1715;
+  margin: 0;
+}
+
+.infoSubtext {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.85rem;
+  color: #5C554E;
+  margin: 0;
+  line-height: 1.45;
+}
+
+.infoLink {
+  color: #1A1715;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.infoLink:hover {
+  color: #103F5F;
+  text-decoration: underline;
+}
+
+/* Location Card */
+.locationBlock {
+  display: flex;
+  flex-direction: column;
+}
+
+.mapCard {
+  position: relative;
+  width: 100%;
+  height: 250px;
+  border-radius: 12px;
+  overflow: hidden;
+  border: 1px solid #E8E2D6;
+  background-color: #EBF1EA;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
+}
+
+.mapSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.mapBtn {
+  position: absolute;
+  left: 1rem;
+  bottom: 1rem;
+  z-index: 5;
+  background-color: #103F5F;
+  color: #FFFFFF;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 0.55rem 1.15rem;
+  border-radius: 9999px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  box-shadow: 0 3px 10px rgba(16, 63, 95, 0.35);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.mapBtn:hover {
+  background-color: #0A2B42;
+  transform: translateY(-1px);
+}
+
+/* RIGHT COLUMN — Form Card */
+.formCard {
+  background-color: #F7F3EE;
+  border: 1px solid #EDE7DD;
+  border-radius: 16px;
+  padding: clamp(1.75rem, 3.2vw, 2.75rem);
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+}
+
+.formHeader {
+  margin-bottom: 1.75rem;
+}
+
+.formTitle {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.75rem, 2.4vw, 2.2rem);
+  font-weight: 600;
+  color: #1A1715;
+  margin: 0 0 0.35rem 0;
+  letter-spacing: -0.01em;
+}
+
+.formSubtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.85rem;
+  color: #5C554E;
+  margin: 0;
+}
+
+.formGroup {
+  margin-bottom: 1.25rem;
+}
+
+.formLabel {
+  display: block;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: #1A1715;
+  margin-bottom: 0.45rem;
+}
+
+.inputField,
+.textareaField {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  color: #1A1715;
+  background-color: #FFFFFF;
+  border: 1px solid #E2DCD1;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.inputField::placeholder,
+.textareaField::placeholder {
+  color: #9C948B;
+}
+
+.inputField:focus,
+.textareaField:focus {
+  border-color: #103F5F;
+  box-shadow: 0 0 0 3px rgba(16, 63, 95, 0.12);
+}
+
+.textareaField {
+  resize: vertical;
+  min-height: 110px;
+}
+
+/* Enquiry Type 6-Grid Selection */
+.enquiryGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.65rem;
+}
+
+@media (max-width: 540px) {
+  .enquiryGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.enquiryOption {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0.85rem 0.5rem;
+  background-color: #FFFFFF;
+  border: 1px solid #E2DCD1;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  user-select: none;
+  text-align: center;
+}
+
+.enquiryOption:hover {
+  border-color: #103F5F;
+  background-color: #FAFBFD;
+}
+
+.enquiryOptionActive {
+  border-color: #103F5F;
+  background-color: #EEF4F8;
+  box-shadow: 0 0 0 1px #103F5F;
+}
+
+.enquiryIcon {
+  color: #5C554E;
+  transition: color 0.15s ease;
+}
+
+.enquiryOptionActive .enquiryIcon {
+  color: #103F5F;
+}
+
+.enquiryLabel {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: #1A1715;
+  line-height: 1.25;
+}
+
+.enquiryOptionActive .enquiryLabel {
+  color: #103F5F;
+}
+
+/* Submit Button */
+.submitBtn {
+  width: 100%;
+  padding: 0.9rem 1.5rem;
+  margin-top: 0.75rem;
+  background-color: #103F5F;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.submitBtn:hover:not(:disabled) {
+  background-color: #0A2B42;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 14px rgba(16, 63, 95, 0.35);
+}
+
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+}
+
+/* Success / Error Feedback */
+.feedbackSuccess {
+  padding: 1rem 1.25rem;
+  background-color: #EAF4EE;
+  border: 1px solid #C3E2CE;
+  border-radius: 8px;
+  color: #1B5E34;
+  font-size: 0.875rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.45;
+}
+
+.feedbackError {
+  padding: 0.85rem 1.15rem;
+  background-color: #FDF2F2;
+  border: 1px solid #F8D0D0;
+  border-radius: 8px;
+  color: #B91C1C;
+  font-size: 0.85rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.4;
+}
+
+/* ==========================================================================
+   3. LET’S BUILD TOGETHER SECTION
+   ========================================================================== */
+.buildTogetherSection {
+  padding: clamp(3rem, 5vw, 4.5rem) 0;
+  border-top: 1px solid #EBE4DA;
+}
+
+.buildTogetherGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2.25rem;
+  align-items: center;
+}
+
+@media (min-width: 992px) {
+  .buildTogetherGrid {
+    grid-template-columns: 1fr 1.2fr;
+    gap: 3.5rem;
+  }
+}
+
+.buildHeaderCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.buildHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3vw, 2.65rem);
+  font-weight: 600;
+  color: #1A1715;
+  margin: 0 0 0.75rem 0;
+  letter-spacing: -0.01em;
+}
+
+.buildParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.875rem;
+  line-height: 1.6;
+  color: #5C554E;
+  margin: 0;
+}
+
+.buildCardsRow {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .buildCardsRow {
+    grid-template-columns: 1fr;
+    gap: 0.85rem;
+  }
+}
+
+.buildCard {
+  background-color: #FFFFFF;
+  border: 1px solid #EAE3D6;
+  border-radius: 12px;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.buildCard:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+}
+
+.buildCardIcon {
+  color: #C29B38;
+  margin-bottom: 0.25rem;
+}
+
+.buildCardTitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #9D6844;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.buildCardText {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: #5C554E;
+  margin: 0;
+}
+
+/* ==========================================================================
+   4. FINAL FEATURE SECTION — A SHARED FUTURE
+   ========================================================================== */
+.featureSection {
+  padding: 0 0 clamp(3.5rem, 6vw, 5.5rem) 0;
+}
+
+.featureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  border-radius: 16px;
+  overflow: hidden;
+  background-color: #F7F3EE;
+  border: 1px solid #EBE4DA;
+}
+
+@media (min-width: 860px) {
+  .featureGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.featureImageWrapper {
+  position: relative;
+  min-height: 280px;
+  width: 100%;
+}
+
+@media (min-width: 860px) {
+  .featureImageWrapper {
+    min-height: 340px;
+  }
+}
+
+.featureImage {
+  object-fit: cover !important;
+}
+
+.featureContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: clamp(2rem, 4vw, 3.5rem);
+}
+
+.featureEyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.featureEyebrowDash {
+  width: 20px;
+  height: 2px;
+  background-color: #9D6844;
+}
+
+.featureEyebrow {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #9D6844;
+  text-transform: uppercase;
+}
+
+.featureHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.9rem, 3.2vw, 2.65rem);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #1A1715;
+  margin: 0 0 1rem 0;
+  letter-spacing: -0.01em;
+}
+
+.featureParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #5C554E;
+  margin: 0;
+  max-width: 480px;
+}

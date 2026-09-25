@@ -59,8 +59,8 @@ export function Header() {
 
           {/* Right Action Utilities */}
           <div className={styles.actions}>
-            <Link href="/textiles" className={styles.ctaBtn}>
-              <span>EXPLORE TEXTILES</span>
+            <Link href="/get-in-touch" className={styles.ctaBtn}>
+              <span>GET IN TOUCH</span>
               <ArrowRight size={14} className={styles.ctaArrow} />
             </Link>
 
@@ -93,13 +93,10 @@ export function Header() {
               </Link>
             );
           })}
-          <div style={{ marginTop: 'var(--space-6)', display: 'flex', flexDirection: 'column', gap: 'var(--space-4)' }}>
-            <Link href="/textiles" className={styles.mobileCtaPrimary} style={{ textAlign: 'center' }}>
-              Explore Textiles Library &rarr;
+          <div style={{ marginTop: 'var(--space-4)' }}>
+            <Link href="/get-in-touch" className={styles.mobileCtaPrimary} style={{ textAlign: 'center' }}>
+              Get In Touch &rarr;
             </Link>
-            <a href="mailto:cottontrustburgula@gmail.com" className={styles.mobileCtaSecondary} style={{ textAlign: 'center' }}>
-              Contact House
-            </a>
           </div>
         </div>
       )}

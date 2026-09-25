@@ -87,9 +87,24 @@
 .heroVisual {
   position: relative;
   width: 100%;
-  min-height: 240px;
+  height: 205px;
+  min-height: 195px;
   background-color: #E2E2DA;
   overflow: hidden;
+}
+
+@media (max-width: 480px) {
+  .heroVisual {
+    height: 180px;
+    min-height: 170px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  .heroVisual {
+    height: 260px;
+    min-height: 250px;
+  }
 }
 
 @media (min-width: 992px) {
@@ -416,6 +431,24 @@
   color: var(--color-text-muted, #7A746E);
   font-weight: 300;
   user-select: none;
+}
+
+@media (max-width: 640px) {
+  .journeySteps {
+    row-gap: 1.25rem;
+  }
+
+  .stepItem:nth-of-type(4) {
+    margin-left: auto;
+  }
+
+  .stepArrow:nth-of-type(4) {
+    margin: 0 clamp(1rem, 4vw, 1.75rem);
+  }
+
+  .stepItem:nth-of-type(5) {
+    margin-right: auto;
+  }
 }
 
 .journeyAside {

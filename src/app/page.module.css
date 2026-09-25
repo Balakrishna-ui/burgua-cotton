@@ -369,8 +369,8 @@
 @media (max-width: 768px) {
   .hero {
     height: auto;
-    min-height: 560px;
-    padding: 4.5rem 0 3rem 0;
+    min-height: 380px;
+    padding: 2.5rem 0 2rem 0;
     align-items: center;
   }
 
@@ -416,8 +416,8 @@
 
 @media (max-width: 576px) {
   .hero {
-    min-height: 520px;
-    padding: 3.5rem 0 2.5rem 0;
+    min-height: 320px;
+    padding: 2rem 0 1.75rem 0;
   }
 
   .heroContainer {
@@ -425,16 +425,20 @@
     padding-right: 1.125rem;
   }
 
+  .heroEyebrow {
+    margin-bottom: 0.65rem;
+  }
+
   .heroHeading {
     font-size: clamp(1.85rem, 8vw, 2.45rem);
     line-height: 1.1;
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
   }
 
   .heroParagraph {
     font-size: 0.875rem;
     line-height: 1.55;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.15rem;
   }
 
   .heroButtons {
@@ -449,15 +453,15 @@
     justify-content: center;
     width: 100%;
     text-align: center;
-    min-height: var(--touch-target-min, 44px);
-    padding: 0.75rem 1.25rem;
+    min-height: var(--touch-target-min, 40px);
+    padding: 0.62rem 1.25rem;
   }
 }
 
 @media (max-width: 374px) {
   .hero {
-    min-height: 480px;
-    padding: 2.75rem 0 2rem 0;
+    min-height: 290px;
+    padding: 1.75rem 0 1.5rem 0;
   }
 
   .heroContainer {
@@ -472,7 +476,7 @@
   .heroEyebrow {
     font-size: 0.6875rem;
     letter-spacing: 0.2em;
-    margin-bottom: 0.75rem;
+    margin-bottom: 0.5rem;
   }
 }
 
@@ -658,13 +662,13 @@
 
 @media (max-width: 768px) {
   .ourTextileSection {
-    padding: var(--space-12) 0;
+    padding: 2.25rem 0;
   }
 
   .ourTextileContainer {
     flex-direction: column;
     align-items: flex-start;
-    gap: var(--space-8);
+    gap: 1.5rem;
   }
 
   .textileContentCol {
@@ -681,33 +685,43 @@
   }
 
   .textileImageFrame {
-    aspect-ratio: 16 / 7.5;
-    min-height: 180px;
+    aspect-ratio: 16 / 7;
+    min-height: 150px;
   }
 
   .textilePillarsCol {
-    margin-top: var(--space-2);
+    margin-top: 0.25rem;
   }
 }
 
 @media (max-width: 576px) {
   .ourTextileSection {
-    padding: clamp(2.5rem, 6vw, 3.5rem) 0;
+    padding: 1.75rem 0;
+  }
+
+  .ourTextileContainer {
+    gap: 1.15rem;
+  }
+
+  .textileEyebrow {
+    margin-bottom: 0.5rem;
   }
 
   .textileHeading {
     font-size: clamp(1.75rem, 6.5vw, 2.25rem);
-    margin-bottom: 1rem;
+    margin-bottom: 0.65rem;
   }
 
   .textileImageFrame {
-    aspect-ratio: 16 / 8.5;
-    min-height: 140px;
+    aspect-ratio: 16 / 7.5;
+    min-height: 120px;
+    max-height: 180px;
   }
 
   .textilePillarsCol {
     padding-left: 0.85rem;
     font-size: 0.625rem;
+    gap: 2px;
   }
 }
 
@@ -830,8 +844,8 @@
 
 @media (max-width: 768px) {
   .handloomSection {
-    padding: var(--space-16) 0;
-    min-height: 70dvh;
+    padding: var(--space-8) 0;
+    min-height: 35dvh;
     align-items: center;
   }
 
@@ -856,8 +870,8 @@
 
 @media (max-width: 576px) {
   .handloomSection {
-    padding: clamp(3.5rem, 8vw, 4.5rem) 0;
-    min-height: 60dvh;
+    padding: clamp(1.25rem, 3vw, 1.5rem) 0;
+    min-height: 27dvh;
   }
 
   .handloomHeading {
@@ -1297,39 +1311,93 @@
 }
 
 @media (max-width: 768px) {
+  .cottonToClothSection {
+    padding: 2.25rem 0;
+  }
+
   .clothHeaderRow {
     flex-direction: column;
     align-items: flex-start;
     gap: 0.4rem;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.25rem;
+  }
+
+  .clothHeading {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
   }
 
   .clothProcessStrip {
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem 0.85rem;
     align-items: stretch;
-    gap: 1.25rem;
+    width: 100%;
+  }
+
+  .processArrow {
+    display: none !important;
   }
 
   .processCardItem {
     width: 100%;
+    min-width: 0;
   }
 
   .processImageWrapper {
-    aspect-ratio: 16 / 7;
-    max-height: 180px;
+    aspect-ratio: 16 / 9;
+    min-height: 85px;
+    max-height: 130px;
+    border-radius: 2px;
   }
 
-  .processArrow {
-    height: auto;
-    transform: rotate(90deg);
-    margin: -0.25rem auto;
+  .processCardMeta {
+    margin-top: 0.5rem;
+    gap: 0.15rem;
+  }
+
+  .processNumberTitle {
+    gap: 0.4rem;
+  }
+
+  .processNum {
+    font-size: 0.8125rem;
+  }
+
+  .processTitle {
+    font-size: 0.8125rem;
+  }
+
+  .processSubtitle {
+    font-size: 0.72rem;
+    line-height: 1.35;
   }
 
   .journeyCtaPanel {
+    grid-column: 1 / -1;
     max-width: 100%;
     width: 100%;
-    height: 90px;
-    margin-top: 0.5rem;
+    min-height: 50px;
+    height: auto;
+    padding: 0.75rem 1.25rem;
+    margin-top: 0.35rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    border-radius: 2px;
+  }
+
+  .journeyCtaText {
+    font-size: 0.8125rem;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .journeyCtaText br {
+    display: none;
   }
 
   .botanicalBgWrapper {
@@ -1338,6 +1406,57 @@
     right: 0;
     bottom: -10px;
     opacity: 0.35;
+  }
+}
+
+@media (max-width: 576px) {
+  .cottonToClothSection {
+    padding: 1.75rem 0;
+  }
+
+  .cottonToClothContainer {
+    padding: 0 1rem;
+  }
+
+  .clothHeaderRow {
+    margin-bottom: 1rem;
+  }
+
+  .clothProcessStrip {
+    gap: 0.85rem 0.65rem;
+  }
+
+  .processImageWrapper {
+    aspect-ratio: 16 / 9;
+    min-height: 70px;
+    max-height: 105px;
+  }
+
+  .processCardMeta {
+    margin-top: 0.4rem;
+  }
+
+  .processNum {
+    font-size: 0.75rem;
+  }
+
+  .processTitle {
+    font-size: 0.75rem;
+  }
+
+  .processSubtitle {
+    font-size: 0.6875rem;
+    line-height: 1.3;
+  }
+
+  .journeyCtaPanel {
+    min-height: 46px;
+    padding: 0.65rem 1rem;
+    margin-top: 0.25rem;
+  }
+
+  .journeyCtaText {
+    font-size: 0.75rem;
   }
 }
 
@@ -1477,24 +1596,82 @@
 
 @media (max-width: 640px) {
   .villageBannerSection {
-    min-height: 220px;
+    min-height: 200px;
   }
 
   .villageBannerLink::before {
-    width: 85%;
+    width: 62%;
+    background: linear-gradient(
+      90deg,
+      rgba(6, 42, 70, 0.96) 0%,
+      rgba(6, 42, 70, 0.9) 45%,
+      rgba(6, 42, 70, 0.5) 75%,
+      rgba(6, 42, 70, 0.15) 90%,
+      transparent 100%
+    );
   }
 
   .villageAerialBannerImg {
-    min-height: 220px;
+    min-height: 200px;
     object-fit: cover;
     object-position: 75% center;
   }
 
   .villageBannerContent {
-    width: 85%;
+    width: 58%;
     max-width: none;
-    padding-left: 1.5rem;
-    padding-right: 1rem;
+    padding-left: 1rem;
+    padding-right: 0.5rem;
+  }
+
+  .villageBannerEyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.15em;
+    margin-bottom: 0.25rem;
+  }
+
+  .villageBannerHeading {
+    font-size: clamp(1.05rem, 4.2vw, 1.35rem);
+    line-height: 1.18;
+    margin: 0 0 0.35rem 0;
+  }
+
+  .villageBannerSubtitle {
+    font-size: clamp(0.72rem, 2.8vw, 0.8125rem);
+    line-height: 1.3;
+    margin: 0 0 0.55rem 0;
+  }
+
+  .villageBannerBtn {
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    padding: 0.35rem 0.75rem;
+    gap: 0.35rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .villageBannerContent {
+    width: 62%;
+    padding-left: 0.85rem;
+    padding-right: 0.35rem;
+  }
+
+  .villageBannerLink::before {
+    width: 66%;
+  }
+
+  .villageBannerHeading {
+    font-size: 1rem;
+  }
+
+  .villageBannerSubtitle {
+    font-size: 0.6875rem;
+  }
+
+  .villageBannerBtn {
+    font-size: 0.58rem;
+    padding: 0.3rem 0.6rem;
   }
 }
 
@@ -1585,6 +1762,72 @@
   line-height: 1.5;
   display: flex;
   gap: var(--space-3);
+}
+
+@media (max-width: 768px) {
+  .institutionVisual {
+    min-height: 280px;
+  }
+
+  .institutionContent {
+    padding: 1.75rem 1.25rem;
+    gap: 0.75rem;
+  }
+
+  .institutionHeading {
+    font-size: clamp(1.4rem, 5vw, 1.75rem);
+    line-height: 1.15;
+  }
+
+  .institutionPara {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+  }
+
+  .institutionList {
+    margin-top: 0.25rem;
+  }
+
+  .institutionListItem {
+    padding: 0.35rem 0;
+    font-size: 0.7rem;
+    line-height: 1.35;
+    gap: 0.5rem;
+  }
+
+  .institutionCtaWrapper {
+    margin-top: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .institutionVisual {
+    min-height: 240px;
+  }
+
+  .institutionContent {
+    padding: 1.5rem 1rem;
+    gap: 0.65rem;
+  }
+
+  .institutionHeading {
+    font-size: 1.35rem;
+  }
+
+  .institutionPara {
+    font-size: 0.75rem;
+    line-height: 1.4;
+  }
+
+  .institutionListItem {
+    padding: 0.28rem 0;
+    font-size: 0.675rem;
+    line-height: 1.3;
+  }
+
+  .institutionCtaWrapper {
+    margin-top: 0.35rem;
+  }
 }
 
 /* SECTION 06 & 07 — FOUNDATION & TIMELINE */
@@ -1900,7 +2143,95 @@
 @media (max-width: 900px) {
   .b2bBannerSection {
     min-height: auto;
-    padding: 4rem 0;
+    padding: 3.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .b2bBannerSection {
+    min-height: 340px;
+    padding: 2.25rem 0;
+  }
+
+  .b2bBannerContainer {
+    padding: 0 1.25rem;
+  }
+
+  .b2bBannerContent {
+    max-width: 100%;
+  }
+
+  .b2bBannerEyebrow {
+    font-size: 0.6875rem;
+    letter-spacing: 0.16em;
+    margin-bottom: 0.5rem;
+  }
+
+  .b2bBannerHeading {
+    font-size: clamp(1.4rem, 5.5vw, 1.85rem);
+    line-height: 1.15;
+    margin: 0 0 0.65rem 0;
+  }
+
+  .b2bBannerParagraph {
+    font-size: 0.8125rem;
+    line-height: 1.45;
+    margin: 0 0 1.15rem 0;
+    max-width: 92%;
+  }
+
+  .b2bBannerButtons {
+    gap: 0.5rem;
+    width: 100%;
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .b2bBannerPrimaryBtn,
+  .b2bBannerSecondaryBtn {
+    padding: 0.55rem 1.15rem;
+    font-size: 0.6875rem;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .b2bBannerSection {
+    min-height: 300px;
+    padding: 1.75rem 0;
+  }
+
+  .b2bBannerContainer {
+    padding: 0 1rem;
+  }
+
+  .b2bBannerEyebrow {
+    font-size: 0.625rem;
+    margin-bottom: 0.4rem;
+  }
+
+  .b2bBannerHeading {
+    font-size: 1.35rem;
+    margin: 0 0 0.5rem 0;
+  }
+
+  .b2bBannerParagraph {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    margin: 0 0 0.95rem 0;
+    max-width: 96%;
+  }
+
+  .b2bBannerButtons {
+    gap: 0.45rem;
+  }
+
+  .b2bBannerPrimaryBtn,
+  .b2bBannerSecondaryBtn {
+    padding: 0.5rem 1rem;
+    font-size: 0.65rem;
   }
 }
 
