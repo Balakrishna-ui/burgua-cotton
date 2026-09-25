@@ -335,21 +335,33 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* SECTION 12 — B2B TRADE & BESPOKE DEVELOPMENT */}
-      <section className={styles.b2bSection} aria-label="B2B Commercial Sourcing">
-        <div className="container">
-          <div className={styles.b2bCard} data-reveal>
-            <span className="section-label section-label-light">10 — B2B &amp; SOURCING</span>
-            <h2 className={styles.b2bHeading}>Textiles for Purpose</h2>
-            <p className={styles.b2bText}>
+      {/* SECTION 10 — B2B TRADE & BESPOKE DEVELOPMENT */}
+      <section className={styles.b2bBannerSection} aria-label="B2B Commercial Sourcing">
+        <Image
+          src="/images/wiving.png"
+          alt="Traditional handloom weaving and warp preparation in Burgula, Telangana"
+          fill
+          sizes="100vw"
+          className={styles.b2bBannerBgImage}
+        />
+        <div className={styles.b2bBannerContainer}>
+          <div className={styles.b2bBannerContent}>
+            <span className={styles.b2bBannerEyebrow}>&mdash; 10 &mdash; B2B &amp; SOURCING</span>
+            <h2 className={styles.b2bBannerHeading}>
+              Textiles for a<br />
+              Better Tomorrow
+            </h2>
+            <p className={styles.b2bBannerParagraph}>
               For designers, labels, manufacturers, retailers, architects and hospitality brands seeking verified handloom yardage, custom weave developments, and traceable material origin.
             </p>
-            <div className={styles.b2bButtonRow}>
-              <a href="mailto:cottontrustburgula@gmail.com" className="btn btn-hero-white">
-                Start B2B Trade Enquiry
+            <div className={styles.b2bBannerButtons}>
+              <a href="mailto:cottontrustburgula@gmail.com" className={styles.b2bBannerPrimaryBtn}>
+                <span>START B2B TRADE ENQUIRY</span>
+                <ArrowRight size={14} className={styles.btnArrow} aria-hidden="true" />
               </a>
-              <Link href="/our-story" className="btn btn-hero-outline">
-                View Story &amp; Philosophy
+              <Link href="/our-story" className={styles.b2bBannerSecondaryBtn}>
+                <span>VIEW STORY &amp; PHILOSOPHY</span>
+                <ArrowRight size={14} className={styles.btnArrow} aria-hidden="true" />
               </Link>
             </div>
           </div>

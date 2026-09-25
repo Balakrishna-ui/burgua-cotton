@@ -96,11 +96,11 @@ export default function AboutPage() {
               </div>
             </div>
 
-            {/* Right Visual Column: Weaver at Loom */}
+            {/* Right Visual Column: Community Yarn Spinning */}
             <div className={styles.storyVisual}>
               <Image
-                src="/images/hero-weaver.png"
-                alt="Telangana handloom weaver working at traditional pit-loom"
+                src="/images/1211.jpg"
+                alt="Burgula community members working on decentralised cotton yarn spinning machinery"
                 fill
                 sizes="(max-width: 992px) 100vw, 50vw"
                 className={styles.storyImg}

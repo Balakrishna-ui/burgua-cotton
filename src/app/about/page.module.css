@@ -20,7 +20,7 @@
     rgba(247, 243, 238, 0.88) 38%,
     rgba(247, 243, 238, 0.42) 55%,
     rgba(247, 243, 238, 0) 72%
-  ), url('/images/abt1.png');
+  ), url('/images/about-hero.png');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -128,7 +128,7 @@
       rgba(247, 243, 238, 0.88) 55%,
       rgba(247, 243, 238, 0.35) 80%,
       rgba(247, 243, 238, 0.05) 100%
-    ), url('/images/abt1.png');
+    ), url('/images/about-hero.png');
   }
 
   .heroVisual {
@@ -257,7 +257,7 @@
 
 .storyImg {
   object-fit: cover !important;
-  object-position: 85% center !important;
+  object-position: center center !important;
 }
 
 .storyQuoteOverlay {
