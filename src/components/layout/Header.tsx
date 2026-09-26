@@ -4,7 +4,7 @@ import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
-import { Menu, X, ArrowRight } from 'lucide-react';
+import { Menu, X, ArrowRight, Home, Users, BookOpen } from 'lucide-react';
 import styles from './Header.module.css';
 
 export function Header() {
@@ -16,20 +16,20 @@ export function Header() {
   }, [pathname]);
 
   const navLinks = [
-    { href: '/', label: 'HOME' },
-    { href: '/about', label: 'ABOUT US' },
-    { href: '/our-story', label: 'OUR STORY' },
+    { href: '/', label: 'HOME', icon: Home },
+    { href: '/about', label: 'ABOUT US', icon: Users },
+    { href: '/our-story', label: 'OUR STORY', icon: BookOpen },
   ];
 
   return (
     <header className={styles.header}>
-      {/* Colorful heritage gradient stripe at the top */}
+      {/* Subtle Handloom Heritage Accent Stripe */}
       <div className={styles.headerTopStripe} aria-hidden="true" />
 
-      <div className="container">
+      <div className={styles.headerContainer}>
         <div className={styles.inner}>
-          {/* Brand Logo */}
-          <Link href="/" className={styles.brand} aria-label="Burgula Cotton Home">
+          {/* Brand Logo — EXACT EXISTING LOGO */}
+          <Link href="/" className={styles.brand} aria-label="Burgula Cotton Trust Home">
             <Image
               src="/images/logo.png"
               alt="Burgula Cotton Trust"
@@ -40,28 +40,29 @@ export function Header() {
             />
           </Link>
 
-          {/* Desktop Navigation - Pill Capsule with Active Glow */}
+          {/* Desktop Navigation — Centered Heritage Layout with Icons */}
           <nav className={styles.nav} aria-label="Main Navigation">
             {navLinks.map((link) => {
               const isActive = pathname === link.href;
+              const Icon = link.icon;
               return (
                 <Link
                   key={link.href}
                   href={link.href}
                   className={`${styles.navLink} ${isActive ? styles.navLinkActive : ''}`}
                 >
-                  {isActive && <span className={styles.activeDot} aria-hidden="true" />}
+                  <Icon size={14} className={styles.navIcon} aria-hidden="true" />
                   <span>{link.label}</span>
                 </Link>
               );
             })}
           </nav>
 
-          {/* Right Action Utilities */}
+          {/* Right Action Utilities — GET IN TOUCH */}
           <div className={styles.actions}>
             <Link href="/get-in-touch" className={styles.ctaBtn}>
               <span>GET IN TOUCH</span>
-              <ArrowRight size={14} className={styles.ctaArrow} />
+              <ArrowRight size={13} className={styles.ctaArrow} aria-hidden="true" />
             </Link>
 
             <button
@@ -82,20 +83,22 @@ export function Header() {
         <div className={styles.mobileNav}>
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
+            const Icon = link.icon;
             return (
               <Link
                 key={link.href}
                 href={link.href}
                 className={`${styles.mobileNavLink} ${isActive ? styles.mobileNavLinkActive : ''}`}
               >
-                {isActive && <span className={styles.activeDot} aria-hidden="true" />}
+                <Icon size={16} aria-hidden="true" />
                 <span>{link.label}</span>
               </Link>
             );
           })}
-          <div style={{ marginTop: 'var(--space-4)' }}>
-            <Link href="/get-in-touch" className={styles.mobileCtaPrimary} style={{ textAlign: 'center' }}>
-              Get In Touch &rarr;
+          <div className={styles.mobileCtaWrapper}>
+            <Link href="/get-in-touch" className={styles.mobileCtaBtn}>
+              <span>GET IN TOUCH</span>
+              <ArrowRight size={14} aria-hidden="true" />
             </Link>
           </div>
         </div>

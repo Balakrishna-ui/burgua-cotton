@@ -528,38 +528,6 @@ export function GetInTouchClient() {
           </div>
         </div>
       </section>
-
-      {/* ====================================================================
-          4. FINAL FEATURE SECTION — A SHARED FUTURE
-          ==================================================================== */}
-      <section className={styles.featureSection} aria-label="A Shared Future">
-        <div className="container">
-          <div className={styles.featureGrid}>
-            {/* Left: Cotton Image */}
-            <div className={styles.featureImageWrapper}>
-              <Image
-                src="/images/journey-strip/cotton.png"
-                alt="Ripe organic cotton bolls ready for harvest in Burgula"
-                fill
-                sizes="(max-width: 860px) 100vw, 50vw"
-                className={styles.featureImage}
-              />
-            </div>
-
-            {/* Right: Text Card Panel */}
-            <div className={styles.featureContent}>
-              <div className={styles.featureEyebrowRow}>
-                <span className={styles.featureEyebrowDash} aria-hidden="true" />
-                <span className={styles.featureEyebrow}>A SHARED FUTURE</span>
-              </div>
-              <h2 className={styles.featureHeading}>From Cotton to Community</h2>
-              <p className={styles.featureParagraph}>
-                We believe in partnerships, knowledge sharing and collective action to create a more equitable and sustainable future.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

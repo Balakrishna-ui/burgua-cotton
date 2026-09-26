@@ -20,7 +20,7 @@
     rgba(247, 243, 238, 0.88) 38%,
     rgba(247, 243, 238, 0.42) 55%,
     rgba(247, 243, 238, 0) 72%
-  ), url('/images/about-hero.png');
+  ), url('/images/abt.png');
   background-size: cover;
   background-position: right center;
   background-repeat: no-repeat;
@@ -128,7 +128,7 @@
       rgba(247, 243, 238, 0.88) 55%,
       rgba(247, 243, 238, 0.35) 80%,
       rgba(247, 243, 238, 0.05) 100%
-    ), url('/images/about-hero.png');
+    ), url('/images/abt.png');
   }
 
   .heroVisual {
@@ -145,7 +145,7 @@
       rgba(247, 243, 238, 0.86) 0%,
       rgba(247, 243, 238, 0.80) 50%,
       rgba(247, 243, 238, 0.65) 100%
-    ), url('/images/about-hero.png');
+    ), url('/images/abt.png');
   }
 
   .heroVisual {
