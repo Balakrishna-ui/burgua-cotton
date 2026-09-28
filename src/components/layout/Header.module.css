@@ -2,23 +2,22 @@
   position: sticky;
   top: 0;
   z-index: var(--z-header, 100);
-  background-color: #FAF7F2;
-  border-bottom: 1px solid rgba(223, 201, 158, 0.45);
-  box-shadow: 0 2px 14px rgba(22, 58, 72, 0.04);
+  background-color: #FFFFFF;
+  border-bottom: 1px solid rgba(16, 63, 95, 0.1);
+  box-shadow: 0 2px 14px rgba(16, 63, 95, 0.04);
   transition: all var(--transition-base, 0.25s ease);
 }
 
 /* Subtle Handloom Heritage Accent Stripe at the very top */
 .headerTopStripe {
   width: 100%;
-  height: 2.5px;
+  height: 2px;
   background: linear-gradient(
     90deg,
-    #0E3325 0%,
-    #17382B 25%,
-    #DFC99E 50%,
-    #B98733 75%,
-    #0E3325 100%
+    #9BB24E 0%,
+    #E7B234 18%,
+    #E7B234 85%,
+    #103F5F 100%
   );
 }
 
@@ -80,7 +79,7 @@
   font-weight: 600;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: #17382B;
+  color: #103F5F;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -98,15 +97,15 @@
 }
 
 .navLink:hover {
-  color: #0E3325;
-  background-color: rgba(14, 51, 37, 0.06);
+  color: #103F5F;
+  background-color: rgba(16, 63, 95, 0.06);
 }
 
-/* Active State: Clean Solid Forest Green Pill per Reference */
+/* Active State: Clean Solid Navy Pill per Reference */
 .navLinkActive {
-  background-color: #0E3325 !important;
+  background-color: #103F5F !important;
   color: #FFFFFF !important;
-  box-shadow: 0 2px 8px rgba(14, 51, 37, 0.18);
+  box-shadow: 0 2px 8px rgba(16, 63, 95, 0.22);
 }
 
 .navLinkActive .navIcon {
@@ -114,7 +113,7 @@
 }
 
 .navLinkActive:hover {
-  background-color: #133E2E !important;
+  background-color: #0C314B !important;
   color: #FFFFFF !important;
 }
 
@@ -139,9 +138,9 @@
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
-  color: #0E3325;
-  background-color: transparent;
-  border: 1.5px solid #0E3325;
+  color: #103F5F;
+  background-color: #FFFFFF;
+  border: 1.5px solid #103F5F;
   transition: all 0.25s ease;
   text-decoration: none;
   white-space: nowrap;
@@ -154,9 +153,9 @@
 }
 
 .ctaBtn:hover {
-  background-color: #0E3325;
+  background-color: #103F5F;
   color: #FFFFFF;
-  box-shadow: 0 4px 14px rgba(14, 51, 37, 0.2);
+  box-shadow: 0 4px 14px rgba(16, 63, 95, 0.2);
   transform: translateY(-1px);
 }
 
@@ -177,17 +176,17 @@
   height: 42px;
   min-width: var(--touch-target-min, 44px);
   min-height: var(--touch-target-min, 44px);
-  color: #0E3325;
-  background: rgba(223, 201, 158, 0.2);
-  border: 1px solid rgba(223, 201, 158, 0.45);
+  color: #103F5F;
+  background: rgba(16, 63, 95, 0.05);
+  border: 1px solid rgba(16, 63, 95, 0.18);
   border-radius: 8px;
   touch-action: manipulation;
   transition: all 0.2s ease;
 }
 
 .mobileMenuBtn:hover {
-  background: rgba(14, 51, 37, 0.08);
-  color: #0E3325;
+  background: rgba(16, 63, 95, 0.1);
+  color: #103F5F;
 }
 
 @media (min-width: 1024px) {
@@ -199,21 +198,21 @@
 /* Mobile Drawer */
 .mobileNav {
   position: fixed;
-  top: clamp(68px, calc(7.5vw + 2.5px), 78.5px);
+  top: clamp(68px, calc(7.5vw + 2px), 78px);
   left: 0;
   right: 0;
   bottom: 0;
-  height: calc(100dvh - clamp(68px, calc(7.5vw + 2.5px), 78.5px));
-  background: linear-gradient(180deg, #FAF7F2 0%, #F5EFE4 100%);
+  height: calc(100dvh - clamp(68px, calc(7.5vw + 2px), 78px));
+  background: #FFFFFF;
   padding: 1.5rem clamp(1rem, 4vw, 1.5rem);
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
-  border-top: 2px solid #DFC99E;
+  border-top: 2px solid #E7B234;
   z-index: var(--z-overlay, 900);
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
-  box-shadow: 0 12px 32px rgba(22, 58, 72, 0.15);
+  box-shadow: 0 12px 32px rgba(16, 63, 95, 0.12);
 }
 
 .mobileNavLink {
@@ -221,8 +220,9 @@
   font-size: 1rem;
   font-weight: 600;
   letter-spacing: 0.08em;
-  color: #17382B;
-  border-bottom: 1px solid rgba(223, 201, 158, 0.3);
+  text-transform: uppercase;
+  color: #103F5F;
+  border-bottom: 1px solid rgba(16, 63, 95, 0.08);
   padding: 0.85rem 0.5rem;
   display: flex;
   align-items: center;
@@ -232,9 +232,9 @@
 }
 
 .mobileNavLinkActive {
-  color: #0E3325 !important;
+  color: #FFFFFF !important;
   font-weight: 700;
-  background-color: rgba(14, 51, 37, 0.06);
+  background-color: #103F5F !important;
   border-radius: 6px;
   padding-left: 0.75rem;
 }
@@ -249,7 +249,7 @@
   justify-content: center;
   gap: 0.5rem;
   padding: 0.85rem 1.5rem;
-  background: #0E3325;
+  background: #103F5F;
   color: #FFFFFF;
   border-radius: 9999px;
   font-family: var(--font-sans, sans-serif);
@@ -258,5 +258,5 @@
   letter-spacing: 0.08em;
   text-transform: uppercase;
   text-decoration: none;
-  box-shadow: 0 4px 14px rgba(14, 51, 37, 0.22);
+  box-shadow: 0 4px 14px rgba(16, 63, 95, 0.25);
 }

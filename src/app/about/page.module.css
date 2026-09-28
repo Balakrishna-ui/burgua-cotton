@@ -58,7 +58,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gold, #C29B38);
+  color: #E7B234;
   text-transform: uppercase;
   margin-bottom: 0.65rem;
 }
@@ -67,7 +67,7 @@
   font-family: var(--font-serif);
   font-size: clamp(2.5rem, 4.8vw, 4.25rem);
   font-weight: 500;
-  color: var(--color-text-primary, #1A1715);
+  color: #103F5F;
   line-height: 1.1;
   letter-spacing: -0.015em;
   margin-bottom: 0.5rem;
@@ -77,7 +77,7 @@
   font-family: var(--font-serif);
   font-size: clamp(1.35rem, 2.2vw, 1.85rem);
   font-weight: 400;
-  color: var(--color-text-secondary, #5C554E);
+  color: #E7B234;
   line-height: 1.35;
   margin-bottom: 1.25rem;
 }
@@ -98,12 +98,12 @@
   font-family: var(--font-sans);
   font-size: clamp(0.75rem, 0.95vw, 0.875rem);
   font-weight: 500;
-  color: var(--color-text-secondary, #5C554E);
+  color: #888888;
   letter-spacing: 0.04em;
 }
 
 .heroTaglineSep {
-  color: #C5BCB0;
+  color: #C6C6C6;
   font-weight: 300;
 }
 
@@ -240,7 +240,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gold, #C29B38);
+  color: #E7B234;
   text-transform: uppercase;
 }
 
@@ -249,15 +249,19 @@
   font-size: clamp(2.15rem, 3.8vw, 3.25rem);
   font-weight: 500;
   line-height: 1.15;
-  color: var(--color-text-primary, #1A1715);
+  color: #103F5F;
   margin-bottom: 0.5rem;
+}
+
+.storyHeadingGold {
+  color: #E7B234;
 }
 
 .storyParagraph {
   font-family: var(--font-sans);
   font-size: clamp(0.875rem, 0.98vw, 0.9375rem);
   line-height: 1.75;
-  color: var(--color-text-secondary, #5C554E);
+  color: #103F5F;
   text-align: justify;
 }
 
@@ -363,7 +367,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gold, #C29B38);
+  color: #E7B234;
   text-transform: uppercase;
   margin-bottom: 0.6rem;
   display: block;
@@ -373,15 +377,19 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.5vw, 3rem);
   font-weight: 500;
-  color: var(--color-text-primary, #1A1715);
+  color: #103F5F;
   line-height: 1.15;
+}
+
+.whatWeDoHeadingGold {
+  color: #E7B234;
 }
 
 .whatWeDoIntroText {
   font-family: var(--font-sans);
   font-size: clamp(0.875rem, 1vw, 0.9375rem);
   line-height: 1.65;
-  color: var(--color-text-secondary, #5C554E);
+  color: #103F5F;
   max-width: 440px;
 }
 
@@ -438,7 +446,7 @@
   font-family: var(--font-sans);
   font-size: 0.875rem;
   font-weight: 700;
-  color: var(--color-text-primary, #1A1715);
+  color: #103F5F;
   margin-bottom: 0.75rem;
   line-height: 1.35;
   min-height: 2.4em;
@@ -451,7 +459,7 @@
   font-family: var(--font-sans);
   font-size: 0.75rem;
   line-height: 1.6;
-  color: var(--color-text-secondary, #5C554E);
+  color: #888888;
 }
 
 /* ==========================================================================
@@ -509,7 +517,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gold, #C29B38);
+  color: #E7B234;
   text-transform: uppercase;
 }
 
@@ -517,15 +525,19 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.2vw, 2.85rem);
   font-weight: 400;
-  color: #FAF7F2;
+  color: #FFE7BA;
   line-height: 1.18;
+}
+
+.approachHeadingGold {
+  color: #E7B234;
 }
 
 .approachSubheading {
   font-family: var(--font-sans);
   font-size: 0.875rem;
   line-height: 1.65;
-  color: #DDD7CF;
+  color: #C6C6C6;
   max-width: 480px;
 }
 
@@ -563,12 +575,12 @@
   font-family: var(--font-sans);
   font-size: 0.6875rem;
   font-weight: 500;
-  color: #FAF7F2;
+  color: #FFE7BA;
   letter-spacing: 0.04em;
 }
 
 .processArrow {
-  color: rgba(250, 247, 242, 0.6);
+  color: #E7B234;
   font-size: 1rem;
   margin-top: -1.25rem;
 }
@@ -577,7 +589,7 @@
   font-family: var(--font-sans);
   font-size: 0.8125rem;
   line-height: 1.7;
-  color: #C8BFB4;
+  color: #C6C6C6;
   max-width: 500px;
   margin-top: 0.25rem;
 }
@@ -603,7 +615,7 @@
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: var(--color-gold, #C29B38);
+  color: #E7B234;
   text-transform: uppercase;
 }
 
@@ -611,15 +623,19 @@
   font-family: var(--font-serif);
   font-size: clamp(2rem, 3.2vw, 2.85rem);
   font-weight: 400;
-  color: var(--color-text-primary, #1A1715);
+  color: #103F5F;
   line-height: 1.18;
+}
+
+.visionHeadingGold {
+  color: #E7B234;
 }
 
 .visionText {
   font-family: var(--font-sans);
   font-size: clamp(0.875rem, 1.05vw, 1rem);
   line-height: 1.75;
-  color: var(--color-text-secondary, #5C554E);
+  color: #103F5F;
   max-width: 480px;
 }
 
@@ -631,6 +647,6 @@
   font-size: 0.8125rem;
   font-weight: 500;
   letter-spacing: 0.08em;
-  color: var(--color-text-muted, #8C847B);
+  color: #888888;
   text-align: left;
 }

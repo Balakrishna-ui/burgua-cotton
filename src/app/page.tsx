@@ -34,7 +34,7 @@ export default async function HomePage() {
             </h1>
 
             <p className={styles.heroParagraph}>
-              Handloom cotton, rooted in Telangana &mdash; from cotton to yarn to cloth, crafted for a more thoughtful tomorrow.
+              Cotton handloom, rooted in Telangana &mdash; from cotton to yarn to cloth, crafted for a more thoughtful tomorrow.
             </p>
 
             <div className={styles.heroButtons}>
@@ -100,7 +100,7 @@ export default async function HomePage() {
               <span className={styles.textileEyebrowDash} aria-hidden="true" />
               <span className={styles.textileEyebrowText}>OUR TEXTILE</span>
             </div>
-            <h2 className={styles.textileHeading}>Cotton. Yarn. Cloth.</h2>
+            <h2 className={styles.textileHeading}>Cotton. Yarn. <span className={styles.textileHeadingGold}>Cloth.</span></h2>
             <p className={styles.textileParagraph}>
               We work with the purest cotton, skilled hands and traditional techniques to create fabrics that are natural, breathable and timeless.
             </p>
@@ -207,7 +207,7 @@ export default async function HomePage() {
             <span className="section-label section-label-light">HANDLOOM HERITAGE</span>
             <h2 className={styles.handloomHeading}>
               WHERE TRADITION<br />
-              BECOMES FABRIC.
+              <span className={styles.handloomHeadingGold}>BECOMES FABRIC.</span>
             </h2>
           </div>
         </div>
@@ -243,7 +243,7 @@ export default async function HomePage() {
               <span className={styles.clothEyebrowDash} aria-hidden="true" />
               <span className={styles.clothEyebrowText}>OUR JOURNEY</span>
             </div>
-            <h2 className={styles.clothHeading}>From Cotton to Cloth</h2>
+            <h2 className={styles.clothHeading}>From Cotton <span className={styles.clothHeadingGold}>to Cloth</span></h2>
             <p className={styles.clothSubheading}>
               A simple journey that creates stronger communities, sustainable livelihoods and a better tomorrow.
             </p>
@@ -561,7 +561,7 @@ export default async function HomePage() {
                 <span className={styles.institutionEyebrow}>04 — THE INSTITUTION</span>
               </div>
 
-              <h2 className={styles.institutionHeading}>The Burgula Cotton Trust</h2>
+              <h2 className={styles.institutionHeading}>The Burgula <span className={styles.institutionHeadingGold}>Cotton Trust</span></h2>
 
               <p className={styles.institutionPara}>
                 The Trust exists to hold the ecosystem together — the land, the existing assets, the people already working in cotton and handloom, and the enterprise development needed to make it durable.
@@ -638,7 +638,7 @@ export default async function HomePage() {
 
               <h2 className={styles.b2bHeading}>
                 Textiles for a<br />
-                Better Tomorrow
+                <span className={styles.b2bHeadingGold}>Better Tomorrow</span>
               </h2>
 
               <p className={styles.b2bParagraph}>

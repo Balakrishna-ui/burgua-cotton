@@ -1,226 +1,539 @@
+/* ==========================================================================
+   HANDLOOM HERITAGE FOOTER — BURGULA COTTON TRUST
+   Exact Visual Reference: Yale Blue (#103f5f) + Sunflower Gold (#e7b234)
+   Accent Green (#9bb24e) Pill + Blue (#0078b2) Chevrons + Maroon (#79170e) Spool
+   ========================================================================== */
+
 .footer {
-  background-color: var(--color-bg-dark);
-  color: var(--color-text-inverse);
-  padding-top: clamp(3rem, 7vw, var(--space-20));
-  padding-bottom: clamp(2rem, 5vw, var(--space-12));
-  border-top: 1px solid var(--color-border-dark);
+  position: relative;
+  width: 100%;
+  background-color: #103f5f;
+  color: #ffe7ba;
+  overflow: hidden;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* --------------------------------------------------------------------------
+   TOP BANNER: High-Resolution Handloom Weaving Photo + Dual Gold Wave
+   -------------------------------------------------------------------------- */
+.bannerContainer {
+  position: relative;
+  width: 100%;
+  height: clamp(135px, 13.5vw, 195px);
+  overflow: hidden;
+  background-color: #103f5f;
+}
+
+.handloomImgWrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.handloomImg {
+  object-fit: cover;
+  object-position: center 24%;
+  image-rendering: -webkit-optimize-contrast;
+  display: block;
+}
+
+.handloomOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(16, 63, 95, 0.2) 0%,
+    transparent 45%,
+    rgba(16, 63, 95, 0.1) 100%
+  );
+  pointer-events: none;
+}
+
+/* Sweeping Organic Wave Transition */
+.waveSvgWrap {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  width: 100%;
+  height: clamp(75px, 8vw, 126px);
+  pointer-events: none;
+  z-index: 2;
+  line-height: 0;
+}
+
+.topCurveSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+/* --------------------------------------------------------------------------
+   FOOTER MAIN BODY (YALE BLUE #103F5F)
+   -------------------------------------------------------------------------- */
+.footerBody {
+  position: relative;
+  background-color: #103f5f;
+  padding-top: clamp(0.75rem, 1.4vw, 1.5rem);
+  z-index: 3;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2rem, 4vw, var(--space-12));
-  margin-bottom: clamp(2.5rem, 5vw, var(--space-16));
+  grid-template-columns: 1.85fr auto 1.15fr auto 1.45fr;
+  align-items: start;
+  gap: clamp(1.2rem, 2.6vw, 3rem);
+  padding-bottom: clamp(2.5rem, 4vw, 3.8rem);
 }
 
-@media (min-width: 640px) {
-  .grid {
-    grid-template-columns: 1fr 1fr;
-  }
+.colDivider {
+  width: 1px;
+  height: 100%;
+  min-height: 230px;
+  background: linear-gradient(
+    180deg,
+    rgba(231, 178, 52, 0.35) 0%,
+    rgba(231, 178, 52, 0.22) 50%,
+    rgba(231, 178, 52, 0.08) 100%
+  );
 }
 
-@media (min-width: 900px) {
-  .grid {
-    grid-template-columns: 1.9fr 1fr 1.6fr;
-    gap: clamp(2.5rem, 4.5vw, var(--space-16));
-  }
-}
-
+/* --------------------------------------------------------------------------
+   COLUMN 1: Brand, Telugu Name, Green Motto Pill & 4 Pillars
+   -------------------------------------------------------------------------- */
 .brandCol {
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
+  align-items: flex-start;
+}
+
+.regdBadgeGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 0.45rem;
+}
+
+.regdDash {
+  width: 18px;
+  height: 2px;
+  background-color: #e7b234;
+  display: inline-block;
 }
 
 .regdBadge {
-  font-family: var(--font-sans);
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.08em;
-  color: #E5A93C;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #e7b234;
   text-transform: uppercase;
 }
 
 .titleGroup {
   display: flex;
   flex-direction: column;
-  gap: 0.35rem;
+  margin-bottom: 0.75rem;
 }
 
 .title {
-  font-family: var(--font-serif);
-  font-size: 1.85rem;
-  color: var(--color-text-inverse);
-  line-height: 1.1;
-  margin: 0;
+  font-family: var(--font-serif-display, 'Playfair Display', serif);
+  font-size: clamp(1.85rem, 2.4vw, 2.35rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #FFFFFF;
+  margin: 0 0 0.15rem 0;
+  letter-spacing: -0.01em;
 }
 
 .teluguTitle {
   font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
-  font-size: 1.15rem;
+  font-size: clamp(1.2rem, 1.5vw, 1.4rem);
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.88);
+  color: #FFFFFF;
   letter-spacing: 0.02em;
+  line-height: 1.25;
 }
 
+/* Motto Pill — Leaf Green (#9bb24e) matching reference */
 .mottoPill {
   display: inline-flex;
   align-items: center;
-  gap: 0.65rem;
-  padding: 0.4rem 0.95rem;
-  background-color: #6E8B4E;
+  gap: 0.55rem;
+  padding: 0.42rem 1.05rem;
+  background-color: #9bb24e;
   border-radius: 9999px;
-  color: #FFFFFF;
-  font-size: 0.75rem;
-  font-weight: 600;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.25);
+  margin-bottom: 0.95rem;
   width: fit-content;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-  margin: var(--space-1) 0;
+}
+
+.mottoIconWrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+}
+
+.mottoTelugu {
+  font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: #FFFFFF;
 }
 
 .mottoDivider {
-  opacity: 0.65;
+  color: rgba(255, 255, 255, 0.65);
+  font-size: 0.75rem;
+  user-select: none;
+}
+
+.mottoEnglish {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: #FFFFFF;
+  letter-spacing: 0.02em;
 }
 
 .statement {
-  color: var(--color-text-inverse-muted);
-  font-size: var(--text-sm);
-  line-height: var(--leading-relaxed);
-  max-width: 360px;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.88rem;
+  line-height: 1.55;
+  color: rgba(255, 231, 186, 0.92);
+  margin: 0 0 1.5rem 0;
+  max-width: 440px;
 }
 
-.trustDistinction {
-  margin-top: var(--space-2);
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--color-bg-dark-subtle);
-  border-left: 2px solid var(--color-accent);
-  font-size: var(--text-xs);
-  color: var(--color-text-inverse-muted);
-  line-height: 1.5;
+/* 4 Pillars */
+.pillarsRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(0.75rem, 1.5vw, 1.25rem);
+  padding: 0.35rem 0.1rem;
+  width: 100%;
+  max-width: 450px;
+}
+
+.pillarItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  flex: 1;
+  gap: 0.45rem;
+}
+
+.pillarIcon {
+  width: 24px;
+  height: 24px;
+  color: #e7b234;
+  flex-shrink: 0;
+}
+
+.pillarText {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: #FFFFFF;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+/* --------------------------------------------------------------------------
+   COLUMNS 2 & 3: Headings & Navigation / Contact
+   -------------------------------------------------------------------------- */
+.headingGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  margin-bottom: 1.35rem;
 }
 
 .heading {
-  font-family: var(--font-sans);
-  font-size: var(--text-xs);
-  font-weight: 600;
-  letter-spacing: 0.12em;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--color-kora);
-  margin-bottom: var(--space-4);
+  color: #e7b234;
+  margin: 0;
+}
+
+.headingDash {
+  width: 18px;
+  height: 2px;
+  background-color: #e7b234;
+  display: inline-block;
+}
+
+/* Quick Links */
+.linksCol {
+  display: flex;
+  flex-direction: column;
 }
 
 .linkList {
   list-style: none;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
-  gap: var(--space-3);
-  padding: 0;
-  margin: 0;
+  gap: 0.95rem;
 }
 
 .link {
-  font-size: var(--text-sm);
-  color: var(--color-text-inverse-muted);
-  transition: color var(--transition-fast);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFFFFF;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.9rem;
+  font-weight: 500;
   text-decoration: none;
+  transition: color 0.22s ease, transform 0.22s ease;
+  padding: 0.2rem 0;
+}
+
+/* Chevrons in bright secondary blue (#0078b2) per reference */
+.linkChevron {
+  color: #0078b2;
+  font-size: 0.95rem;
+  font-weight: 700;
+  transition: transform 0.22s ease, color 0.22s ease;
 }
 
 .link:hover {
-  color: var(--color-text-inverse);
+  color: #e7b234;
+  transform: translateX(3px);
 }
 
+.link:hover .linkChevron {
+  transform: translateX(2px);
+  color: #e7b234;
+}
+
+/* Contact Column */
 .contactCol {
   display: flex;
   flex-direction: column;
 }
 
-.addressBlock {
-  font-style: normal;
-  color: var(--color-text-inverse-muted);
-  font-size: var(--text-xs);
-  line-height: 1.65;
-  margin-bottom: var(--space-4);
-  padding: var(--space-3) var(--space-4);
-  background-color: var(--color-bg-dark-subtle);
-  border-left: 2px solid #E5A93C;
-  border-radius: 2px;
-}
-
-.addressLine {
-  margin: 0;
-}
-
-.addressLine strong {
-  color: #E5A93C;
-}
-
 .contactItems {
   display: flex;
   flex-direction: column;
-  gap: var(--space-2);
-  font-size: var(--text-xs);
+  gap: 1.05rem;
 }
 
 .contactItem {
   display: flex;
-  align-items: baseline;
-  gap: var(--space-2);
+  align-items: flex-start;
+  gap: 0.85rem;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.86rem;
+  line-height: 1.45;
+  color: #FFFFFF;
 }
 
-.contactLabel {
-  color: var(--color-text-inverse-muted);
-  font-weight: 600;
-  min-width: 50px;
+.contactIconWrap {
+  width: 22px;
+  height: 22px;
+  color: #e7b234;
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contactIconWrap svg {
+  width: 100%;
+  height: 100%;
+}
+
+.addressBlock {
+  font-style: normal;
+  margin: 0;
+  color: #FFFFFF;
+}
+
+.hNo {
+  color: #FFFFFF;
+  font-weight: 700;
 }
 
 .contactLink {
-  color: var(--color-kora);
+  color: #FFFFFF;
   text-decoration: none;
+  transition: color 0.2s ease;
   word-break: break-all;
-  transition: color var(--transition-fast);
 }
 
 .contactLink:hover {
-  color: #FFFFFF;
+  color: #e7b234;
   text-decoration: underline;
 }
 
 .contactVal {
-  color: var(--color-text-inverse);
-  font-weight: 500;
+  color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   BOTTOM SUB-FOOTER BAR + FLOWING GOLDEN THREAD DECORATION & MAROON SPOOL
+   -------------------------------------------------------------------------- */
+.bottomBarWrap {
+  position: relative;
+  width: 100%;
+  border-top: 1px solid rgba(231, 178, 52, 0.25);
+  padding: 1.35rem 0 1.5rem 0;
+  background-color: #103f5f;
+  overflow: hidden;
+}
+
+.threadWavesDecor {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: clamp(280px, 35vw, 520px);
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+.threadWavesSvg {
+  width: 100%;
+  height: 100%;
+  display: block;
 }
 
 .bottomBar {
-  padding-top: var(--space-8);
-  border-top: 1px solid var(--color-border-dark);
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: var(--space-4);
   align-items: center;
-  justify-content: space-between;
-  font-size: var(--text-xs);
-  color: var(--color-text-inverse-muted);
-}
-
-@media (min-width: 768px) {
-  .bottomBar {
-    flex-direction: row;
-  }
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.4rem;
+  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
+  font-size: 0.76rem;
+  color: rgba(255, 231, 186, 0.9);
+  z-index: 2;
 }
 
 .copyright {
-  font-size: var(--text-xs);
+  white-space: nowrap;
 }
 
 .bottomMeta {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: var(--space-3);
-  font-size: var(--text-xs);
-  color: var(--color-text-inverse-muted);
+  gap: 0.55rem;
+  white-space: nowrap;
+}
+
+.bottomSep {
+  color: rgba(231, 178, 52, 0.5);
+  font-weight: 300;
 }
 
 .bottomTelugu {
   font-family: 'Noto Sans Telugu', 'Gautami', sans-serif;
-  color: #E5A93C;
+  color: #e7b234;
+  font-weight: 600;
+}
+
+.bottomDot {
+  color: rgba(231, 178, 52, 0.7);
+}
+
+.bottomHouse {
+  color: rgba(255, 231, 186, 0.9);
+}
+
+/* --------------------------------------------------------------------------
+   RESPONSIVE BREAKPOINTS
+   -------------------------------------------------------------------------- */
+@media (max-width: 1023px) {
+  .grid {
+    grid-template-columns: 1.4fr auto 1fr;
+    gap: 1.75rem;
+  }
+
+  .colDivider:nth-of-type(2) {
+    display: none;
+  }
+
+  .contactCol {
+    grid-column: 1 / -1;
+    margin-top: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(231, 178, 52, 0.2);
+  }
+}
+
+@media (max-width: 767px) {
+  .bannerContainer {
+    height: 100px;
+  }
+
+  .waveSvgWrap {
+    height: 58px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 2.25rem;
+    padding-bottom: 2rem;
+  }
+
+  .colDivider {
+    display: none;
+  }
+
+  .contactCol {
+    margin-top: 0;
+    padding-top: 0;
+    border-top: none;
+  }
+
+  .pillarsRow {
+    flex-wrap: wrap;
+    gap: 1rem 0.5rem;
+  }
+
+  .pillarItem {
+    flex: 1 1 42%;
+  }
+
+  .bottomBar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  .bottomMeta {
+    flex-wrap: wrap;
+  }
+
+  .bottomSep {
+    display: none;
+  }
+
+  .threadWavesDecor {
+    width: 220px;
+    opacity: 0.6;
+  }
 }

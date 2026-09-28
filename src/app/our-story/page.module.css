@@ -1,176 +1,495 @@
+/* ==========================================================================
+   1. HERO SECTION: ASYMMETRIC EDITORIAL SPLIT WITH ORGANIC TRANSITION
+   ========================================================================== */
 .heroSection {
   position: relative;
-  background-color: #E2E2DA;
+  background-color: #FAF8F5;
   border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(1.5rem, 2vw, 2.25rem) 0;
   overflow: hidden;
+}
+
+.heroContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
 }
 
 .heroGrid {
   display: grid;
   grid-template-columns: 1fr;
-  min-height: 0;
+  gap: 1.75rem;
+  align-items: center;
 }
 
 @media (min-width: 992px) {
   .heroGrid {
-    grid-template-columns: 40% 60%;
-    min-height: 0;
+    grid-template-columns: 0.92fr 1.08fr;
+    gap: clamp(1.75rem, 2.5vw, 3rem);
   }
 }
 
 .heroContent {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: 1.75rem 1.25rem;
-  max-width: 660px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-@media (min-width: 992px) {
-  .heroContent {
-    margin: 0;
-    max-width: 100%;
-    padding: clamp(1.5rem, 2.2vw, 2.25rem) clamp(1.5rem, 2.6vw, 2.5rem);
-  }
+  position: relative;
+  z-index: 2;
 }
 
 .heroEyebrowRow {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.75rem;
   margin-bottom: 0.5rem;
 }
 
 .heroEyebrowDash {
-  width: 24px;
+  width: 28px;
   height: 2px;
-  background-color: #9E6B47;
+  background-color: #E7B234;
+  border-radius: 1px;
 }
 
 .heroEyebrow {
   font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.14em;
-  color: #9E6B47;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #E7B234;
   text-transform: uppercase;
 }
 
 .heroHeading {
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.65rem, 2.2vw, 2.25rem);
+  font-size: clamp(2rem, 3vw, 2.85rem);
   font-weight: 500;
   line-height: 1.15;
-  color: var(--color-text-primary, #1A1715);
   letter-spacing: -0.015em;
-  margin-bottom: 0.75rem;
+  margin: 0 0 0.85rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.heroHeadingNavy {
+  color: #103F5F;
+}
+
+.heroHeadingGold {
+  color: #E7B234;
 }
 
 .heroBody {
   display: flex;
   flex-direction: column;
   gap: 0.45rem;
+  max-width: 580px;
 }
 
 .heroParagraph {
   font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
-  font-size: clamp(0.8125rem, 0.88vw, 0.875rem);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
   font-weight: 400;
-  line-height: 1.55;
+  line-height: 1.6;
   color: var(--color-text-secondary, #4A443E);
   margin: 0;
   text-align: left;
 }
 
-.heroVisual {
+.heroBottomDash {
+  width: 28px;
+  height: 2px;
+  background-color: #E7B234;
+  border-radius: 1px;
+  margin-top: 0.85rem;
+}
+
+/* Right Column: Visual Composition with Organic Shapes */
+.heroVisualCol {
   position: relative;
   width: 100%;
-  height: 205px;
-  min-height: 195px;
-  background-color: #E2E2DA;
+  z-index: 2;
+}
+
+.heroVisualWrap {
+  position: relative;
+  width: 100%;
+}
+
+.heroNavyAccent {
+  position: absolute;
+  top: -12px;
+  left: -14px;
+  width: 72px;
+  height: 90px;
+  background-color: #103F5F;
+  border-radius: 28px 8px 8px 18px;
+  z-index: 1;
+}
+
+.heroGoldAccent {
+  position: absolute;
+  bottom: -12px;
+  right: -14px;
+  width: 84px;
+  height: 84px;
+  background-color: #E7B234;
+  border-radius: 12px 18px 28px 12px;
+  z-index: 1;
+  opacity: 0.9;
+}
+
+.heroOrganicCurveSvg {
+  position: absolute;
+  top: -30px;
+  left: -80px;
+  width: calc(100% + 120px);
+  height: calc(100% + 60px);
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+}
+
+.heroBotanicalWatermark {
+  position: absolute;
+  bottom: -15px;
+  left: -70px;
+  width: 140px;
+  height: 170px;
+  pointer-events: none;
+  opacity: 0.35;
+  z-index: 3;
+}
+
+.heroImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  min-height: 220px;
+  border-radius: 28px;
   overflow: hidden;
+  box-shadow: 0 16px 40px -8px rgba(16, 63, 95, 0.16);
+  z-index: 2;
+  background-color: #E2E2DA;
 }
 
-@media (max-width: 480px) {
-  .heroVisual {
-    height: 180px;
-    min-height: 170px;
-  }
-}
-
-@media (min-width: 768px) and (max-width: 991px) {
-  .heroVisual {
-    height: 260px;
-    min-height: 250px;
-  }
-}
-
-@media (min-width: 992px) {
-  .heroVisual {
-    min-height: 100%;
-    height: 100%;
-  }
-}
-
-.heroImg {
+.heroImage {
   object-fit: cover !important;
-  object-position: 65% center !important;
+  object-position: center !important;
+  border-radius: 28px;
 }
 
-.heroVisualFade {
-  display: none;
+@media (max-width: 991px) {
+  .heroImageFrame {
+    aspect-ratio: 16 / 10;
+    min-height: 240px;
+    border-radius: 20px;
+  }
+
+  .heroImage {
+    border-radius: 20px;
+  }
+
+  .heroNavyAccent {
+    top: -8px;
+    left: -10px;
+    width: 50px;
+    height: 60px;
+    border-radius: 20px 6px 6px 12px;
+  }
+
+  .heroGoldAccent {
+    bottom: -8px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 8px 12px 20px 8px;
+  }
+
+  .heroOrganicCurveSvg {
+    display: none;
+  }
+
+  .heroBotanicalWatermark {
+    display: none;
+  }
 }
 
-@media (min-width: 992px) {
-  .heroVisualFade {
-    display: block;
-    position: absolute;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    width: clamp(70px, 7vw, 110px);
-    background: linear-gradient(
-      90deg,
-      #E2E2DA 0%,
-      rgba(226, 226, 218, 0.9) 14%,
-      rgba(226, 226, 218, 0.72) 30%,
-      rgba(226, 226, 218, 0.48) 48%,
-      rgba(226, 226, 218, 0.25) 66%,
-      rgba(226, 226, 218, 0.08) 84%,
-      rgba(226, 226, 218, 0) 100%
-    );
-    z-index: 2;
-    pointer-events: none;
+@media (max-width: 640px) {
+  .heroHeading {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .heroImageFrame {
+    min-height: 200px;
+    border-radius: 16px;
+  }
+
+  .heroImage {
+    border-radius: 16px;
+  }
+
+  .heroNavyAccent {
+    border-radius: 16px 4px 4px 10px;
+  }
+
+  .heroGoldAccent {
+    border-radius: 6px 10px 16px 6px;
   }
 }
 
 /* ==========================================================================
-   2. VILLAGE COMMUNITY & HISTORICAL FOUNDATION SECTION
+   2. VILLAGE COMMUNITY & HISTORICAL FOUNDATION SECTION (EDITORIAL ASYMMETRIC)
    ========================================================================== */
 .villageSection {
-  background-color: #F9F6F0;
+  position: relative;
+  background-color: #FAF7F2;
   border-bottom: 1px solid var(--color-border, #E8E2D6);
-  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
+  overflow: hidden;
+}
+
+.villageContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
 }
 
 .villageGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(2rem, 3.5vw, 3.5rem);
+  gap: 1.75rem;
   align-items: center;
 }
 
 @media (min-width: 992px) {
   .villageGrid {
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(1.75rem, 2.5vw, 3.25rem);
   }
 }
 
+.villageContentCol {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 2;
+}
+
+.villageEyebrowRow {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.villageEyebrowDash {
+  width: 28px;
+  height: 2px;
+  background-color: #E7B234;
+  border-radius: 1px;
+}
+
+.villageEyebrow {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  color: #8C7D70;
+  text-transform: uppercase;
+}
+
+.villageTitle {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  color: #103F5F;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.85rem 0;
+}
+
+.villageBodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 590px;
+}
+
+.villagePara {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+  text-align: left;
+}
+
+.villageHighlightQuote {
+  background-color: #F5EFE6;
+  border-left: 3.5px solid #E7B234;
+  border-radius: 12px;
+  padding: 0.75rem 1.15rem;
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.villageQuoteIconBadge {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  background-color: #DE9F35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.villageQuoteSvg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.villageHighlightQuoteText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #103F5F;
+  margin: 0;
+  font-style: italic;
+}
+
+.villageFinalSentence {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+.villageBottomDash {
+  width: 28px;
+  height: 2px;
+  background-color: #E7B234;
+  border-radius: 1px;
+  margin-top: 0.85rem;
+}
+
+/* Right Column: Visual with Offset Depth Shapes */
 .villageVisualCol {
+  position: relative;
   width: 100%;
+  z-index: 2;
+}
+
+.villageVisualWrap {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+}
+
+.villageNavyAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 130px;
+  background-color: #103F5F;
+  border-radius: 28px 8px 8px 18px;
+  z-index: 1;
+}
+
+.villageGoldAccent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  background-color: #DE9F35;
+  border-radius: 12px 18px 28px 12px;
+  z-index: 1;
+}
+
+.villageImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 351 / 225;
+  min-height: 210px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -6px rgba(16, 63, 95, 0.16);
+  z-index: 2;
+  background-color: #D8D6CE;
+}
+
+.villageMainImage {
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 28px;
+}
+
+@media (max-width: 991px) {
+  .villageNavyAccent {
+    width: 52px;
+    height: 84px;
+    border-radius: 20px 6px 6px 12px;
+  }
+
+  .villageGoldAccent {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px 12px 20px 8px;
+  }
+
+  .villageImageFrame {
+    border-radius: 20px;
+  }
+
+  .villageMainImage {
+    border-radius: 20px;
+  }
+
+  .villageVisualWrap {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .villageTitle {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .villageImageFrame {
+    min-height: 200px;
+    border-radius: 16px;
+  }
+
+  .villageMainImage {
+    border-radius: 16px;
+  }
+
+  .villageNavyAccent {
+    border-radius: 16px 4px 4px 10px;
+    width: 40px;
+    height: 60px;
+  }
+
+  .villageGoldAccent {
+    border-radius: 6px 10px 16px 6px;
+    width: 48px;
+    height: 48px;
+  }
 }
 
 .villageImageWrapper {
@@ -247,332 +566,1178 @@
 }
 
 /* ==========================================================================
-   3. VILLAGE TEXTILE ECONOMY SECTION (TEXT LEFT, IMAGE RIGHT)
+   3. VILLAGE TEXTILE ECONOMY SECTION (EDITORIAL ASYMMETRIC)
    ========================================================================== */
 .economySection {
+  position: relative;
   background-color: #FAF8F5;
   border-bottom: 1px solid var(--color-border, #E8E2D6);
-  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
+  overflow: hidden;
+}
+
+.economyContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
 }
 
 .economyGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(2rem, 3.5vw, 3.5rem);
+  gap: 1.75rem;
   align-items: center;
 }
 
 @media (min-width: 992px) {
   .economyGrid {
-    grid-template-columns: 1.05fr 0.95fr;
-    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: clamp(1.75rem, 2.5vw, 3.25rem);
   }
 }
 
 .economyContentCol {
   display: flex;
   flex-direction: column;
+  position: relative;
+  z-index: 2;
 }
 
+.economyTopDash {
+  width: 28px;
+  height: 2px;
+  background-color: #E7B234;
+  border-radius: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.economyHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.85rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.economyHeadingNavy {
+  color: #103F5F;
+}
+
+.economyHeadingGold {
+  color: #DE9F35;
+}
+
+.economyBodyText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  max-width: 590px;
+}
+
+.economyPara {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+  text-align: left;
+}
+
+.economyHighlightQuote {
+  background-color: #F5EFE6;
+  border-left: 3.5px solid #DE9F35;
+  border-radius: 12px;
+  padding: 0.75rem 1.15rem;
+  margin: 0.25rem 0;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.economyQuoteIconBadge {
+  width: 36px;
+  height: 36px;
+  min-width: 36px;
+  min-height: 36px;
+  border-radius: 50%;
+  background-color: #DE9F35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  flex-shrink: 0;
+}
+
+.economyQuoteSvg {
+  width: 16px;
+  height: 16px;
+  fill: currentColor;
+}
+
+.economyHighlightQuoteText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.1rem, 1.35vw, 1.35rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #103F5F;
+  margin: 0;
+  font-style: italic;
+}
+
+/* Right Column: Visual with Layered Offset Shapes */
 .economyVisualCol {
-  width: 100%;
-}
-
-.economyImageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 388 / 211;
-  min-height: 220px;
-  background-color: #D8D6CE;
+  z-index: 2;
+}
+
+.economyVisualWrap {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+}
+
+.economyNavyAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 130px;
+  background-color: #103F5F;
+  border-radius: 28px 8px 8px 18px;
+  z-index: 1;
+}
+
+.economyGoldOutlineAccent {
+  position: absolute;
+  top: 6px;
+  right: 6px;
+  width: 90px;
+  height: 90px;
+  border: 1.5px solid #DE9F35;
+  border-radius: 24px;
+  z-index: 1;
+  opacity: 0.7;
+}
+
+.economyGoldAccent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  background-color: #DE9F35;
+  border-radius: 12px 18px 28px 12px;
+  z-index: 1;
+}
+
+.economyImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 388 / 235;
+  min-height: 210px;
+  border-radius: 28px;
   overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 16px 36px -6px rgba(16, 63, 95, 0.16);
+  z-index: 2;
+  background-color: #D8D6CE;
+}
+
+.economyMainImage {
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 28px;
+}
+
+@media (max-width: 991px) {
+  .economyNavyAccent {
+    width: 52px;
+    height: 84px;
+    border-radius: 20px 6px 6px 12px;
+  }
+
+  .economyGoldOutlineAccent {
+    display: none;
+  }
+
+  .economyGoldAccent {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px 12px 20px 8px;
+  }
+
+  .economyImageFrame {
+    border-radius: 20px;
+  }
+
+  .economyMainImage {
+    border-radius: 20px;
+  }
+
+  .economyVisualWrap {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .economyHeading {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .economyImageFrame {
+    min-height: 200px;
+    border-radius: 16px;
+  }
+
+  .economyMainImage {
+    border-radius: 16px;
+  }
+
+  .economyNavyAccent {
+    border-radius: 16px 4px 4px 10px;
+    width: 40px;
+    height: 60px;
+  }
+
+  .economyGoldAccent {
+    border-radius: 6px 10px 16px 6px;
+    width: 48px;
+    height: 48px;
+  }
 }
 
 /* ==========================================================================
-   4. THE REVIVAL TODAY SECTION (IMAGE LEFT, TEXT RIGHT)
+   4. THE REVIVAL TODAY SECTION (EDITORIAL ASYMMETRIC)
    ========================================================================== */
 .revivalSection {
-  background-color: #E2E2DA;
+  position: relative;
+  background-color: #FAF7F2;
   border-bottom: 1px solid var(--color-border, #E8E2D6);
-  padding: clamp(2.75rem, 5vw, 4.25rem) 0;
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
+  overflow: hidden;
+}
+
+.revivalContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
 }
 
 .revivalGrid {
   display: grid;
   grid-template-columns: 1fr;
-  gap: clamp(2rem, 3.5vw, 3.5rem);
+  gap: 1.75rem;
   align-items: center;
 }
 
 @media (min-width: 992px) {
   .revivalGrid {
-    grid-template-columns: 0.95fr 1.05fr;
-    gap: clamp(2.5rem, 4.5vw, 4.25rem);
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: clamp(1.75rem, 2.5vw, 3.25rem);
   }
 }
 
+/* Left Column: Visual with Layered Offset Shapes */
 .revivalVisualCol {
-  width: 100%;
-}
-
-.revivalImageWrapper {
   position: relative;
   width: 100%;
-  aspect-ratio: 378 / 198;
-  min-height: 220px;
-  background-color: #D8D6CE;
-  overflow: hidden;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  z-index: 2;
 }
 
+.revivalVisualWrap {
+  position: relative;
+  width: 100%;
+  padding: 16px;
+}
+
+.revivalNavyAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 76px;
+  height: 130px;
+  background-color: #103F5F;
+  border-radius: 28px 8px 8px 18px;
+  z-index: 1;
+}
+
+.revivalGoldArcSvg {
+  position: absolute;
+  top: -24px;
+  left: -20px;
+  width: calc(100% + 40px);
+  height: calc(100% + 40px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.revivalGoldAccent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 96px;
+  height: 96px;
+  background-color: #DE9F35;
+  border-radius: 12px 18px 28px 12px;
+  z-index: 1;
+}
+
+.revivalImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 378 / 225;
+  min-height: 210px;
+  border-radius: 28px;
+  overflow: hidden;
+  box-shadow: 0 16px 36px -6px rgba(16, 63, 95, 0.16);
+  z-index: 2;
+  background-color: #D8D6CE;
+}
+
+.revivalMainImage {
+  object-fit: cover !important;
+  object-position: center !important;
+  border-radius: 28px;
+}
+
+/* Right Column: Narrative Content */
 .revivalContentCol {
   display: flex;
   flex-direction: column;
-}
-
-.revivalQuestionText {
-  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.35rem, 1.7vw, 1.75rem);
-  font-weight: 600;
-  line-height: 1.25;
-  color: var(--color-text-primary, #1A1715);
-  margin: 0;
-  letter-spacing: -0.01em;
-}
-
-/* ==========================================================================
-   5. FROM COTTON TO CLOTH (FINAL JOURNEY & BELIEF SECTION)
-   ========================================================================== */
-.journeySection {
-  background-color: #FAF8F5;
-  padding: clamp(3rem, 5.5vw, 4.5rem) 0;
-  border-bottom: 1px solid var(--color-border, #E8E2D6);
-}
-
-.journeyHeader {
-  margin-bottom: 2.25rem;
-}
-
-.journeyHeading {
-  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.75rem, 2.4vw, 2.3rem);
-  font-weight: 500;
-  line-height: 1.2;
-  color: var(--color-text-primary, #1A1715);
-  margin-bottom: 0.5rem;
-}
-
-.journeySubtitle {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.875rem;
-  color: var(--color-text-secondary, #4A443E);
-  margin: 0;
-}
-
-.journeyFlowRow {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 2.5rem;
-  align-items: center;
-  padding-bottom: 3.5rem;
-  border-bottom: 1px solid rgba(157, 104, 68, 0.18);
-  margin-bottom: 3.5rem;
-}
-
-@media (min-width: 992px) {
-  .journeyFlowRow {
-    grid-template-columns: 1.55fr 0.85fr;
-    gap: 3.5rem;
-  }
-}
-
-.journeySteps {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-}
-
-.stepItem {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.65rem;
-  text-align: center;
-}
-
-.stepCircle {
-  width: clamp(58px, 5.5vw, 76px);
-  height: clamp(58px, 5.5vw, 76px);
-  border-radius: 50%;
-  overflow: hidden;
   position: relative;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-  background-color: #E6DFCF;
-  flex-shrink: 0;
+  z-index: 2;
 }
 
-.stepImage {
-  object-fit: cover !important;
+.revivalTopDash {
+  width: 28px;
+  height: 2px;
+  background-color: #E7B234;
+  border-radius: 1px;
+  margin-bottom: 0.75rem;
 }
 
-.stepLabel {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-  color: var(--color-text-primary, #1A1715);
-  text-transform: uppercase;
-}
-
-.stepArrow {
-  font-size: 1.25rem;
-  color: var(--color-text-muted, #7A746E);
-  font-weight: 300;
-  user-select: none;
-}
-
-@media (max-width: 640px) {
-  .journeySteps {
-    row-gap: 1.25rem;
-  }
-
-  .stepItem:nth-of-type(4) {
-    margin-left: auto;
-  }
-
-  .stepArrow:nth-of-type(4) {
-    margin: 0 clamp(1rem, 4vw, 1.75rem);
-  }
-
-  .stepItem:nth-of-type(5) {
-    margin-right: auto;
-  }
-}
-
-.journeyAside {
-  border-left: 2px solid #9D6844;
-  padding-left: 1.5rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.85rem;
-}
-
-.journeyAsideText {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.84rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary, #4A443E);
-  margin: 0;
-}
-
-/* Looking Ahead & Our Belief 2-Column Grid */
-.futureGrid {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2.5rem, 5vw, 4.5rem);
-}
-
-@media (min-width: 992px) {
-  .futureGrid {
-    grid-template-columns: 1fr 1fr;
-  }
-}
-
-.futureCol {
-  display: flex;
-  flex-direction: column;
-  gap: 0.95rem;
-}
-
-.futureHeading {
+.revivalHeading {
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.65rem, 2.2vw, 2.1rem);
-  font-weight: 500;
-  color: var(--color-text-primary, #1A1715);
-  margin-bottom: 0.15rem;
-}
-
-.futureLead {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.875rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary, #4A443E);
-  margin: 0;
-}
-
-.futureList {
-  list-style-type: disc;
-  padding-left: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.35rem;
-  margin: 0.25rem 0;
-}
-
-.futureList li {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.84rem;
-  line-height: 1.5;
-  color: var(--color-text-secondary, #4A443E);
-}
-
-.futureNote {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.84rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary, #4A443E);
-  margin: 0.5rem 0 0 0;
-}
-
-.beliefGroup {
-  display: flex;
-  flex-direction: column;
-  gap: 0.65rem;
-}
-
-.beliefParagraph {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.84rem;
-  line-height: 1.6;
-  color: var(--color-text-secondary, #4A443E);
-  margin: 0;
-}
-
-.communityStatement {
-  border-left: 3px solid #9D6844;
-  padding-left: 1rem;
-  margin: 1.25rem 0 0.5rem 0;
-}
-
-.communityStatementText {
-  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
-  font-size: clamp(1.35rem, 1.8vw, 1.8rem);
+  font-size: clamp(2rem, 3vw, 2.85rem);
   font-weight: 600;
-  color: var(--color-text-primary, #1A1715);
-  line-height: 1.25;
-  margin: 0;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.85rem 0;
 }
 
-.trustSignature {
-  margin-top: 0.75rem;
+.revivalHeadingNavy {
+  color: #103F5F;
+}
+
+.revivalHeadingGold {
+  color: #DE9F35;
+}
+
+.revivalBodyText {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.5rem;
+  max-width: 590px;
 }
 
-.trustName {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.95rem;
+.revivalPara {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+  text-align: left;
+}
+
+.revivalPara strong {
   font-weight: 700;
   color: var(--color-text-primary, #1A1715);
 }
 
-.trustTagline {
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.82rem;
+.revivalHighlightBox {
+  background-color: #F5EFE6;
+  border-left: 3.5px solid #DE9F35;
+  border-radius: 12px;
+  padding: 0.75rem 1.15rem;
+  margin: 0.25rem 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.revivalHighlightText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.2rem, 1.55vw, 1.55rem);
+  font-weight: 600;
+  line-height: 1.35;
+  color: #103F5F;
+  margin: 0;
+  font-style: italic;
+}
+
+@media (max-width: 991px) {
+  .revivalNavyAccent {
+    width: 52px;
+    height: 84px;
+    border-radius: 20px 6px 6px 12px;
+  }
+
+  .revivalGoldArcSvg {
+    display: none;
+  }
+
+  .revivalGoldAccent {
+    width: 64px;
+    height: 64px;
+    border-radius: 8px 12px 20px 8px;
+  }
+
+  .revivalImageFrame {
+    border-radius: 20px;
+  }
+
+  .revivalMainImage {
+    border-radius: 20px;
+  }
+
+  .revivalVisualWrap {
+    padding: 12px;
+  }
+}
+
+@media (max-width: 640px) {
+  .revivalHeading {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .revivalImageFrame {
+    min-height: 200px;
+    border-radius: 16px;
+  }
+
+  .revivalMainImage {
+    border-radius: 16px;
+  }
+
+  .revivalNavyAccent {
+    border-radius: 16px 4px 4px 10px;
+    width: 40px;
+    height: 60px;
+  }
+
+  .revivalGoldAccent {
+    border-radius: 6px 10px 16px 6px;
+    width: 48px;
+    height: 48px;
+  }
+}
+
+/* ==========================================================================
+   5. FROM COTTON TO CLOTH, IN ONE VILLAGE (EDITORIAL TEXTILE JOURNEY)
+   ========================================================================== */
+.journeySection {
+  position: relative;
+  background-color: #FAF7F2;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
+  overflow: hidden;
+}
+
+.journeyContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
+}
+
+.journeyHeader {
+  margin-bottom: clamp(1.25rem, 2vw, 1.75rem);
+}
+
+.journeyTopDash {
+  width: 28px;
+  height: 2px;
+  background-color: #DE9F35;
+  border-radius: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.journeyHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.5rem 0;
+}
+
+.journeyHeadingNavy {
+  color: #103F5F;
+}
+
+.journeyHeadingGold {
+  color: #DE9F35;
+}
+
+.journeySubtitle {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
   color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+/* Main Grid: Horizontal Journey Track + Editorial Narrative Aside */
+.journeyMainGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+  align-items: center;
+}
+
+@media (min-width: 1100px) {
+  .journeyMainGrid {
+    grid-template-columns: 1fr 340px;
+    gap: clamp(1.75rem, 2.5vw, 3.25rem);
+  }
+}
+
+/* Journey Track Wrapper */
+.journeyTrackWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.journeyThreadSvg {
+  position: absolute;
+  top: 52px;
+  left: 20px;
+  width: calc(100% - 40px);
+  height: 28px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.journeyStagesRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+/* Individual Stage */
+.stageItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.stageVisualWrapper {
+  position: relative;
+  width: 112px;
+  height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 0.85rem;
+}
+
+/* Asymmetric Organic Backdrop Blobs */
+.stageBlob {
+  position: absolute;
+  width: 106px;
+  height: 106px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+.blobCotton {
+  background-color: #C08A4D;
+  border-radius: 46% 54% 62% 38% / 54% 44% 56% 46%;
+  top: -3px;
+  left: -6px;
+}
+
+.blobYarn {
+  background-color: #9FAEA0;
+  border-radius: 54% 46% 38% 62% / 46% 58% 42% 54%;
+  bottom: -3px;
+  right: -5px;
+}
+
+.blobWeaving {
+  background-color: #103F5F;
+  border-radius: 48% 52% 44% 56% / 56% 48% 52% 44%;
+  top: -5px;
+  left: -4px;
+}
+
+.blobFabric {
+  background-color: #DFCAA7;
+  border-radius: 52% 48% 60% 40% / 44% 56% 44% 56%;
+  top: -4px;
+  right: -6px;
+}
+
+.blobLivelihood {
+  background-color: #DE9F35;
+  border-radius: 40% 60% 48% 52% / 50% 44% 56% 50%;
+  bottom: -5px;
+  right: -6px;
+}
+
+/* Foreground Circular Frame */
+.stageCircleFrame {
+  position: relative;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  overflow: hidden;
+  z-index: 2;
+  box-shadow: 0 6px 18px rgba(16, 63, 95, 0.12);
+  border: 2.5px solid #FAF7F2;
+  background-color: #E6DFCF;
+}
+
+.stageImage {
+  object-fit: cover !important;
+  object-position: center !important;
+}
+
+.imageYarn {
+  object-position: 40% center !important;
+}
+
+.imageLivelihood {
+  object-position: 25% 80% !important;
+  transform: scale(1.5);
+  transform-origin: 25% 85%;
+}
+
+/* Stage Label & Dash */
+.stageLabel {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  color: #103F5F;
+  text-transform: uppercase;
+  margin-top: 0.25rem;
+}
+
+.stageLabelDash {
+  width: 20px;
+  height: 2px;
+  background-color: #DE9F35;
+  border-radius: 1px;
+  margin-top: 0.35rem;
+}
+
+/* Arrow Badges */
+.stageArrowBadge {
+  width: 28px;
+  height: 28px;
+  min-width: 28px;
+  min-height: 28px;
+  border-radius: 50%;
+  background-color: #FAF7F2;
+  border: 1.5px solid #DE9F35;
+  color: #DE9F35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 3;
+  margin-bottom: 2.25rem;
+}
+
+.stageArrowSvg {
+  width: 14px;
+  height: 14px;
+}
+
+/* Right Narrative Aside */
+.journeyAside {
+  display: flex;
+  align-items: stretch;
+  gap: 1.25rem;
+  position: relative;
+}
+
+.journeyAsideBorder {
+  width: 2px;
+  background-color: #DE9F35;
+  border-radius: 1px;
+  flex-shrink: 0;
+}
+
+.journeyAsideContent {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.journeyAsideText {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.65;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+@media (max-width: 1099px) and (min-width: 768px) {
+  .stageVisualWrapper {
+    width: 96px;
+    height: 96px;
+  }
+
+  .stageCircleFrame {
+    width: 78px;
+    height: 78px;
+  }
+
+  .stageBlob {
+    width: 90px;
+    height: 90px;
+  }
+
+  .journeyThreadSvg {
+    top: 45px;
+  }
+
+  .stageLabel {
+    font-size: 0.72rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .journeyThreadSvg {
+    display: none;
+  }
+
+  .journeyStagesRow {
+    flex-direction: column;
+    gap: 0.85rem;
+    position: relative;
+  }
+
+  .journeyStagesRow::before {
+    content: '';
+    position: absolute;
+    top: 45px;
+    bottom: 45px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 2px;
+    background-color: #DE9F35;
+    z-index: 1;
+  }
+
+  .stageArrowBadge {
+    margin-bottom: 0;
+    transform: rotate(90deg);
+    background-color: #FAF7F2;
+    z-index: 2;
+  }
+
+  .journeyHeading {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .journeyAside {
+    margin-top: 1.5rem;
+  }
+}
+
+/* ==========================================================================
+   6. LOOKING AHEAD & OUR BELIEF SECTION (CLOSING EDITORIAL ROADMAP)
+   ========================================================================== */
+.futureSection {
+  position: relative;
+  background-color: #FAF7F2;
+  border-bottom: 1px solid var(--color-border, #E8E2D6);
+  padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
+  overflow: hidden;
+}
+
+.futureContainer {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 3.5vw, 2.75rem);
+}
+
+.futureGrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.75rem;
+}
+
+@media (min-width: 1060px) {
+  .futureGrid {
+    grid-template-columns: 1.15fr 0.95fr;
+    gap: clamp(1.75rem, 2.5vw, 3.25rem);
+  }
+}
+
+/* --- Left Column: Looking Ahead Roadmap --- */
+.futureColLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.aheadTopDash {
+  width: 28px;
+  height: 2px;
+  background-color: #DE9F35;
+  border-radius: 1px;
+  margin-bottom: 0.75rem;
+}
+
+.aheadHeading {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(2rem, 3vw, 2.85rem);
+  font-weight: 600;
+  line-height: 1.15;
+  letter-spacing: -0.015em;
+  margin: 0 0 0.65rem 0;
+}
+
+.aheadHeadingNavy {
+  color: #103F5F;
+}
+
+.aheadHeadingGold {
+  color: #DE9F35;
+}
+
+.aheadLeadText {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 1.15rem;
+  max-width: 580px;
+}
+
+.aheadLead {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+/* Roadmap Grid & Thread Lines */
+.aheadRoadmapWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 1.15rem;
+  margin-bottom: 1.25rem;
+  position: relative;
+}
+
+.aheadRowWrapper {
+  position: relative;
+  width: 100%;
+}
+
+.aheadThreadSvgRow1,
+.aheadThreadSvgRow2 {
+  position: absolute;
+  top: 24px;
+  left: 10px;
+  width: calc(100% - 20px);
+  height: 20px;
+  pointer-events: none;
+  z-index: 1;
+  overflow: visible;
+}
+
+.aheadRow5 {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 0.5rem;
+  align-items: flex-start;
+  position: relative;
+  z-index: 2;
+}
+
+.aheadRow4 {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0.75rem;
+  align-items: flex-start;
+  max-width: 86%;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.aheadCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 0.55rem;
+}
+
+.aheadIconBadge {
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 3px 10px rgba(16, 63, 95, 0.08);
+  border: 1.5px solid #FAF7F2;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.aheadCard:hover .aheadIconBadge {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(16, 63, 95, 0.12);
+}
+
+.aheadIconSvg {
+  width: 20px;
+  height: 20px;
+}
+
+/* Subtle organic tints for each badge */
+.badgeYarn { background-color: #F3ECE2; }
+.badgeLeaf { background-color: #E8EFE6; }
+.badgeWeave { background-color: #E4ECEF; }
+.badgeCollab { background-color: #F8ECE2; }
+.badgeResearch { background-color: #E6F0EB; }
+.badgeStudent { background-color: #EBF0F5; }
+.badgeWorkshop { background-color: #EFECE8; }
+.badgeExhibition { background-color: #F7EBE2; }
+.badgeLivelihood { background-color: #E8F0E6; }
+
+.aheadCardLabel {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.72rem;
+  font-weight: 500;
+  line-height: 1.35;
+  color: #103F5F;
+  max-width: 104px;
+}
+
+.aheadPartnershipText {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.6;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+  max-width: 580px;
+}
+
+/* --- Right Column: Our Belief & Handloom Visual --- */
+.futureColRight {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+@media (min-width: 1060px) {
+  .futureColRight {
+    border-left: 1px solid #E8E2D6;
+    padding-left: clamp(2rem, 3.5vw, 3.75rem);
+  }
+}
+
+.beliefSubgrid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+  align-items: center;
+  margin-bottom: 1.15rem;
+}
+
+@media (min-width: 641px) {
+  .beliefSubgrid {
+    grid-template-columns: 1.15fr 0.85fr;
+    gap: 1.5rem;
+  }
+}
+
+.beliefTextWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.beliefParagraph {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: clamp(0.8125rem, 0.9vw, 0.875rem);
+  font-weight: 400;
+  line-height: 1.55;
+  color: var(--color-text-secondary, #4A443E);
+  margin: 0;
+}
+
+/* Visual Handloom Frame with Layered Offset Shapes */
+.beliefVisualCol {
+  position: relative;
+  width: 100%;
+  z-index: 2;
+}
+
+.beliefVisualWrap {
+  position: relative;
+  width: 100%;
+  padding: 12px;
+}
+
+.beliefNavyAccent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 54px;
+  height: 90px;
+  background-color: #103F5F;
+  border-radius: 22px 6px 6px 14px;
+  z-index: 1;
+}
+
+.beliefGoldArcSvg {
+  position: absolute;
+  top: -16px;
+  left: -12px;
+  width: calc(100% + 24px);
+  height: calc(100% + 24px);
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0.8;
+}
+
+.beliefGoldAccent {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 68px;
+  height: 68px;
+  background-color: #DE9F35;
+  border-radius: 10px 14px 22px 10px;
+  z-index: 1;
+}
+
+.beliefImageFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  min-height: 180px;
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px -4px rgba(16, 63, 95, 0.16);
+  z-index: 2;
+  background-color: #D8D6CE;
+}
+
+.beliefMainImage {
+  object-fit: cover !important;
+  object-position: 85% center !important;
+  border-radius: 20px;
+}
+
+/* Manifesto Statement Box */
+.communityManifestoBox {
+  border-left: 3.5px solid #DE9F35;
+  padding: 0.4rem 0 0.4rem 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.communityManifestoText {
+  font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
+  font-size: clamp(1.4rem, 1.85vw, 1.85rem);
+  font-weight: 600;
+  line-height: 1.25;
+  color: #103F5F;
+  margin: 0;
+}
+
+/* Trust Signature */
+.trustSignatureWrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.trustSignatureName {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #103F5F;
+}
+
+.trustSignatureTagline {
+  font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
+  font-size: 0.8125rem;
+  color: var(--color-text-secondary, #6B635B);
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .aheadThreadSvgRow1,
+  .aheadThreadSvgRow2 {
+    display: none;
+  }
+
+  .aheadRow5 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem 0.75rem;
+  }
+
+  .aheadRow4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.75rem;
+    max-width: 100%;
+  }
+
+  .beliefGoldArcSvg {
+    display: none;
+  }
+}
+
+@media (max-width: 640px) {
+  .aheadRow5,
+  .aheadRow4 {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.25rem 0.5rem;
+  }
+
+  .aheadHeading {
+    font-size: clamp(1.75rem, 6vw, 2.15rem);
+  }
+
+  .beliefImageFrame {
+    min-height: 180px;
+    border-radius: 16px;
+  }
+
+  .beliefMainImage {
+    border-radius: 16px;
+  }
 }
 
 /* ==========================================================================

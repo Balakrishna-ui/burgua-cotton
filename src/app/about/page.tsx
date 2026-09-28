@@ -62,7 +62,7 @@ export default function AboutPage() {
               <span className={styles.storyEyebrow}>OUR STORY</span>
               <h2 className={styles.storyHeading}>
                 A Community Rooted<br />
-                in Purpose
+                <span className={styles.storyHeadingGold}>in Purpose</span>
               </h2>
               <p className={styles.storyParagraph}>
                 Burgula Cotton Trust is a community-oriented organisation working to
@@ -121,7 +121,7 @@ export default function AboutPage() {
               <span className={styles.whatWeDoEyebrow}>WHAT WE DO</span>
               <h2 className={styles.whatWeDoHeading}>
                 Working Together<br />
-                for a Stronger Tomorrow
+                <span className={styles.whatWeDoHeadingGold}>for a Stronger Tomorrow</span>
               </h2>
             </div>
             <p className={styles.whatWeDoIntroText}>
@@ -229,7 +229,7 @@ export default function AboutPage() {
             <div className={styles.approachInner}>
               <span className={styles.approachEyebrow}>OUR APPROACH</span>
               <h2 className={styles.approachHeading}>
-                Handloom is not only a fabric.
+                Handloom is not only <span className={styles.approachHeadingGold}>a fabric.</span>
               </h2>
               <p className={styles.approachSubheading}>
                 It is a relationship between material, labour, knowledge, technology, land and community.
@@ -315,7 +315,7 @@ export default function AboutPage() {
               <span className={styles.visionEyebrow}>OUR VISION</span>
               <h2 className={styles.visionHeading}>
                 A stronger rural<br />
-                textile ecosystem.
+                <span className={styles.visionHeadingGold}>textile ecosystem.</span>
               </h2>
               <p className={styles.visionText}>
                 We envision Burgula as a place where cotton, yarn, handloom, skills, enterprise and
