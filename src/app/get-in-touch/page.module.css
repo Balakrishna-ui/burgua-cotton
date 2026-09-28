@@ -1,13 +1,22 @@
 /* ==========================================================================
    GET IN TOUCH PAGE STYLES — BURGULA COTTON TRUST
-   Matches reference design: layout, typography, cards, responsive behavior
+   Burgula Brand Palette Applied:
+   - Navy: #103F5F
+   - Gold: #E7B234
+   - Blue: #0078B2
+   - Green: #9BB24E
+   - Cream: #FFE7BA
+   - Red: #79170E
+   - Black: #000000
+   - Grey: #888888
+   - Light Grey: #C6C6C6
    ========================================================================== */
 
 .pageWrapper {
   width: 100%;
   overflow-x: hidden;
   background-color: #FAF8F5;
-  color: #1A1715;
+  color: #103F5F;
   font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
@@ -82,7 +91,7 @@
   font-size: 0.8125rem;
   font-weight: 600;
   letter-spacing: 0.18em;
-  color: #D4A359;
+  color: #E7B234;
   text-transform: uppercase;
   margin-bottom: 0.85rem;
   display: inline-block;
@@ -102,7 +111,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: clamp(0.92rem, 1.15vw, 1.0625rem);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.88);
+  color: #FFFFFF;
   margin: 0;
   max-width: 520px;
 }
@@ -128,18 +137,17 @@
   }
 }
 
-/* LEFT COLUMN — Contact Information & Location */
+/* LEFT COLUMN — Contact Information */
 .leftCol {
   display: flex;
   flex-direction: column;
-  gap: 2.75rem;
 }
 
 .sectionTitle {
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(1.85rem, 2.6vw, 2.35rem);
   font-weight: 600;
-  color: #1A1715;
+  color: #103F5F;
   margin: 0 0 0.5rem 0;
   letter-spacing: -0.01em;
 }
@@ -148,7 +156,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.875rem;
   line-height: 1.55;
-  color: #5C554E;
+  color: #888888;
   margin: 0 0 1.5rem 0;
   max-width: 480px;
 }
@@ -170,11 +178,12 @@
   width: 48px;
   height: 48px;
   border-radius: 12px;
-  background-color: #F3ECE1;
+  background-color: #FFE7BA;
+  border: 1px solid rgba(231, 178, 52, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #9D6844;
+  color: #103F5F;
   flex-shrink: 0;
 }
 
@@ -189,7 +198,7 @@
   font-size: 0.6875rem;
   font-weight: 700;
   letter-spacing: 0.14em;
-  color: #9E743A;
+  color: #E7B234;
   text-transform: uppercase;
   margin-bottom: 0.15rem;
 }
@@ -199,84 +208,36 @@
   font-size: 0.9rem;
   font-weight: 600;
   line-height: 1.45;
-  color: #1A1715;
+  color: #103F5F;
   margin: 0;
 }
 
 .infoSubtext {
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.85rem;
-  color: #5C554E;
+  color: #888888;
   margin: 0;
   line-height: 1.45;
 }
 
 .infoLink {
-  color: #1A1715;
+  color: #103F5F;
   text-decoration: none;
   transition: color 0.15s ease;
 }
 
 .infoLink:hover {
-  color: #103F5F;
+  color: #E7B234;
   text-decoration: underline;
-}
-
-/* Location Card */
-.locationBlock {
-  display: flex;
-  flex-direction: column;
-}
-
-.mapCard {
-  position: relative;
-  width: 100%;
-  height: 250px;
-  border-radius: 12px;
-  overflow: hidden;
-  border: 1px solid #E8E2D6;
-  background-color: #EBF1EA;
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.04);
-}
-
-.mapSvg {
-  width: 100%;
-  height: 100%;
-  display: block;
-}
-
-.mapBtn {
-  position: absolute;
-  left: 1rem;
-  bottom: 1rem;
-  z-index: 5;
-  background-color: #103F5F;
-  color: #FFFFFF;
-  font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
-  font-size: 0.75rem;
-  font-weight: 600;
-  padding: 0.55rem 1.15rem;
-  border-radius: 9999px;
-  text-decoration: none;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  box-shadow: 0 3px 10px rgba(16, 63, 95, 0.35);
-  transition: background-color 0.2s ease, transform 0.2s ease;
-}
-
-.mapBtn:hover {
-  background-color: #0A2B42;
-  transform: translateY(-1px);
 }
 
 /* RIGHT COLUMN — Form Card */
 .formCard {
   background-color: #F7F3EE;
-  border: 1px solid #EDE7DD;
+  border: 1px solid #C6C6C6;
   border-radius: 16px;
   padding: clamp(1.75rem, 3.2vw, 2.75rem);
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.03);
+  box-shadow: 0 6px 24px rgba(16, 63, 95, 0.04);
 }
 
 .formHeader {
@@ -287,7 +248,7 @@
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(1.75rem, 2.4vw, 2.2rem);
   font-weight: 600;
-  color: #1A1715;
+  color: #103F5F;
   margin: 0 0 0.35rem 0;
   letter-spacing: -0.01em;
 }
@@ -295,7 +256,7 @@
 .formSubtitle {
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.85rem;
-  color: #5C554E;
+  color: #888888;
   margin: 0;
 }
 
@@ -308,7 +269,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.8125rem;
   font-weight: 600;
-  color: #1A1715;
+  color: #103F5F;
   margin-bottom: 0.45rem;
 }
 
@@ -318,9 +279,9 @@
   padding: 0.75rem 1rem;
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.875rem;
-  color: #1A1715;
+  color: #103F5F;
   background-color: #FFFFFF;
-  border: 1px solid #E2DCD1;
+  border: 1px solid #C6C6C6;
   border-radius: 8px;
   outline: none;
   transition: border-color 0.15s ease, box-shadow 0.15s ease;
@@ -328,7 +289,7 @@
 
 .inputField::placeholder,
 .textareaField::placeholder {
-  color: #9C948B;
+  color: #888888;
 }
 
 .inputField:focus,
@@ -342,7 +303,7 @@
   min-height: 110px;
 }
 
-/* Enquiry Type 6-Grid Selection */
+/* Enquiry Type Selection Grid */
 .enquiryGrid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -363,7 +324,7 @@
   gap: 0.4rem;
   padding: 0.85rem 0.5rem;
   background-color: #FFFFFF;
-  border: 1px solid #E2DCD1;
+  border: 1px solid #C6C6C6;
   border-radius: 8px;
   cursor: pointer;
   transition: all 0.15s ease;
@@ -373,17 +334,17 @@
 
 .enquiryOption:hover {
   border-color: #103F5F;
-  background-color: #FAFBFD;
+  background-color: rgba(16, 63, 95, 0.04);
 }
 
 .enquiryOptionActive {
   border-color: #103F5F;
-  background-color: #EEF4F8;
+  background-color: rgba(16, 63, 95, 0.08);
   box-shadow: 0 0 0 1px #103F5F;
 }
 
 .enquiryIcon {
-  color: #5C554E;
+  color: #103F5F;
   transition: color 0.15s ease;
 }
 
@@ -395,7 +356,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.72rem;
   font-weight: 600;
-  color: #1A1715;
+  color: #103F5F;
   line-height: 1.25;
 }
 
@@ -422,13 +383,14 @@
   justify-content: center;
   gap: 0.6rem;
   cursor: pointer;
-  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+  transition: background-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease, color 0.2s ease;
 }
 
 .submitBtn:hover:not(:disabled) {
-  background-color: #0A2B42;
+  background-color: #E7B234;
+  color: #103F5F;
   transform: translateY(-1px);
-  box-shadow: 0 4px 14px rgba(16, 63, 95, 0.35);
+  box-shadow: 0 4px 14px rgba(231, 178, 52, 0.35);
 }
 
 .submitBtn:disabled {
@@ -439,10 +401,10 @@
 /* Success / Error Feedback */
 .feedbackSuccess {
   padding: 1rem 1.25rem;
-  background-color: #EAF4EE;
-  border: 1px solid #C3E2CE;
+  background-color: rgba(155, 178, 78, 0.15);
+  border: 1px solid #9BB24E;
   border-radius: 8px;
-  color: #1B5E34;
+  color: #103F5F;
   font-size: 0.875rem;
   margin-bottom: 1.25rem;
   line-height: 1.45;
@@ -450,10 +412,10 @@
 
 .feedbackError {
   padding: 0.85rem 1.15rem;
-  background-color: #FDF2F2;
-  border: 1px solid #F8D0D0;
+  background-color: rgba(121, 23, 14, 0.08);
+  border: 1px solid #79170E;
   border-radius: 8px;
-  color: #B91C1C;
+  color: #79170E;
   font-size: 0.85rem;
   margin-bottom: 1.25rem;
   line-height: 1.4;
@@ -464,7 +426,7 @@
    ========================================================================== */
 .buildTogetherSection {
   padding: clamp(3rem, 5vw, 4.5rem) 0 clamp(4rem, 6vw, 6rem) 0;
-  border-top: 1px solid #EBE4DA;
+  border-top: 1px solid #C6C6C6;
 }
 
 .buildTogetherGrid {
@@ -490,7 +452,7 @@
   font-family: var(--font-serif, 'Cormorant Garamond', Georgia, serif);
   font-size: clamp(2rem, 3vw, 2.65rem);
   font-weight: 600;
-  color: #1A1715;
+  color: #103F5F;
   margin: 0 0 0.75rem 0;
   letter-spacing: -0.01em;
 }
@@ -499,7 +461,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.875rem;
   line-height: 1.6;
-  color: #5C554E;
+  color: #888888;
   margin: 0;
 }
 
@@ -518,22 +480,23 @@
 
 .buildCard {
   background-color: #FFFFFF;
-  border: 1px solid #EAE3D6;
+  border: 1px solid #C6C6C6;
   border-radius: 12px;
   padding: 1.25rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
 }
 
 .buildCard:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.04);
+  border-color: #E7B234;
+  box-shadow: 0 4px 14px rgba(16, 63, 95, 0.08);
 }
 
 .buildCardIcon {
-  color: #C29B38;
+  color: #E7B234;
   margin-bottom: 0.25rem;
 }
 
@@ -542,7 +505,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  color: #9D6844;
+  color: #103F5F;
   text-transform: uppercase;
   margin: 0;
 }
@@ -551,12 +514,12 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.78rem;
   line-height: 1.45;
-  color: #5C554E;
+  color: #888888;
   margin: 0;
 }
 
 /* ==========================================================================
-   4. FINAL FEATURE SECTION — A SHARED FUTURE
+   4. FINAL FEATURE SECTION — A SHARED FUTURE (STANDBY UTILITY)
    ========================================================================== */
 .featureSection {
   padding: 0 0 clamp(3.5rem, 6vw, 5.5rem) 0;
@@ -568,7 +531,7 @@
   border-radius: 16px;
   overflow: hidden;
   background-color: #F7F3EE;
-  border: 1px solid #EBE4DA;
+  border: 1px solid #C6C6C6;
 }
 
 @media (min-width: 860px) {
@@ -610,7 +573,7 @@
 .featureEyebrowDash {
   width: 20px;
   height: 2px;
-  background-color: #9D6844;
+  background-color: #E7B234;
 }
 
 .featureEyebrow {
@@ -618,7 +581,7 @@
   font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.16em;
-  color: #9D6844;
+  color: #E7B234;
   text-transform: uppercase;
 }
 
@@ -627,7 +590,7 @@
   font-size: clamp(1.9rem, 3.2vw, 2.65rem);
   font-weight: 600;
   line-height: 1.2;
-  color: #1A1715;
+  color: #103F5F;
   margin: 0 0 1rem 0;
   letter-spacing: -0.01em;
 }
@@ -636,7 +599,7 @@
   font-family: var(--font-sans, 'Plus Jakarta Sans', sans-serif);
   font-size: 0.9rem;
   line-height: 1.65;
-  color: #5C554E;
+  color: #888888;
   margin: 0;
   max-width: 480px;
 }

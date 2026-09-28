@@ -25,6 +25,18 @@ export const metadata: Metadata = {
     'B2B cotton fabric supplier',
   ],
   authors: [{ name: 'Burgula Cotton' }],
+  icons: {
+    icon: [
+      { url: '/favicon.ico?v=2', sizes: 'any' },
+      { url: '/icon.png?v=2', type: 'image/png', sizes: '512x512' },
+      { url: '/favicon-32x32.png?v=2', type: 'image/png', sizes: '32x32' },
+      { url: '/favicon-16x16.png?v=2', type: 'image/png', sizes: '16x16' },
+    ],
+    apple: [
+      { url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
+    ],
+    shortcut: '/favicon.ico?v=2',
+  },
   openGraph: {
     type: 'website',
     locale: 'en_IN',

@@ -2,9 +2,16 @@ import { NextRequest } from 'next/server';
 import { DataService } from '@/lib/data-service';
 import { SearchQuerySchema } from '@/lib/validations';
 import { createSuccessResponse, createErrorResponse } from '@/lib/api-response';
+import { checkRateLimit, getClientIp } from '@/lib/rate-limit';
 
 export async function GET(request: NextRequest) {
   try {
+    const ip = getClientIp(request.headers);
+    const rateLimit = await checkRateLimit(`search-get:${ip}`, { maxRequests: 60, windowMs: 60000 });
+    if (!rateLimit.allowed) {
+      return createErrorResponse('RATE_LIMITED', 'Too many search requests. Please wait a moment.', 429);
+    }
+
     const { searchParams } = new URL(request.url);
     const q = searchParams.get('q') || '';
     const category = searchParams.get('category') || 'all';

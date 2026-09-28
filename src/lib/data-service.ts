@@ -1,14 +1,15 @@
+import { Prisma } from '@prisma/client';
 import { prisma, isDbAvailable, openCircuit } from './db';
 import { VERIFIED_TEXTILES, VERIFIED_JOURNAL_ARTICLES, VerifiedTextile, VerifiedJournalArticle } from './seed-data';
 import { CreateOrderInput } from './validations';
 
 // ─── Prisma → Domain Mappers ──────────────────────────────────────────────────
 
-// Accepts the raw Prisma textile record (with relations) and maps it to the
-// domain VerifiedTextile shape. We avoid re-declaring the parameter type
-// manually to prevent drift from the generated Prisma types.
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-function mapTextileRecord(t: any): VerifiedTextile {
+type PrismaTextileWithRelations = Prisma.TextileGetPayload<{
+  include: { variants: true; images: true };
+}>;
+
+function mapTextileRecord(t: PrismaTextileWithRelations): VerifiedTextile {
   return {
     id: t.id,
     code: t.code,
@@ -31,16 +32,14 @@ function mapTextileRecord(t: any): VerifiedTextile {
     isFeatured: t.isFeatured,
     heroImage: t.heroImage,
     macroImage: t.macroImage,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    variants: t.variants.map((v: any) => ({
+    variants: t.variants.map((v) => ({
       id: v.id,
       colorName: v.colorName,
       colorHex: v.colorHex ?? '#EAE5D9',
       isAvailable: v.isAvailable,
       imageUrl: v.imageUrl ?? undefined,
     })),
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    images: t.images.map((img: any) => ({
+    images: t.images.map((img) => ({
       id: img.id,
       url: img.url,
       altText: img.altText,
