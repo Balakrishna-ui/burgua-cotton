@@ -377,8 +377,8 @@ export default function OurStoryPage() {
                     <div className={`${styles.stageBlob} ${styles.blobCotton}`} aria-hidden="true" />
                     <div className={styles.stageCircleFrame}>
                       <Image
-                        src="/images/editorial/journal-cotton.png"
-                        alt="Cotton boll harvest in Burgula fields"
+                        src="/images/c1.png"
+                        alt="Cotton"
                         fill
                         sizes="130px"
                         className={styles.stageImage}
@@ -402,11 +402,11 @@ export default function OurStoryPage() {
                     <div className={`${styles.stageBlob} ${styles.blobYarn}`} aria-hidden="true" />
                     <div className={styles.stageCircleFrame}>
                       <Image
-                        src="/images/journey-strip/yarn.png"
-                        alt="Spun cotton yarn spool"
+                        src="/images/c2.png"
+                        alt="Yarn"
                         fill
                         sizes="130px"
-                        className={`${styles.stageImage} ${styles.imageYarn}`}
+                        className={styles.stageImage}
                       />
                     </div>
                   </div>
@@ -427,8 +427,8 @@ export default function OurStoryPage() {
                     <div className={`${styles.stageBlob} ${styles.blobWeaving}`} aria-hidden="true" />
                     <div className={styles.stageCircleFrame}>
                       <Image
-                        src="/images/journey-strip/weaving.png"
-                        alt="Traditional handloom weaving"
+                        src="/images/c3.png"
+                        alt="Weaving"
                         fill
                         sizes="130px"
                         className={styles.stageImage}
@@ -452,8 +452,8 @@ export default function OurStoryPage() {
                     <div className={`${styles.stageBlob} ${styles.blobFabric}`} aria-hidden="true" />
                     <div className={styles.stageCircleFrame}>
                       <Image
-                        src="/images/journey-strip/cloth.png"
-                        alt="Woven cotton handloom fabric"
+                        src="/images/c4.png"
+                        alt="Fabric"
                         fill
                         sizes="130px"
                         className={styles.stageImage}
@@ -477,11 +477,11 @@ export default function OurStoryPage() {
                     <div className={`${styles.stageBlob} ${styles.blobLivelihood}`} aria-hidden="true" />
                     <div className={styles.stageCircleFrame}>
                       <Image
-                        src="/images/editorial/our-story-weaver.png"
-                        alt="Artisan hands and sustainable community handloom livelihood"
+                        src="/images/c5.png"
+                        alt="Livelihood"
                         fill
                         sizes="130px"
-                        className={`${styles.stageImage} ${styles.imageLivelihood}`}
+                        className={styles.stageImage}
                       />
                     </div>
                   </div>

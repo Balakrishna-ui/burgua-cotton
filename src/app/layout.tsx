@@ -27,15 +27,10 @@ export const metadata: Metadata = {
   authors: [{ name: 'Burgula Cotton' }],
   icons: {
     icon: [
-      { url: '/favicon.ico?v=2', sizes: 'any' },
-      { url: '/icon.png?v=2', type: 'image/png', sizes: '512x512' },
-      { url: '/favicon-32x32.png?v=2', type: 'image/png', sizes: '32x32' },
-      { url: '/favicon-16x16.png?v=2', type: 'image/png', sizes: '16x16' },
+      { url: '/images/fav2.png?v=5', type: 'image/png', sizes: 'any' },
     ],
-    apple: [
-      { url: '/apple-touch-icon.png?v=2', sizes: '180x180', type: 'image/png' },
-    ],
-    shortcut: '/favicon.ico?v=2',
+    shortcut: '/images/fav2.png?v=5',
+    apple: '/images/fav2.png?v=5',
   },
   openGraph: {
     type: 'website',

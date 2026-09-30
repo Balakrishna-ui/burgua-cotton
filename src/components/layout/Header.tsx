@@ -31,10 +31,10 @@ export function Header() {
           {/* Brand Logo — EXACT EXISTING LOGO */}
           <Link href="/" className={styles.brand} aria-label="Burgula Cotton Trust Home">
             <Image
-              src="/images/logo.png"
+              src="/images/logo2.png"
               alt="Burgula Cotton Trust"
-              width={200}
-              height={60}
+              width={250}
+              height={110}
               priority
               className={styles.logoImg}
             />

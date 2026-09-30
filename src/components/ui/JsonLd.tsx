@@ -34,7 +34,7 @@ export function createOrganizationSchema() {
     '@type': 'Organization',
     name: 'Burgula Cotton',
     url: SITE_URL,
-    logo: `${SITE_URL}/logo.png`,
+    logo: `${SITE_URL}/images/logo2.png`,
     description: 'Premium market-facing handloom cotton and decentralised yarn fabric house rooted in Telangana.',
     foundingLocation: {
       '@type': 'Place',
