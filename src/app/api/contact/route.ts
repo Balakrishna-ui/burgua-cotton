@@ -16,11 +16,13 @@ export async function POST(request: NextRequest) {
     const parseResult = ContactSubmissionSchema.safeParse(body);
 
     if (!parseResult.success) {
+      const fieldErrors = parseResult.error.flatten().fieldErrors;
+      const firstErrorMessage = Object.values(fieldErrors).flat()[0] || 'Invalid contact form submission';
       return createErrorResponse(
         'VALIDATION_ERROR',
-        'Invalid contact form submission',
+        firstErrorMessage,
         400,
-        parseResult.error.flatten().fieldErrors
+        fieldErrors
       );
     }
 

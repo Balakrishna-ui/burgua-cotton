@@ -2126,114 +2126,24 @@
 }
 
 /* ==========================================================================
-   LEFT SIDE: Layered Image Collage - Compact Proportions
+   LEFT SIDE: Single Clean Rectangular Image
    ========================================================================== */
-.institutionCollage {
+.institutionImageWrap {
   position: relative;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
-}
-
-.collageMainWrap {
-  position: relative;
-  width: 100%;
-  height: clamp(185px, 20vw, 265px);
-  border-radius: 16px 16px 0 0;
-}
-
-.collageMainImgInner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-  border-radius: 16px 16px 0 0;
-  overflow: hidden;
-  box-shadow: 0 6px 20px rgba(26, 23, 21, 0.08);
-}
-
-.collageImg {
-  object-fit: cover !important;
-  object-position: center !important;
-}
-
-.collageGoldAccent {
-  position: absolute;
-  right: -6px;
-  bottom: -14px;
-  width: 44px;
-  height: 80px;
-  background: #B98733;
-  border-radius: 0 16px 16px 0;
-  z-index: 1;
-  pointer-events: none;
-  box-shadow: 0 4px 10px rgba(185, 135, 51, 0.22);
-}
-
-.collageBottomRow {
-  display: grid;
-  grid-template-columns: 0.95fr 1.05fr;
-  gap: 0.75rem;
-  align-items: stretch;
-}
-
-.collageGreenCard {
-  background-color: #17382B;
-  border-radius: 12px;
-  padding: 0.65rem;
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  min-height: 110px;
-  box-shadow: 0 5px 16px rgba(23, 56, 43, 0.14);
-}
-
-.collageCottonThumb {
-  position: relative;
-  width: 44%;
-  height: 100%;
-  min-height: 90px;
   border-radius: 8px;
   overflow: hidden;
-  flex-shrink: 0;
+  box-shadow: 0 4px 20px rgba(26, 23, 21, 0.08);
 }
 
-.collagePillarsText {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 0.12rem;
-  font-family: var(--font-serif);
-  font-style: italic;
-  font-size: clamp(0.9rem, 1.05vw, 1.025rem);
-  line-height: 1.3;
-  color: #FFE7BA;
-}
-
-.collageDetailWrap {
-  position: relative;
-  min-height: 110px;
-  border-radius: 0 0 24px 0;
-}
-
-.collageDetailInner {
-  position: relative;
+.institutionImage {
   width: 100%;
-  height: 100%;
-  border-radius: 0 0 24px 0;
-  overflow: hidden;
-  box-shadow: 0 5px 16px rgba(26, 23, 21, 0.08);
-}
-
-.collageDetailBackdrop {
-  position: absolute;
-  right: -6px;
-  bottom: -6px;
-  width: 100%;
-  height: 100%;
-  border-radius: 0 0 28px 0;
-  background: rgba(185, 135, 51, 0.35);
-  z-index: -1;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  border-radius: 8px;
 }
 
 /* ==========================================================================
@@ -2364,18 +2274,6 @@
     gap: 1.5rem;
   }
 
-  .collageMainWrap {
-    height: 175px;
-  }
-
-  .collageGreenCard,
-  .collageDetailWrap {
-    min-height: 95px;
-  }
-
-  .collagePillarsText {
-    font-size: 0.825rem;
-  }
 
   .institutionHeading {
     font-size: clamp(1.5rem, 5.5vw, 1.95rem);
@@ -2413,21 +2311,6 @@
   }
 }
 
-@media (max-width: 480px) {
-  .collageBottomRow {
-    grid-template-columns: 1fr;
-    gap: 0.65rem;
-  }
-
-  .collageGreenCard {
-    height: 95px;
-    min-height: 90px;
-  }
-
-  .collageDetailWrap {
-    height: 140px;
-  }
-}
 
 /* SECTION 06 & 07 — FOUNDATION & TIMELINE */
 .foundationSection {

@@ -499,59 +499,16 @@ export default async function HomePage() {
 
         <div className={styles.institutionContainer}>
           <div className={styles.institutionGrid}>
-            {/* LEFT SIDE: Asymmetric Layered Collage */}
-            <div className={styles.institutionCollage}>
-              {/* Top Main Image with golden corner curve */}
-              <div className={styles.collageMainWrap}>
-                <div className={styles.collageMainImgInner}>
-                  <Image
-                    src="/images/b2b-spinning.jpg"
-                    alt="Artisan technician operating ring-spinning machinery at Burgula Cotton Trust"
-                    fill
-                    sizes="(max-width: 992px) 100vw, 55vw"
-                    className={styles.collageImg}
-                  />
-                </div>
-                {/* Gold curved geometric accent on right */}
-                <div className={styles.collageGoldAccent} aria-hidden="true" />
-              </div>
-
-              {/* Bottom Row: Dark Green Card + Detail Hand Image */}
-              <div className={styles.collageBottomRow}>
-                {/* Dark Forest Green Card */}
-                <div className={styles.collageGreenCard}>
-                  <div className={styles.collageCottonThumb}>
-                    <Image
-                      src="/images/journey-strip/cotton.png"
-                      alt="Raw natural cotton bolls"
-                      fill
-                      sizes="160px"
-                      className={styles.collageImg}
-                    />
-                  </div>
-                  <div className={styles.collagePillarsText}>
-                    <span>People</span>
-                    <span>Land</span>
-                    <span>Tradition</span>
-                    <span>Livelihoods</span>
-                  </div>
-                </div>
-
-                {/* Secondary Detail Image (hands adjusting spools on machinery) */}
-                <div className={styles.collageDetailWrap}>
-                  <div className={styles.collageDetailInner}>
-                    <Image
-                      src="/images/bct.png"
-                      alt="Artisan hands calibrating yarn threads on spinning frame"
-                      fill
-                      sizes="(max-width: 992px) 50vw, 28vw"
-                      className={styles.collageImg}
-                    />
-                  </div>
-                  {/* Subtle golden corner backdrop */}
-                  <div className={styles.collageDetailBackdrop} aria-hidden="true" />
-                </div>
-              </div>
+            {/* LEFT SIDE: Clean Single Image */}
+            <div className={styles.institutionImageWrap}>
+              <Image
+                src="/images/b2b-spinning.jpg"
+                alt="Artisan technician operating ring-spinning machinery at Burgula Cotton Trust"
+                width={800}
+                height={600}
+                sizes="(max-width: 992px) 100vw, 55vw"
+                className={styles.institutionImage}
+              />
             </div>
 
             {/* RIGHT SIDE: Institution Content */}

@@ -48,6 +48,7 @@ export function GetInTouchClient() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    if (status === 'loading') return;
     setStatus('loading');
     setErrorMessage('');
 
@@ -205,148 +206,155 @@ export function GetInTouchClient() {
 
             </div>
 
-            {/* RIGHT COLUMN: Send Us a Message Form */}
+            {/* RIGHT COLUMN: Send Us a Message Form / Success State */}
             <div className={styles.formCard}>
-              <div className={styles.formHeader}>
-                <h2 className={styles.formTitle}>Send Us a Message</h2>
-                <p className={styles.formSubtitle}>
-                  Fill in the form below and our team will get back to you.
-                </p>
-              </div>
-
-              {status === 'success' && (
-                <div className={styles.feedbackSuccess} role="status">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                    <CheckCircle2 size={18} />
-                    <strong>Thank you!</strong>
+              {status === 'success' ? (
+                <div className={styles.successState} role="status" aria-live="polite">
+                  <div className={styles.successIconWrap} aria-hidden="true">
+                    <CheckCircle2 size={36} className={styles.successCheckIcon} />
                   </div>
-                  We have received your message. Our team will get back to you shortly.
+                  <h2 className={styles.successHeading}>THANK YOU FOR CONTACTING US</h2>
+                  <p className={styles.successDescription}>
+                    Your message has been received successfully. We’ll get back to you soon.
+                  </p>
+                  <p className={styles.successSubtext}>
+                    Thank you for reaching out to Burgula Cotton Trust.
+                  </p>
                 </div>
-              )}
-
-              {status === 'error' && (
-                <div className={styles.feedbackError} role="alert">
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
-                    <AlertCircle size={18} />
-                    <strong>Unable to send message</strong>
+              ) : (
+                <>
+                  <div className={styles.formHeader}>
+                    <h2 className={styles.formTitle}>Send Us a Message</h2>
+                    <p className={styles.formSubtitle}>
+                      Fill in the form below and our team will get back to you.
+                    </p>
                   </div>
-                  {errorMessage}
-                </div>
-              )}
 
-              <form onSubmit={handleSubmit} noValidate>
-                {/* Full Name */}
-                <div className={styles.formGroup}>
-                  <label htmlFor="fullName" className={styles.formLabel}>
-                    Full Name *
-                  </label>
-                  <input
-                    id="fullName"
-                    type="text"
-                    required
-                    placeholder="Enter your name"
-                    className={styles.inputField}
-                    value={formData.name}
-                    onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  />
-                </div>
-
-                {/* Email Address */}
-                <div className={styles.formGroup}>
-                  <label htmlFor="emailAddress" className={styles.formLabel}>
-                    Email Address *
-                  </label>
-                  <input
-                    id="emailAddress"
-                    type="email"
-                    required
-                    placeholder="Enter your email"
-                    className={styles.inputField}
-                    value={formData.email}
-                    onChange={(e) => setFormData({ ...formData, email: e.target.value })}
-                  />
-                </div>
-
-                {/* Phone Number */}
-                <div className={styles.formGroup}>
-                  <label htmlFor="phoneNumber" className={styles.formLabel}>
-                    Phone Number
-                  </label>
-                  <input
-                    id="phoneNumber"
-                    type="tel"
-                    placeholder="Enter your phone number"
-                    className={styles.inputField}
-                    value={formData.phone}
-                    onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  />
-                </div>
-
-                {/* Enquiry Type — 6 Selectable Grid Options */}
-                <div className={styles.formGroup}>
-                  <span className={styles.formLabel}>Enquiry Type *</span>
-                  <div className={styles.enquiryGrid} role="radiogroup" aria-label="Enquiry Type">
-                    {ENQUIRY_OPTIONS.map((opt) => {
-                      const IconComponent = opt.icon;
-                      const isSelected = formData.enquiryType === opt.id;
-                      return (
-                        <div
-                          key={opt.id}
-                          role="radio"
-                          aria-checked={isSelected}
-                          tabIndex={0}
-                          className={`${styles.enquiryOption} ${isSelected ? styles.enquiryOptionActive : ''}`}
-                          onClick={() => setFormData({ ...formData, enquiryType: opt.id })}
-                          onKeyDown={(e) => {
-                            if (e.key === ' ' || e.key === 'Enter') {
-                              e.preventDefault();
-                              setFormData({ ...formData, enquiryType: opt.id });
-                            }
-                          }}
-                        >
-                          <IconComponent size={20} className={styles.enquiryIcon} />
-                          <span className={styles.enquiryLabel}>{opt.label}</span>
-                        </div>
-                      );
-                    })}
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div className={styles.formGroup}>
-                  <label htmlFor="messageField" className={styles.formLabel}>
-                    Message *
-                  </label>
-                  <textarea
-                    id="messageField"
-                    required
-                    rows={4}
-                    placeholder="Write your message here..."
-                    className={styles.textareaField}
-                    value={formData.message}
-                    onChange={(e) => setFormData({ ...formData, message: e.target.value })}
-                  />
-                </div>
-
-                {/* Submit Button */}
-                <button
-                  type="submit"
-                  disabled={status === 'loading'}
-                  className={styles.submitBtn}
-                >
-                  {status === 'loading' ? (
-                    <>
-                      <Loader2 size={16} className="animate-spin" />
-                      <span>SENDING...</span>
-                    </>
-                  ) : (
-                    <>
-                      <span>SEND MESSAGE</span>
-                      <ArrowRight size={15} aria-hidden="true" />
-                    </>
+                  {status === 'error' && (
+                    <div className={styles.feedbackError} role="alert">
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.25rem' }}>
+                        <AlertCircle size={18} />
+                        <strong>Unable to send message</strong>
+                      </div>
+                      {errorMessage}
+                    </div>
                   )}
-                </button>
-              </form>
+
+                  <form onSubmit={handleSubmit} noValidate>
+                    {/* Full Name */}
+                    <div className={styles.formGroup}>
+                      <label htmlFor="fullName" className={styles.formLabel}>
+                        Full Name *
+                      </label>
+                      <input
+                        id="fullName"
+                        type="text"
+                        required
+                        placeholder="Enter your name"
+                        className={styles.inputField}
+                        value={formData.name}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
+                      />
+                    </div>
+
+                    {/* Email Address */}
+                    <div className={styles.formGroup}>
+                      <label htmlFor="emailAddress" className={styles.formLabel}>
+                        Email Address *
+                      </label>
+                      <input
+                        id="emailAddress"
+                        type="email"
+                        required
+                        placeholder="Enter your email"
+                        className={styles.inputField}
+                        value={formData.email}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
+                      />
+                    </div>
+
+                    {/* Phone Number */}
+                    <div className={styles.formGroup}>
+                      <label htmlFor="phoneNumber" className={styles.formLabel}>
+                        Phone Number
+                      </label>
+                      <input
+                        id="phoneNumber"
+                        type="tel"
+                        placeholder="Enter your phone number"
+                        className={styles.inputField}
+                        value={formData.phone}
+                        onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
+                      />
+                    </div>
+
+                    {/* Enquiry Type — 6 Selectable Grid Options */}
+                    <div className={styles.formGroup}>
+                      <span className={styles.formLabel}>Enquiry Type *</span>
+                      <div className={styles.enquiryGrid} role="radiogroup" aria-label="Enquiry Type">
+                        {ENQUIRY_OPTIONS.map((opt) => {
+                          const IconComponent = opt.icon;
+                          const isSelected = formData.enquiryType === opt.id;
+                          return (
+                            <div
+                              key={opt.id}
+                              role="radio"
+                              aria-checked={isSelected}
+                              tabIndex={0}
+                              className={`${styles.enquiryOption} ${isSelected ? styles.enquiryOptionActive : ''}`}
+                              onClick={() => setFormData({ ...formData, enquiryType: opt.id })}
+                              onKeyDown={(e) => {
+                                if (e.key === ' ' || e.key === 'Enter') {
+                                  e.preventDefault();
+                                  setFormData({ ...formData, enquiryType: opt.id });
+                                }
+                              }}
+                            >
+                              <IconComponent size={20} className={styles.enquiryIcon} />
+                              <span className={styles.enquiryLabel}>{opt.label}</span>
+                            </div>
+                          );
+                        })}
+                      </div>
+                    </div>
+
+                    {/* Message */}
+                    <div className={styles.formGroup}>
+                      <label htmlFor="messageField" className={styles.formLabel}>
+                        Message *
+                      </label>
+                      <textarea
+                        id="messageField"
+                        required
+                        rows={4}
+                        placeholder="Write your message here..."
+                        className={styles.textareaField}
+                        value={formData.message}
+                        onChange={(e) => setFormData({ ...formData, message: e.target.value })}
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={status === 'loading'}
+                      className={styles.submitBtn}
+                    >
+                      {status === 'loading' ? (
+                        <>
+                          <Loader2 size={16} className="animate-spin" />
+                          <span>SENDING...</span>
+                        </>
+                      ) : (
+                        <>
+                          <span>SEND MESSAGE</span>
+                          <ArrowRight size={15} aria-hidden="true" />
+                        </>
+                      )}
+                    </button>
+                  </form>
+                </>
+              )}
             </div>
           </div>
         </div>

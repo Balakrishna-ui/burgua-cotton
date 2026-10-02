@@ -38,7 +38,7 @@ export const ContactSubmissionSchema = z.object({
     'GENERAL',
   ]),
   subject: z.string().min(3, 'Subject is required').max(150),
-  message: z.string().min(10, 'Message must be at least 10 characters').max(3000),
+  message: z.string().min(1, 'Message is required').max(3000),
   // Honeypot field
   website_hp: z.string().max(0, 'Spam detected').optional(),
 });
