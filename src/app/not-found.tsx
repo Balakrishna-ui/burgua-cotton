@@ -64,8 +64,8 @@ export default function NotFoundPage() {
         <Link href="/" className="btn btn-primary">
           Return to homepage
         </Link>
-        <Link href="/textiles" className="btn btn-secondary">
-          Browse Textiles
+        <Link href="/our-story" className="btn btn-secondary">
+          Our Story
         </Link>
         <a href="mailto:cottontrustburgula@gmail.com" className="btn btn-ghost">
           Contact us

@@ -1,8 +1,6 @@
 import type { Metadata } from 'next';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
-import { CartProvider } from '@/context/CartContext';
-import { CartDrawer } from '@/components/cart/CartDrawer';
 import { ScrollRevealProvider } from '@/components/layout/ScrollRevealProvider';
 import '@/styles/globals.css';
 
@@ -62,13 +60,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <CartProvider>
-          <Header />
-          <main id="main-content">{children}</main>
-          <Footer />
-          <CartDrawer />
-          <ScrollRevealProvider />
-        </CartProvider>
+        <Header />
+        <main id="main-content">{children}</main>
+        <Footer />
+        <ScrollRevealProvider />
       </body>
     </html>
   );

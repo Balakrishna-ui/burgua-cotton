@@ -17,7 +17,16 @@ export default function OurStoryPage() {
   ]);
 
   return (
-    <div className={styles.pageWrapper}>
+    <div
+      className={styles.pageWrapper}
+      style={{
+        position: 'relative',
+        isolation: 'isolate',
+        zIndex: 1,
+        backgroundColor: '#FAF7F2',
+        backgroundImage: 'none',
+      }}
+    >
       <JsonLd data={breadcrumbs} />
 
       {/* 1. HERO SECTION: Asymmetric Editorial Split with Organic Curved Transition */}

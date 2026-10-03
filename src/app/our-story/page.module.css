@@ -8,6 +8,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2vw, 2.25rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .heroContainer {
@@ -249,6 +251,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .villageContainer {
@@ -577,6 +581,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .economyContainer {
@@ -825,6 +831,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .revivalContainer {
@@ -1053,6 +1061,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .journeyContainer {
@@ -1368,6 +1378,8 @@
   border-bottom: 1px solid var(--color-border, #E8E2D6);
   padding: clamp(1.5rem, 2.25vw, 2.5rem) 0;
   overflow: hidden;
+  isolation: isolate;
+  z-index: 1;
 }
 
 .futureContainer {
@@ -1741,10 +1753,13 @@
    ========================================================================== */
 .pageWrapper {
   width: 100%;
+  min-height: 100vh;
   overflow-x: hidden;
-  background-color: var(--color-bg-primary, #FAF7F2);
+  background-color: var(--color-bg-primary, #FAF7F2) !important;
   background-image: none !important;
   position: relative;
+  isolation: isolate;
+  z-index: 1;
   font-family: var(--font-sans, 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif);
 }
 
