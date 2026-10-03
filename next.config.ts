@@ -15,12 +15,7 @@ const nextConfig: NextConfig = {
     unoptimized: true,
     contentDispositionType: "inline",
     formats: ["image/avif", "image/webp"],
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    remotePatterns: [],
   },
   async headers() {
     return [

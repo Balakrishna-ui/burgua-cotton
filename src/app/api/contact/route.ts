@@ -34,7 +34,16 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await DataService.createContactSubmission(data);
-    return createSuccessResponse(result, 201);
+
+    if (!result.success) {
+      return createErrorResponse(
+        'DATABASE_UNAVAILABLE',
+        'Our messaging service is temporarily unavailable. Please try again shortly or email us directly at cottontrustburgula@gmail.com.',
+        503
+      );
+    }
+
+    return createSuccessResponse({ id: result.id }, 201);
   } catch (error) {
     console.error('API Error /api/contact:', error);
     return createErrorResponse('INTERNAL_ERROR', 'Failed to process contact submission', 500);

@@ -32,7 +32,16 @@ export async function POST(request: NextRequest) {
     }
 
     const result = await DataService.createB2BEnquiry(data);
-    return createSuccessResponse(result, 201);
+
+    if (!result.success) {
+      return createErrorResponse(
+        'DATABASE_UNAVAILABLE',
+        'Our enquiry service is temporarily unavailable. Please try again shortly or email us directly at cottontrustburgula@gmail.com.',
+        503
+      );
+    }
+
+    return createSuccessResponse({ id: result.id, enquiryNumber: result.enquiryNumber }, 201);
   } catch (error) {
     console.error('API Error /api/b2b:', error);
     return createErrorResponse('INTERNAL_ERROR', 'An error occurred while saving your B2B enquiry. Please try again.', 500);

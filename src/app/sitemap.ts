@@ -9,6 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     '',
     '/about',
     '/our-story',
+    '/get-in-touch',
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: STATIC_CONTENT_DATE,

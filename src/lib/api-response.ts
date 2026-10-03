@@ -8,6 +8,7 @@ export type ErrorCode =
   | 'CONFLICT'
   | 'RATE_LIMITED'
   | 'PAYMENT_FAILED'
+  | 'DATABASE_UNAVAILABLE'
   | 'INTERNAL_ERROR';
 
 export interface ApiResponse<T = unknown> {

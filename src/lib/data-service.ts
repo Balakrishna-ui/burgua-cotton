@@ -1,9 +1,17 @@
 import { prisma, isDbAvailable, openCircuit } from './db';
 
+export type CreateB2BEnquiryResult =
+  | { success: true; enquiryNumber: string; id: string }
+  | { success: false; error: 'DATABASE_UNAVAILABLE' };
+
+export type CreateContactSubmissionResult =
+  | { success: true; id: string }
+  | { success: false; error: 'DATABASE_UNAVAILABLE' };
+
 export class DataService {
   /**
-   * Persist a B2B enquiry. Returns a confirmed enquiry reference on success
-   * or a local reference if the database is currently unavailable.
+   * Persist a B2B enquiry to PostgreSQL. Returns confirmed enquiry metadata on success,
+   * or a failure result if the database is unreachable or the write fails.
    */
   static async createB2BEnquiry(data: {
     companyName: string;
@@ -16,12 +24,12 @@ export class DataService {
     approximateQuantity?: string | null;
     timeline?: string | null;
     customRequirement?: string | null;
-  }) {
-    const enquiryNumber = `ENQ-${Date.now().toString().slice(-6)}-${Math.floor(100 + Math.random() * 900)}`;
-
+  }): Promise<CreateB2BEnquiryResult> {
     if (!isDbAvailable()) {
-      return { success: true, enquiryNumber, id: `local-${enquiryNumber}` };
+      return { success: false, error: 'DATABASE_UNAVAILABLE' };
     }
+
+    const enquiryNumber = `ENQ-${Date.now().toString().slice(-6)}-${Math.floor(100 + Math.random() * 900)}`;
 
     try {
       const created = await prisma.enquiry.create({
@@ -40,14 +48,16 @@ export class DataService {
         },
       });
       return { success: true, enquiryNumber: created.enquiryNumber, id: created.id };
-    } catch {
+    } catch (error) {
+      console.error('[DataService.createB2BEnquiry] Database write failed:', error);
       openCircuit();
-      return { success: true, enquiryNumber, id: `local-${enquiryNumber}` };
+      return { success: false, error: 'DATABASE_UNAVAILABLE' };
     }
   }
 
   /**
-   * Persist a contact form submission.
+   * Persist a contact form submission to PostgreSQL. Returns confirmed record ID on success,
+   * or a failure result if the database is unreachable or the write fails.
    */
   static async createContactSubmission(data: {
     name: string;
@@ -56,9 +66,9 @@ export class DataService {
     purpose: string;
     subject: string;
     message: string;
-  }) {
+  }): Promise<CreateContactSubmissionResult> {
     if (!isDbAvailable()) {
-      return { success: true, id: `local-${Date.now()}` };
+      return { success: false, error: 'DATABASE_UNAVAILABLE' };
     }
 
     try {
@@ -73,9 +83,10 @@ export class DataService {
         },
       });
       return { success: true, id: created.id };
-    } catch {
+    } catch (error) {
+      console.error('[DataService.createContactSubmission] Database write failed:', error);
       openCircuit();
-      return { success: true, id: `local-${Date.now()}` };
+      return { success: false, error: 'DATABASE_UNAVAILABLE' };
     }
   }
 }
